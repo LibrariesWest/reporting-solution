@@ -1,0 +1,22 @@
+-- View: public.vw_catalogue
+
+-- DROP VIEW public.vw_catalogue;
+
+CREATE OR REPLACE VIEW public.vw_catalogue AS 
+ SELECT c.catalogue_key,
+    pf.policy_name AS format,
+    c.year_of_publication AS published,
+    ( SELECT (string_to_array(marc.tag, '~'::text))[1] AS string_to_array
+           FROM marc
+          WHERE marc.marc = c.marc AND marc.tag_number = 245) AS title,
+    ( SELECT (string_to_array(marc.tag, '~'::text))[1] AS string_to_array
+           FROM marc
+          WHERE marc.marc = c.marc AND marc.tag_number = 100) AS author,
+    ( SELECT (string_to_array(marc.tag, ' '::text))[1] AS string_to_array
+           FROM marc
+          WHERE marc.marc = c.marc AND marc.tag_number = 20) AS isbn,
+    c.date_catalogued AS catalogued,
+    c.number_of_copies_on_open_order,
+    c.shadow
+   FROM catalogue c
+     JOIN policy pf ON pf.policy_type::text = 'FORM'::text AND pf.policy_number = c.format;
