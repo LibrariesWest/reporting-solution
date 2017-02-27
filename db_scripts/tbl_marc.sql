@@ -1,33 +1,24 @@
--- Table: public.marc
-
--- DROP TABLE public.marc;
-
-CREATE TABLE public.marc
+-- table: marc
+-- drop table marc;
+create table marc
 (
-  marc integer NOT NULL,
-  tag_position integer NOT NULL,
+  marc integer not null,
+  tag_position integer not null,
   absolute_tag integer,
-  tag_number character varying(10) NOT NULL,
+  tag_number character varying(5) not null,
   tag text,
   empty character(1),
-  CONSTRAINT pk_marc_marc_tagpos_tagnum PRIMARY KEY (marc, tag_position, tag_number)
+  constraint pk_marc_marc_tagpos_tagnum primary key (marc, tag_position, tag_number)
 );
 
--- Index: public.cuix_marc_marc_tagpos_tagnum
+-- index: ix_marc_marc
+-- drop index ix_marc_marc;
+create index ix_marc_marc on marc using btree (marc);
 
--- DROP INDEX public.cuix_marc_marc_tagpos_tagnum;
+-- index: cuix_marc_marc_tagpos_tagnum
+-- drop index cuix_marc_marc_tagpos_tagnum;
+create unique index cuix_marc_marc_tagpos_tagnum on marc using btree (marc, tag_position, tag_number);
 
-CREATE UNIQUE INDEX cuix_marc_marc_tagpos_tagnum
-  ON public.marc
-  USING btree
-  (marc, tag_position, tag_number);
-
--- Index: public.ix_marc_marc_tagnum
-
--- DROP INDEX public.ix_marc_marc_tagnum;
-
-CREATE INDEX ix_marc_marc_tagnum
-  ON public.marc
-  USING btree
-  (marc, tag_number);
-
+-- index: ix_marc_marc_tagnum
+-- drop index ix_marc_marc_tagnum;
+create index ix_marc_marc_tagnum on marc using btree (marc, tag_number);

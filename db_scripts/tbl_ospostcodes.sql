@@ -1,10 +1,8 @@
--- Table: public.os_postcodes
-
--- DROP TABLE public.os_postcodes;
-
-CREATE TABLE public.os_postcodes
+-- table: os_postcodes
+-- drop table os_postcodes;
+create table os_postcodes
 (
-  postcode character varying(8) NOT NULL,
+  postcode character varying(8) not null,
   positional_quality_indicator integer,
   eastings numeric,
   northings numeric,
@@ -14,16 +12,10 @@ CREATE TABLE public.os_postcodes
   admin_county_code character varying(9),
   admin_district_code character varying(9),
   admin_ward_code character varying(9),
-  CONSTRAINT pk_postcode PRIMARY KEY (postcode)
+  constraint pk_postcode primary key (postcode)
 );
 
--- Index: public.cix_postcode
-
--- DROP INDEX public.cix_postcode;
-
-CREATE UNIQUE INDEX cix_postcode
-  ON public.os_postcodes
-  USING btree
-  (postcode COLLATE pg_catalog."default");
-ALTER TABLE public.os_postcodes CLUSTER ON cix_postcode;
-
+-- index: cix_postcode
+-- drop index cix_postcode;
+create unique index cix_postcode on os_postcodes using btree (postcode);
+alter table os_postcodes cluster on cix_postcode;

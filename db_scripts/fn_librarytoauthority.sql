@@ -1,22 +1,18 @@
--- Function: public.fn_librarytoauthority(text)
-
--- DROP FUNCTION public.fn_librarytoauthority(text);
-
-CREATE OR REPLACE FUNCTION public.fn_librarytoauthority(s text)
-  RETURNS text AS
+-- drop function public.fn_librarytoauthority(text);
+create or replace function public.fn_librarytoauthority(s text) returns text as
 $BODY$
-BEGIN
-return CASE
-    WHEN s::text ~~ 'BN%'::text THEN 'Bath and North East Somerset'::text
-    WHEN s::text ~~ 'BS%'::text THEN 'Bristol'::text
-    WHEN s::text ~~ 'DO%'::text THEN 'Dorset'::text
-    WHEN s::text ~~ 'PO%'::text THEN 'Poole'::text
-    WHEN s::text ~~ 'SG%'::text THEN 'South Gloucestershire'::text
-    WHEN s::text ~~ 'SO%'::text THEN 'Somerset'::text
-    WHEN s::text ~~ 'NS%'::text THEN 'North Somerset'::text
-    ELSE NULL::text
-END;
-END;
-$BODY$
-  LANGUAGE plpgsql VOLATILE
-  COST 100;
+begin
+return 
+  case
+    when s::text ~~ 'BN%'::text then 'Bath and North East Somerset'::text
+    when s::text ~~ 'BS%'::text then 'Bristol'::text
+    when s::text ~~ 'DO%'::text then 'Dorset'::text
+    when s::text ~~ 'PO%'::text then 'Poole'::text
+    when s::text ~~ 'SG%'::text then 'South Gloucestershire'::text
+    when s::text ~~ 'SO%'::text then 'Somerset'::text
+    when s::text ~~ 'NS%'::text then 'North Somerset'::text
+    else null::text
+  end;
+end;
+$BODY$ 
+language plpgsql volatile cost 100;

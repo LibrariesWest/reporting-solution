@@ -1,12 +1,10 @@
--- Table: public.item
-
--- DROP TABLE public.item;
-
-CREATE TABLE public.item
+-- table: item
+-- drop table item;
+create table item
 (
-  catalogue_key integer NOT NULL,
-  call_sequence integer NOT NULL,
-  copy_number integer NOT NULL,
+  catalogue_key integer not null,
+  call_sequence integer not null,
+  copy_number integer not null,
   id character varying(64),
   library integer,
   home_location integer,
@@ -23,43 +21,42 @@ CREATE TABLE public.item
   date_last_charged date,
   shadow integer,
   empty character(1),
-  CONSTRAINT pk_item_catkey_sequence_copy PRIMARY KEY (catalogue_key, call_sequence, copy_number)
+  constraint pk_item_catkey_sequence_copy primary key (catalogue_key, call_sequence, copy_number)
 );
 
--- Index: public.cuix_item_catkey_sequence_copy
+-- index: cuix_item_catkey_sequence_copy
+-- drop index cuix_item_catkey_sequence_copy;
+create unique index cuix_item_catkey_sequence_copy on item using btree (catalogue_key, call_sequence, copy_number);
+alter table item cluster on cuix_item_catkey_sequence_copy;
 
--- DROP INDEX public.cuix_item_catkey_sequence_copy;
+-- index: ix_item_id
+-- drop index ix_item_id;
+create unique index ix_item_id on item using btree (id);
 
-CREATE UNIQUE INDEX cuix_item_catkey_sequence_copy
-  ON public.item
-  USING btree
-  (catalogue_key, call_sequence, copy_number);
-ALTER TABLE public.item CLUSTER ON cuix_item_catkey_sequence_copy;
+-- index: ix_item_library
+-- drop index ix_item_library;
+create index ix_item_library on item using btree (library);
 
--- Index: public.ix_item_id
+-- index: ix_item_homelocation
+-- drop index ix_item_homelocation;
+create index ix_item_homelocation on item using btree (home_location);
 
--- DROP INDEX public.ix_item_id;
+-- index: ix_item_homelocation
+-- drop index ix_item_homelocation;
+create index ix_item_currentlocation on item using btree (current_location);
 
-CREATE UNIQUE INDEX ix_item_id
-  ON public.item
-  USING btree
-  (id COLLATE pg_catalog."default");
+-- index: ix_item_lastactivity
+-- drop index ix_item_lastactivity;
+create index ix_item_lastactivity on item using btree (last_activity_date);
 
--- Index: public.ix_item_library
+-- index: ix_item_type
+-- drop index ix_item_type;
+create index ix_item_type on item using btree (type);
 
--- DROP INDEX public.ix_item_library;
+-- index: ix_item_transitstatus
+-- drop index ix_item_transitstatus;
+create index ix_item_transitstatus on item using btree (transit_status);
 
-CREATE INDEX ix_item_library
-  ON public.item
-  USING btree
-  (library);
-
--- Index: public.ix_item_type
-
--- DROP INDEX public.ix_item_type;
-
-CREATE INDEX ix_item_type
-  ON public.item
-  USING btree
-  (type);
-
+-- index: ix_item_reservestatus
+-- drop index ix_item_reservestatus;
+create index ix_item_reservestatus on item using btree (reserve_status);

@@ -1,10 +1,8 @@
--- Table: public.users
-
--- DROP TABLE public.users;
-
-CREATE TABLE public.users
+-- table: users
+-- drop table users;
+create table users
 (
-  user_key integer NOT NULL,
+  user_key integer not null,
   responsibility_code integer,
   id character varying(20),
   number_of_claims_returned integer,
@@ -21,43 +19,54 @@ CREATE TABLE public.users
   user_access integer,
   status integer,
   empty character(1),
-  CONSTRAINT pk_user_key PRIMARY KEY (user_key)
+  constraint pk_user_key primary key (user_key)
 );
 
--- Index: public.cuix_user_key
+-- index: cuix_user_key
+-- drop index cuix_user_key;
+create unique index cuix_users_key on users using btree (user_key);
+alter table users cluster on cuix_users_key;
 
--- DROP INDEX public.cuix_user_key;
+-- index: ix_user_id
+-- drop index ix_user_id;
+create index ix_users_id on users using btree (id);
 
-CREATE UNIQUE INDEX cuix_user_key
-  ON public.users
-  USING btree
-  (user_key);
-ALTER TABLE public.users CLUSTER ON cuix_user_key;
+-- index: ix_users_address1
+-- drop index ix_users_address1;
+create index ix_users_address1 on users using btree (address_offset_1);
 
--- Index: public.ix_user_created
+-- index: ix_users_address2
+-- drop index ix_users_address2;
+create index ix_users_address2 on users using btree (address_offset_2);
 
--- DROP INDEX public.ix_user_created;
+-- index: ix_users_address3
+-- drop index ix_users_address3;
+create index ix_users_address3 on users using btree (address_offset_3);
 
-CREATE INDEX ix_user_created
-  ON public.users
-  USING btree
-  (date_created);
+-- index: ix_users_library
+-- drop index ix_users_library;
+create index ix_users_library on users using btree (library);
 
--- Index: public.ix_user_id
+-- index: ix_users_profile
+-- drop index ix_users_profile;
+create index ix_users_profile on users using btree (profile);
 
--- DROP INDEX public.ix_user_id;
+-- index: ix_users_lastactivity
+-- drop index ix_users_lastactivity;
+create index ix_users_lastactivity on users using btree (last_activity_date);
 
-CREATE INDEX ix_user_id
-  ON public.users
-  USING btree
-  (id COLLATE pg_catalog."default");
+-- index: ix_users_datecreated
+-- drop index ix_users_datecreated;
+create index ix_users_datecreated on users using btree (date_created);
 
--- Index: public.ix_user_profile_library
+-- index: ix_user_created
+-- drop index ix_user_created;
+create index ix_users_created on users using btree (date_created);
 
--- DROP INDEX public.ix_user_profile_library;
+-- index: ix_users_access
+-- drop index ix_users_access;
+create index ix_users_access on users using btree (user_access);
 
-CREATE INDEX ix_user_profile_library
-  ON public.users
-  USING btree
-  (profile, library);
-
+-- index: ix_users_status
+-- drop index ix_users_status;
+create index ix_users_status on users using btree (status);

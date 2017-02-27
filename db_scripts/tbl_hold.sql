@@ -1,10 +1,8 @@
--- Table: public.hold
-
--- DROP TABLE public.hold;
-
-CREATE TABLE public.hold
+-- table: hold
+-- drop table hold;
+create table hold
 (
-  key integer NOT NULL,
+  key integer not null,
   user_key integer,
   catalogue_key integer,
   call_sequence integer,
@@ -32,52 +30,54 @@ CREATE TABLE public.hold
   date_reordered date,
   client_used integer,
   empty character(1),
-  CONSTRAINT pk_hold_key PRIMARY KEY (key)
+  constraint pk_hold_key primary key (key)
 );
 
--- Index: public.cuix_hold_key
+-- index: cuix_hold_key
+-- drop index cuix_hold_key;
+create unique index cuix_hold_key on hold using btree (key);
+alter table hold cluster on cuix_hold_key;
 
--- DROP INDEX public.cuix_hold_key;
+-- index: ix_hold_userkey
+-- drop index ix_hold_userkey;
+create index ix_hold_userkey on hold using btree (user_key);
 
-CREATE UNIQUE INDEX cuix_hold_key
-  ON public.hold
-  USING btree
-  (key);
-ALTER TABLE public.hold CLUSTER ON cuix_hold_key;
+-- index: ix_hold_catkey_sequence_copy
+-- drop index ix_hold_catkey_sequence_copy;
+create index ix_hold_catkey_sequence_copy on hold using btree (catalogue_key, call_sequence, copy_number);
 
--- Index: public.ix_hold_catkey_sequence_copy
+-- index: ix_hold_itemlibrary
+-- drop index ix_hold_itemlibrary;
+create index ix_hold_itemlibrary on hold using btree (item_library);
 
--- DROP INDEX public.ix_hold_catkey_sequence_copy;
+-- index: ix_hold_type
+-- drop index ix_hold_type;
+create index ix_hold_type on hold using btree (type);
 
-CREATE INDEX ix_hold_catkey_sequence_copy
-  ON public.hold
-  USING btree
-  (catalogue_key, call_sequence, copy_number);
+-- index: ix_hold_library
+-- drop index ix_hold_library;
+create index ix_hold_library on hold using btree (library);
 
--- Index: public.ix_hold_itemlibrary
+-- index: ix_hold_pickuplibrary
+-- drop index ix_hold_pickuplibrary;
+create index ix_hold_pickuplibrary on hold using btree (pickup_library);
 
--- DROP INDEX public.ix_hold_itemlibrary;
+-- index: ix_hold_dateplaced
+-- drop index ix_hold_dateplaced;
+create index ix_hold_dateplaced on hold using btree (date_placed);
 
-CREATE INDEX ix_hold_itemlibrary
-  ON public.hold
-  USING btree
-  (item_library);
+-- index: ix_hold_status
+-- drop index ix_hold_status;
+create index ix_hold_status on hold using btree (hold_status);
 
--- Index: public.ix_hold_pickuplibrary
+-- index: ix_hold_range
+-- drop index ix_hold_range;
+create index ix_hold_range on hold using btree (range);
 
--- DROP INDEX public.ix_hold_pickuplibrary;
+-- index: ix_hold_dateavailable
+-- drop index ix_hold_dateavailable;
+create index ix_hold_dateavailable on hold using btree (date_available);
 
-CREATE INDEX ix_hold_pickuplibrary
-  ON public.hold
-  USING btree
-  (pickup_library);
-
--- Index: public.ix_hold_userkey
-
--- DROP INDEX public.ix_hold_userkey;
-
-CREATE INDEX ix_hold_userkey
-  ON public.hold
-  USING btree
-  (user_key);
-
+-- index: ix_hold_client
+-- drop index ix_hold_client;
+create index ix_hold_client on hold using btree (client_used);

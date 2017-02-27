@@ -1,14 +1,14 @@
 ---------------------------------------------------------------
--- TABLE: bill
+-- table: bill
 ---------------------------------------------------------------
-
-CREATE TABLE public.bill
+-- drop table bill
+create table bill
 (
   catalogue_key integer,
   call_sequence integer,
   copy_number integer,
-  user_key integer NOT NULL,
-  bill_number integer NOT NULL,
+  user_key integer not null,
+  bill_number integer not null,
   library integer,
   amount_billed numeric,
   date_billed date,
@@ -16,24 +16,30 @@ CREATE TABLE public.bill
   paid_in_full_flag boolean,
   tax numeric,
   empty character(1),
-  CONSTRAINT pk_bill_userkey_billnumber PRIMARY KEY (user_key, bill_number)
+  constraint pk_bill_userkey_billnumber primary key (user_key, bill_number)
 );
 
--- Index: cuix_bill_userkey_billnumber
--- DROP INDEX cuix_bill_userkey_billnumber;
-CREATE UNIQUE INDEX cuix_bill_userkey_billnumber ON bill USING btree (user_key, bill_number);
-ALTER TABLE bill CLUSTER ON cuix_bill_userkey_billnumber;
+-- index: cuix_bill_userkey_billnumber
+-- drop index cuix_bill_userkey_billnumber;
+create unique index cuix_bill_userkey_billnumber on bill using btree (user_key, bill_number);
+alter table bill cluster on cuix_bill_userkey_billnumber;
 
--- Index: ix_bill_catkey_sequence_copy
--- DROP INDEX ix_bill_catkey_sequence_copy;
-CREATE INDEX ix_bill_catkey_sequence_copy ON bill USING btree (catalogue_key, call_sequence, copy_number);
+-- index: ix_bill_catkey_sequence_copy
+-- drop index ix_bill_catkey_sequence_copy;
+create index ix_bill_catkey_sequence_copy on bill using btree (catalogue_key, call_sequence, copy_number);
 
--- Index: public.ix_bill_date
--- DROP INDEX public.ix_bill_date;
+-- index: ix_bill_userkey
+-- drop index ix_bill_userkey;
+create index ix_bill_userkey on bill using btree (user_key);
 
-CREATE INDEX ix_bill_date ON bill USING btree (date_billed);
+-- index: ix_bill_library
+-- drop index ix_bill_library;
+create index ix_bill_library on bill using btree (library);
 
--- Index: public.ix_bill_userkey
--- DROP INDEX ix_bill_userkey;
+-- index: ix_bill_date
+-- drop index public.ix_bill_date;
+create index ix_bill_date on bill using btree (date_billed);
 
-CREATE INDEX ix_bill_userkey ON bill USING btree (user_key);
+-- index: ix_bill_reason
+-- drop index ix_bill_reason;
+create index ix_bill_reason on bill using btree (reason);

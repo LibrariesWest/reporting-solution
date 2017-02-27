@@ -1,54 +1,49 @@
--- Table: public.transit
-
--- DROP TABLE public.transit;
-
-CREATE TABLE public.transit
+-- table: transit
+-- drop table transit;
+create table transit
 (
-  catalogue_key integer,
-  call_sequence integer,
-  copy_number integer,
+  catalogue_key integer not null,
+  call_sequence integer not null,
+  copy_number integer not null,
   hold_key integer,
   date_time_transited date,
   library integer,
   from_library integer,
   to_library integer,
   reason_needed integer,
-  empty character(1)
+  empty character(1),
+  constraint pk_transit_catkey_callsequence_copynumber primary key (catalogue_key, call_sequence, copy_number)
 );
 
--- Index: public.cix_transit_date
+-- index: cix_transit_date
+-- drop index cix_transit_date;
+create index cix_transit_date on transit using btree (date_time_transited);
 
--- DROP INDEX public.cix_transit_date;
+-- index: cuix_transit_catkey_callsequence_copynumber
+-- drop index cuix_transit_catkey_callsequence_copynumber;
+create unique index cuix_transit_catkey_callsequence_copynumber on transit using btree (catalogue_key, call_sequence, copy_number);
+alter table transit cluster on cuix_transit_catkey_callsequence_copynumber;
 
-CREATE INDEX cix_transit_date
-  ON public.transit
-  USING btree
-  (date_time_transited);
+-- index: ix_transit_holdkey
+-- drop index ix_transit_holdkey;
+create index ix_transit_holdkey on transit using btree (hold_key);
 
--- Index: public.ix_transit_fromlibrary
+-- index: ix_transit_datetransited
+-- drop index ix_transit_datetransited;
+create index ix_transit_datetransited on transit using btree (date_time_transited);
 
--- DROP INDEX public.ix_transit_fromlibrary;
+-- index: ix_transit_library
+-- drop index ix_transit_library;
+create index ix_transit_library on transit using btree (library);
 
-CREATE INDEX ix_transit_fromlibrary
-  ON public.transit
-  USING btree
-  (from_library);
+-- index: ix_transit_fromlibrary
+-- drop index ix_transit_fromlibrary;
+create index ix_transit_fromlibrary on transit using btree (from_library);
 
--- Index: public.ix_transit_library
+-- index: ix_transit_tolibrary
+-- drop index ix_transit_tolibrary;
+create index ix_transit_tolibrary on transit using btree (to_library);
 
--- DROP INDEX public.ix_transit_library;
-
-CREATE INDEX ix_transit_library
-  ON public.transit
-  USING btree
-  (library);
-
--- Index: public.ix_transit_tolibrary
-
--- DROP INDEX public.ix_transit_tolibrary;
-
-CREATE INDEX ix_transit_tolibrary
-  ON public.transit
-  USING btree
-  (to_library);
-
+-- index: ix_transit_reasonneeded
+-- drop index ix_transit_reasonneeded;
+create index ix_transit_reasonneeded on transit using btree (reason_needed);

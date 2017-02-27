@@ -1,8 +1,6 @@
--- Table: public.userxinfo
-
--- DROP TABLE public.userxinfo;
-
-CREATE TABLE public.userxinfo
+-- table: userxinfo
+-- drop table userxinfo;
+create table userxinfo
 (
   "offset" integer,
   entry_number integer,
@@ -10,13 +8,15 @@ CREATE TABLE public.userxinfo
   empty character(1)
 );
 
--- Index: public.cix_userxinfo_offset_entry
+-- index: cix_userxinfo_offset_entry
+-- drop index cix_userxinfo_offset_entry;
+create index cix_userxinfo_offset_entry on userxinfo using btree ("offset", entry_number);
+alter table userxinfo cluster on cix_userxinfo_offset_entry;
 
--- DROP INDEX public.cix_userxinfo_offset_entry;
+-- index: ix_userxinfo_offset
+-- drop index ix_userxinfo_offset;
+create index ix_userxinfo_offset on userxinfo using btree ("offset");
 
-CREATE INDEX cix_userxinfo_offset_entry
-  ON public.userxinfo
-  USING btree
-  ("offset", entry_number);
-ALTER TABLE public.userxinfo CLUSTER ON cix_userxinfo_offset_entry;
-
+-- index: ix_userxinfo_entrynumber
+-- drop index ix_userxinfo_entrynumber;
+create index ix_userxinfo_entrynumber on userxinfo using btree (entry_number);

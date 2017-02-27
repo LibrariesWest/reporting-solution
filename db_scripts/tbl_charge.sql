@@ -1,10 +1,8 @@
--- Table: public.charge
-
--- DROP TABLE public.charge;
-
-CREATE TABLE public.charge
+-- table: charge
+-- drop table charge;
+create table charge
 (
-  key integer NOT NULL,
+  key integer not null,
   user_key integer,
   catalogue_key integer,
   call_sequence integer,
@@ -20,43 +18,26 @@ CREATE TABLE public.charge
   status integer,
   number_of_unseen_renewals integer,
   empty character(1),
-  CONSTRAINT pk_charge_key PRIMARY KEY (key)
+  constraint pk_charge_key primary key (key)
 );
 
--- Index: public.cuix_charge_key
+-- index: cuix_charge_key
+-- drop index cuix_charge_key;
+create unique index cuix_charge_key on charge using btree (key);
+alter table charge cluster on cuix_charge_key;
 
--- DROP INDEX public.cuix_charge_key;
-
-CREATE UNIQUE INDEX cuix_charge_key
-  ON public.charge
-  USING btree
-  (key);
-ALTER TABLE public.charge CLUSTER ON cuix_charge_key;
+-- index: ix_charge_userkey
+-- drop index ix_charge_userkey;
+create index ix_charge_userkey on charge using btree (user_key);
 
 -- Index: public.ix_charge_catkey_sequence_copy
+-- drop index ix_charge_catkey_sequence_copy;
+create index ix_charge_catkey_sequence_copy on charge using btree (catalogue_key, call_sequence, copy_number);
 
--- DROP INDEX public.ix_charge_catkey_sequence_copy;
+-- index: ix_charge_library
+-- drop index ix_charge_library;
+create index ix_charge_library on charge using btree (library);
 
-CREATE INDEX ix_charge_catkey_sequence_copy
-  ON public.charge
-  USING btree
-  (catalogue_key, call_sequence, copy_number);
-
--- Index: public.ix_charge_library
-
--- DROP INDEX public.ix_charge_library;
-
-CREATE INDEX ix_charge_library
-  ON public.charge
-  USING btree
-  (library);
-
--- Index: public.ix_charge_userkey
-
--- DROP INDEX public.ix_charge_userkey;
-
-CREATE INDEX ix_charge_userkey
-  ON public.charge
-  USING btree
-  (user_key);
-
+-- index: ix_charge_datecharged
+-- drop index ix_charge_datecharged;
+create index ix_charge_datecharged on charge using btree (date_charged);
