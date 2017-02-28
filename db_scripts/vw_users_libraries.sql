@@ -1,27 +1,17 @@
--- View: public.vw_users_libraries
-
--- DROP VIEW public.vw_users_libraries;
-
-CREATE OR REPLACE VIEW public.vw_users_libraries AS 
- SELECT u.id,
-    fn_librarytoauthority(u.id::text) AS authority,
-        CASE
-            WHEN u.mailing_address = 1 THEN ( SELECT userxinfo.entry
-               FROM userxinfo
-              WHERE userxinfo."offset" = u.address_offset_1 AND userxinfo.entry_number = 9000
-             LIMIT 1)
-            WHEN u.mailing_address = 2 THEN ( SELECT userxinfo.entry
-               FROM userxinfo
-              WHERE userxinfo."offset" = u.address_offset_2 AND userxinfo.entry_number = 9036
-             LIMIT 1)
-            WHEN u.mailing_address = 3 THEN ( SELECT userxinfo.entry
-               FROM userxinfo
-              WHERE userxinfo."offset" = u.address_offset_3 AND userxinfo.entry_number = 9036
-             LIMIT 1)
-            ELSE NULL::text
-        END AS postcode
-   FROM users u
-     JOIN policy ul ON ul.policy_type::text = 'LIBR'::text AND ul.policy_number = u.library
-     JOIN policy us ON us.policy_type::text = 'USTN'::text AND us.policy_number = u.status
-     JOIN policy up ON up.policy_type::text = 'UPRF'::text AND up.policy_number = u.profile
-  WHERE u.id::text = ul.policy_name::text;
+-- view: vw_users_libraries
+-- drop view vw_users_libraries;
+create or replace view vw_users_libraries as 
+select 
+    u.id,
+    fn_librarytoauthority(u.id::text) as authority,
+    case
+        when u.mailing_address = 1 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_1 and userxinfo.entry_number = 9000 limit 1)
+        when u.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_2 and userxinfo.entry_number = 9036 limit 1)
+        when u.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_3 and userxinfo.entry_number = 9036 limit 1)
+        else null::text
+    end as postcode
+from users u
+join policy ul on ul.policy_type::text = 'LIBR'::text and ul.policy_number = u.library
+join policy us on us.policy_type::text = 'USTN'::text and us.policy_number = u.status
+join policy up on up.policy_type::text = 'UPRF'::text and up.policy_number = u.profile
+where u.id::text = ul.policy_name::text;

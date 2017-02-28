@@ -1,25 +1,25 @@
--- View: public.vw_chargeshistory
-
--- DROP VIEW public.vw_chargeshistory;
-
-CREATE OR REPLACE VIEW public.vw_chargeshistory AS 
- SELECT u.id AS "user",
-    i.id AS item,
-    lp.policy_name AS library,
-    fn_librarytoauthority(lp.policy_name::text) AS authority,
-    c.date_charged AS charged,
-    c.date_renewed AS renewed,
-    c.number_of_renewals AS renewals,
-    c.number_of_unseen_renewals AS unseen,
-    c.accrued_fine AS fine,
-        CASE
-            WHEN c.overdue = 0 THEN 'No'::text
-            ELSE 'Yes'::text
-        END AS overdue,
-    c.date_time_discharged AS discharged,
-    ldp.policy_name AS discharge_library
-   FROM chargehist c
-     JOIN users u ON u.user_key = c.user_key
-     JOIN item i ON i.catalogue_key = c.catalogue_key AND i.call_sequence = c.call_sequence AND i.copy_number = c.copy_number
-     JOIN policy lp ON lp.policy_number = c.library AND lp.policy_type::text = 'LIBR'::text
-     JOIN policy ldp ON ldp.policy_number = c.discharge_library AND ldp.policy_type::text = 'LIBR'::text;
+-- view: vw_chargeshistory
+-- drop view vw_chargeshistory;
+create or replace view vw_chargeshistory as 
+select 
+    u.id as "user",
+    i.id as item,
+    lp.policy_name as library,
+    fn_librarytoauthority(lp.policy_name::text) as authority,
+    c.date_charged as charged,
+    c.date_renewed as renewed,
+    c.number_of_renewals as renewals,
+    c.number_of_unseen_renewals as unseen,
+    c.accrued_fine as fine,
+    case
+        when c.overdue = 0 then 'no'::text
+        else 'yes'::text
+    end as overdue,
+    c.date_time_discharged as discharged,
+    ldp.policy_name as discharge_library,
+    fn_librarytoauthority(ldp.policy_name::text) as discharge_authority
+from chargehist c
+join users u on u.user_key = c.user_key
+join item i on i.catalogue_key = c.catalogue_key and i.call_sequence = c.call_sequence and i.copy_number = c.copy_number
+join policy lp on lp.policy_number = c.library and lp.policy_type::text = 'LIBR'::text
+join policy ldp on ldp.policy_number = c.discharge_library and ldp.policy_type::text = 'LIBR'::text;
