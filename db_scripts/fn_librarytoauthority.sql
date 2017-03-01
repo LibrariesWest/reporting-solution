@@ -1,5 +1,9 @@
--- drop function public.fn_librarytoauthority(text);
-create or replace function public.fn_librarytoauthority(s text) returns text as
+---------------------------------------------------------------
+-- function: fn_librarytoauthority
+---------------------------------------------------------------
+
+-- drop function fn_librarytoauthority(text);
+create or replace function fn_librarytoauthority(s text) returns text as
 $BODY$
 begin
 return 
