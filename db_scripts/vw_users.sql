@@ -25,7 +25,10 @@ select
     ( select ucp11.policy_name from ucat uc11 join policy ucp11 on ucp11.policy_type::text = 'CAT11'::text and ucp11.policy_number = uc11.value where uc11.user_key = u.user_key and uc11.category = 11 ) as declared_disability,
     ( select ucp12.policy_name from ucat uc12 join policy ucp12 on ucp12.policy_type::text = 'CAT12'::text and ucp12.policy_number = uc12.value where uc12.user_key = u.user_key and uc12.category = 12 ) as notices_delivery,
     us.policy_name as status,
-    u.birth_date::date as birth_date,
+    case 
+	when u.birth_date = 0 then null
+	else ('J' || cast(u.birth_date as text))::date
+    end as birth_date,
     u.date_created as joined,
     u.last_activity_date as active,
     ( select max(c.date_charged) as max from ( 
