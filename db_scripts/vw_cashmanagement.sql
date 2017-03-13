@@ -9,6 +9,8 @@ select
     sp.policy_name as station,
     br.policy_name as bill_reason,
     coalesce(ity.policy_name, itty.policy_name) as item_type,
+    case when ity.policy_name is not null then i.description
+    else itty.policy_name end as payment_group,
     i.description,
     pt.policy_name as payment_type,
     i.quantity,
