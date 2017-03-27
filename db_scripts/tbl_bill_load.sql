@@ -3,4 +3,4 @@
 ------------------------------------------------------
 
 truncate bill;
-copy bill from 'c:\dbdata\symphonydata\bill.txt' delimiter '|';
+copy bill from 'c:\dbdata\symphony\bill.txt' delimiter '|';
