@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate users;
-copy users from 'c:\dbdata\symphonydata\user.txt' delimiter '|';
+copy users from 'c:\dbdata\symphony\user.txt' delimiter '|';

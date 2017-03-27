@@ -3,4 +3,4 @@
 ------------------------------------------------------
 
 truncate callnum;
-copy callnum from 'c:\dbdata\symphonydata\callnum.txt' delimiter '|';
+copy callnum from 'c:\dbdata\symphony\callnum.txt' delimiter '|';

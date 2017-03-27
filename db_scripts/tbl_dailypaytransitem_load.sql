@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate dailypaytransitem;
-copy dailypaytransitem from 'c:\dbdata\symphonydata\dailypaytransitem.txt' delimiter '|';
+copy dailypaytransitem from 'c:\dbdata\symphony\dailypaytransitem.txt' delimiter '|';

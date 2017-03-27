@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate marc;
-copy marc from 'c:\dbdata\symphonydata\marc.txt' delimiter '|';
+copy marc from 'c:\dbdata\symphony\marc.txt' delimiter '|';

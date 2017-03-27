@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate ucat;
-copy ucat from 'c:\dbdata\symphonydata\ucat.txt' delimiter '|';
+copy ucat from 'c:\dbdata\symphony\ucat.txt' delimiter '|';

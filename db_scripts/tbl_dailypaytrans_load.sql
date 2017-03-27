@@ -4,4 +4,4 @@
 
 -- import dailypaytrans
 truncate dailypaytrans;
-copy dailypaytrans from 'c:\dbdata\symphonydata\dailypaytrans.txt' delimiter '|';
+copy dailypaytrans from 'c:\dbdata\symphony\dailypaytrans.txt' delimiter '|';

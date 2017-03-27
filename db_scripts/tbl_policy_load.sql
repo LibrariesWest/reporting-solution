@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate policy;
-copy policy from 'c:\dbdata\symphonydata\policy.txt' delimiter '|';
+copy policy from 'c:\dbdata\symphony\policy.txt' delimiter '|';

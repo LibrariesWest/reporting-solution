@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate dailypaytransamt;
-copy dailypaytransamt from 'c:\dbdata\symphonydata\dailypaytransamt.txt' delimiter '|';
+copy dailypaytransamt from 'c:\dbdata\symphony\dailypaytransamt.txt' delimiter '|';

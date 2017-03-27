@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate userxinfo;
-copy userxinfo from 'c:\dbdata\symphonydata\userxinfo.txt' delimiter '|';
+copy userxinfo from 'c:\dbdata\symphony\userxinfo.txt' delimiter '|';
