@@ -71,42 +71,37 @@ set client_encoding = 'UTF8';
 \i tbl_marc_load.sql
 \i tbl_marc_indexes.sql
 
--- 15.  marc table 
-\i tbl_marc.sql
-\i tbl_marc_load.sql
-\i tbl_marc_indexes.sql
-
--- 16.  os postcodes table 
+-- 15.  os postcodes table 
 \i tbl_ospostcodes.sql
 \i tbl_ospostcodes_load.sql
 \i tbl_ospostcodes_indexes.sql
 
--- 17.  policy table 
+-- 16.  policy table 
 \i tbl_policy.sql
 \i tbl_policy_load.sql
 \i tbl_policy_indexes.sql
 
--- 18.  transit table 
+-- 17.  transit table 
 \i tbl_transit.sql
 \i tbl_transit_load.sql
 \i tbl_transit_indexes.sql
 
--- 19.  ucat table 
+-- 18.  ucat table 
 \i tbl_ucat.sql
 \i tbl_ucat_load.sql
 \i tbl_ucat_indexes.sql
 
--- 20.  users table 
+-- 19.  users table 
 \i tbl_users.sql
 \i tbl_users_load.sql
 \i tbl_users_indexes.sql
 
--- 21.  users table 
+-- 20.  users table 
 \i tbl_userxinfo.sql
 \i tbl_userxinfo_load.sql
 \i tbl_userxinfo_indexes.sql
 
--- create the views
+-- 21.  create the views
 \i vw_billpayments.sql
 \i vw_bills_billpayments.sql
 \i vw_bills.sql
