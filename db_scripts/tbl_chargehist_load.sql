@@ -1,7 +1,9 @@
--- import charge history
+---------------------------------------------------------------
+-- table: chargehist.  load data
+---------------------------------------------------------------
+
 truncate chargehist;
 alter table chargehist alter column date_renewed type character varying(10);
-copy chargehist from 'c:\dbdesign\symphonydata\chargehist.txt' delimiter '|';
+copy chargehist from 'c:\dbdata\symphonydata\chargehist.txt' delimiter '|';
 update chargehist set date_renewed = null where date_renewed = 'NEVER';
 alter table chargehist alter column date_renewed type date using to_date(date_renewed, 'DD/MM/YYYY');
--- recreate charge and charge history views

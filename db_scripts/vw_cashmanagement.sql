@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_cashmanagement
+---------------------------------------------------------------
+
 -- drop view vw_cashmanagement;
 create or replace view vw_cashmanagement as 
 select 

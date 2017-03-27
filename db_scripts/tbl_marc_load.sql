@@ -1,3 +1,6 @@
--- import marc
+---------------------------------------------------------------
+-- table: marc.  load data
+---------------------------------------------------------------
+
 truncate marc;
-copy marc from 'c:\dbdesign\symphonydata\marc.txt' delimiter '|';
+copy marc from 'c:\dbdata\symphonydata\marc.txt' delimiter '|';

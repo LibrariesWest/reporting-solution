@@ -1,4 +1,7 @@
--- table: dailypaytransamt
+---------------------------------------------------------------
+-- table: dailypaytransamt.
+---------------------------------------------------------------
+
 -- drop table dailypaytransamt;
 create table dailypaytransamt
 (

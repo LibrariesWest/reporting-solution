@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: item.  indexes
+---------------------------------------------------------------
+
 -- index: cuix_item_catkey_sequence_copy
 -- drop index cuix_item_catkey_sequence_copy;
 create unique index cuix_item_catkey_sequence_copy on item using btree (catalogue_key, call_sequence, copy_number);

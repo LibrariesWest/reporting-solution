@@ -1,3 +1,6 @@
--- import users
+---------------------------------------------------------------
+-- table: users.  load data
+---------------------------------------------------------------
+
 truncate users;
-copy users from 'c:\dbdesign\symphonydata\user.txt' delimiter '|';
+copy users from 'c:\dbdata\symphonydata\user.txt' delimiter '|';

@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: transit.  indexes
+---------------------------------------------------------------
+
 -- index: cix_transit_date
 -- drop index cix_transit_date;
 create index cix_transit_date on transit using btree (date_time_transited);

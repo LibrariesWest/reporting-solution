@@ -1,7 +1,8 @@
----------------------------------------------------------------
--- index: cuix_bill_userkey_billnumber
----------------------------------------------------------------
+------------------------------------------------------
+-- table: bill. indexes
+------------------------------------------------------
 
+-- index: cuix_bill_userkey_billnumber
 -- drop index cuix_bill_userkey_billnumber;
 create unique index cuix_bill_userkey_billnumber on bill using btree (user_key, bill_number);
 alter table bill cluster on cuix_bill_userkey_billnumber;

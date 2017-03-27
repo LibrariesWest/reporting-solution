@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: policy.  load data
+---------------------------------------------------------------
+
 -- index: cuix_policy_numbertype
 -- drop index cuix_policy_numbertype;
 create unique index cuix_policy_numbertype on policy using btree (policy_number, policy_type);

@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: marc.  indexes
+---------------------------------------------------------------
+
 -- index: ix_marc_marc
 -- drop index ix_marc_marc;
 create index ix_marc_marc on marc using btree (marc);

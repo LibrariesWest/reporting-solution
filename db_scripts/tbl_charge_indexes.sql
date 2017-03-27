@@ -1,6 +1,8 @@
 ---------------------------------------------------------------
--- index: cuix_charge_key
+-- table: charge.  indexes
 ---------------------------------------------------------------
+
+-- index: cuix_charge_key
 -- drop index cuix_charge_key;
 create unique index cuix_charge_key on charge using btree (key);
 alter table charge cluster on cuix_charge_key;

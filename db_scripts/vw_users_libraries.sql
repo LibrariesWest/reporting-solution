@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_users_libraries
+---------------------------------------------------------------
+
 -- drop view vw_users_libraries;
 create or replace view vw_users_libraries as 
 select 

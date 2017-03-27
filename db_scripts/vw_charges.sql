@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_charges
+---------------------------------------------------------------
+
 -- drop view vw_charges;
 create or replace view vw_charges as 
 select 

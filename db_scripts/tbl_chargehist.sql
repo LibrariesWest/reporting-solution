@@ -1,4 +1,7 @@
--- table: chargehist
+---------------------------------------------------------------
+-- table: chargehist.
+---------------------------------------------------------------
+
 -- drop table chargehist;
 create table chargehist
 (

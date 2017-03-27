@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_catalogue
+---------------------------------------------------------------
+
 -- drop view vw_catalogue;
 create or replace view public.vw_catalogue as 
 select

@@ -1,5 +1,7 @@
 ---------------------------------------------------------------
 -- function: fn_librarytoauthority
+-- This function converts a libray code to an authority name
+-- using libraries west authorities.
 ---------------------------------------------------------------
 
 -- drop function fn_librarytoauthority(text);

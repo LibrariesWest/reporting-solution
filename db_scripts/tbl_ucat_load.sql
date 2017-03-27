@@ -1,3 +1,6 @@
--- import user categories
+---------------------------------------------------------------
+-- table: ucat.  load data
+---------------------------------------------------------------
+
 truncate ucat;
-copy ucat from 'c:\dbdesign\symphonydata\ucat.txt' delimiter '|';
+copy ucat from 'c:\dbdata\symphonydata\ucat.txt' delimiter '|';

@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: users.  indexes
+---------------------------------------------------------------
+
 -- index: cuix_user_key
 -- drop index cuix_user_key;
 create unique index cuix_users_key on users using btree (user_key);

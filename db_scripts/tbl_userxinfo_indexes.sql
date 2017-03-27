@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: userxinfo.  indexes
+---------------------------------------------------------------
+
 -- index: cix_userxinfo_offset_entry
 -- drop index cix_userxinfo_offset_entry;
 create index cix_userxinfo_offset_entry on userxinfo using btree ("offset", entry_number);

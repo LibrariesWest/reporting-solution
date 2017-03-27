@@ -1,3 +1,6 @@
--- import bill payment data
+------------------------------------------------------
+-- table: billpayment. load data
+------------------------------------------------------
+
 truncate billpayment;
-copy billpayment from 'c:\dbdesign\symphonydata\billpayment.txt' delimiter '|';
+copy billpayment from 'c:\dbdata\symphonydata\billpayment.txt' delimiter '|';

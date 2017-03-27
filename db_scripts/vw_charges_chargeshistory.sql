@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_charges_chargeshistory
+---------------------------------------------------------------
+
 -- drop view vw_charges_chargeshistory;
 create or replace view vw_charges_chargeshistory as 
 select 

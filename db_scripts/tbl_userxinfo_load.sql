@@ -1,3 +1,6 @@
--- import user extended info
+---------------------------------------------------------------
+-- table: userxinfo.  load data
+---------------------------------------------------------------
+
 truncate userxinfo;
-copy userxinfo from 'c:\dbdesign\symphonydata\userxinfo.txt' delimiter '|';
+copy userxinfo from 'c:\dbdata\symphonydata\userxinfo.txt' delimiter '|';

@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: hold.  indexes
+---------------------------------------------------------------
+
 -- index: cuix_hold_key
 -- drop index cuix_hold_key;
 create unique index cuix_hold_key on hold using btree (key);

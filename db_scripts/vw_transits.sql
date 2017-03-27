@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_transits
+---------------------------------------------------------------
+
 -- drop view vw_transits;
 create or replace view vw_transits as 
 select 

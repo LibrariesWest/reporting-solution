@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_users_public
+---------------------------------------------------------------
+
 -- drop view vw_users_public;
 create or replace view vw_users_public as 
 select

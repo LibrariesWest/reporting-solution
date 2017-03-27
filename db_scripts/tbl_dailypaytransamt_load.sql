@@ -1,3 +1,6 @@
--- import dailypaytransamt
+---------------------------------------------------------------
+-- table: dailypaytransamt.  load data
+---------------------------------------------------------------
+
 truncate dailypaytransamt;
-copy dailypaytransamt from 'c:\dbdesign\symphonydata\dailypaytransamt.txt' delimiter '|';
+copy dailypaytransamt from 'c:\dbdata\symphonydata\dailypaytransamt.txt' delimiter '|';

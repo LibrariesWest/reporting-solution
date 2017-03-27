@@ -1,4 +1,7 @@
+---------------------------------------------------------------
 -- view: vw_bills_billpayments
+---------------------------------------------------------------
+
 -- drop view vw_bills_billpayments;
 create or replace view vw_bills_billpayments as 
 select 

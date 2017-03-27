@@ -1,3 +1,6 @@
--- import transits
+---------------------------------------------------------------
+-- table: transit.  load data
+---------------------------------------------------------------
+
 truncate transit;
-copy transit from 'c:\dbdesign\symphonydata\transit.txt' delimiter '|';
+copy transit from 'c:\dbdata\symphonydata\transit.txt' delimiter '|';

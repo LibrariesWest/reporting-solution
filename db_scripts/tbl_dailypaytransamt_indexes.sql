@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: dailypaytransamt.  indexes
+---------------------------------------------------------------
+
 -- index: cuix_dailypaytransamt_key
 -- drop index cuix_dailypaytransamt_key;
 create unique index cuix_dailypaytransamt_key on dailypaytransamt using btree (key);

@@ -1,7 +1,8 @@
----------------------------------------------------------------
--- index: cuix_billpayment_paymentkey
----------------------------------------------------------------
+------------------------------------------------------
+-- table: billpayment. indexes
+------------------------------------------------------
 
+-- index: cuix_billpayment_paymentkey
 -- drop index cuix_billpayment_paymentkey;
 create unique index cuix_billpayment_paymentkey on billpayment using btree (bill_payment_key);
 alter table billpayment cluster on cuix_billpayment_paymentkey;

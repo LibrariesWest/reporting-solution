@@ -1,4 +1,7 @@
--- table: dailypaytransitem
+---------------------------------------------------------------
+-- table: dailypaytransitem. 
+---------------------------------------------------------------
+
 -- drop table dailypaytransitem;
 create table dailypaytransitem
 (

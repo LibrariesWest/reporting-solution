@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: dailypaytrans.  load data
+---------------------------------------------------------------
+
 -- import dailypaytrans
 truncate dailypaytrans;
-copy dailypaytrans from 'c:\dbdesign\symphonydata\dailypaytrans.txt' delimiter '|';
+copy dailypaytrans from 'c:\dbdata\symphonydata\dailypaytrans.txt' delimiter '|';

@@ -1,3 +1,6 @@
--- import callnums
+------------------------------------------------------
+-- table: callnum. load data
+------------------------------------------------------
+
 truncate callnum;
-copy callnum from 'c:\dbdesign\symphonydata\callnum.txt' delimiter '|';
+copy callnum from 'c:\dbdata\symphonydata\callnum.txt' delimiter '|';

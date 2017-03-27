@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: chargehist.  indexes
+---------------------------------------------------------------
+
 -- index: cuix_chargehist_key
 -- drop index cuix_chargehist_key;
 create unique index cuix_chargehist_key on chargehist using btree (key);

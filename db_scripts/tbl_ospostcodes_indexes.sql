@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- table: os_postcodes.  indexes
+---------------------------------------------------------------
+
 -- index: cix_postcode
 -- drop index cix_postcode;
 create unique index cix_postcode on os_postcodes using btree (postcode);

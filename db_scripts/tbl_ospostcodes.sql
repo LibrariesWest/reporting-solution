@@ -1,4 +1,7 @@
--- table: os_postcodes
+---------------------------------------------------------------
+-- table: os_postcodes.
+---------------------------------------------------------------
+
 -- drop table os_postcodes;
 create table os_postcodes
 (
