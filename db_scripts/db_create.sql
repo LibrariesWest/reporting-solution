@@ -6,6 +6,8 @@
 create database customreporting;
 \c customreporting;
 
+set client_encoding = 'UTF8';
+
 -- 2.  authorities function
 \i fn_librarytoauthority.sql
 
