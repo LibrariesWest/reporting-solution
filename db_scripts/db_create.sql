@@ -109,10 +109,10 @@ set client_encoding = 'UTF8';
 \i vw_catalogue.sql
 \i vw_charges_chargeshistory.sql
 \i vw_charges.sql
-\i vw_charges_history.sql
+\i vw_chargeshistory.sql
 \i vw_holds.sql
 \i vw_items.sql
 \i vw_transits.sql
+\i vw_users.sql
 \i vw_users_libraries.sql
 \i vw_users_public.sql
-\i vw_users.sql
