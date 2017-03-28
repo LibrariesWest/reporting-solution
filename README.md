@@ -2,7 +2,7 @@
 
 This project is designed to pull in data from our Symphony Library Management system, as well as other open data sources, such as Ordnance Survey boundary lines, ONS deprivation statistics, and more.
 
-Due to the nature of these additional sources, this solution is tailored to English public library reporting requirements. However, many aspects of it could be applicable to other libraries as well.
+Due to the nature of these additional sources, this solution is tailored to English public library reporting requirements. However, many aspects of it could be applicable to other library services as well.
 
 ## What does it do?
 
@@ -32,16 +32,21 @@ This project includes a single file in the sym_scripts directory which will need
 
 ### Necessary files and folders
 
-In C:\dbdata\symphony should be placed all the output files from the daily symphony custom report.  These will be a series of text files.
+The database scripts rely on data being held in a set location on the C drive of the server being used to create the database.
 
-These can be downloaded from your Symphony server, or if self-hosted will reside on your own hosting.
+The data should be set up as follows
+
+| Directory\Files | Description |
+| --------- | ----------- |
+| c:\dbdata\symphony | Holds all the text files as created by the Symphony custom report. |
+| c:\dbdata\os\postcodes.csv | Ordance Survey postcode data.  Can be found in the data directory of this repository |
 
 ### Creating the database
 
 Copy this solution down to a directory onto the PostgreSQL server.  The following command, run within the db_sripts directory, will create the database for the first time, and import all the data.
 
 ```
-c:\program files\postgresql\9.6\bin\psql.exe -U username -P password dbcreate.sql
+"c:\program files\postgresql\9.6\bin\psql.exe" -U username -f db_create.sql
 ```
 
 ### Refreshing the database
@@ -49,5 +54,5 @@ c:\program files\postgresql\9.6\bin\psql.exe -U username -P password dbcreate.sq
 The following command, run in the db_scripts directory will update the database with the latest Symphony data.  It does not completely recreate the database, just that which is necessary to do every night.
 
 ```
-c:\program files\postgresql\9.6\bin\psql.exe -U username -P password db_update.sql
+"c:\program files\postgresql\9.6\bin\psql.exe" -U username -f db_update.sql
 ```
