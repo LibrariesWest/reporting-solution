@@ -8,6 +8,9 @@ create database customreporting;
 
 set client_encoding = 'UTF8';
 
+-- Add PostGIS extensions
+create extension postgis;
+
 -- 2.  authorities function
 \i fn_librarytoauthority.sql
 
@@ -76,6 +79,18 @@ set client_encoding = 'UTF8';
 \i tbl_ospostcodes_load.sql
 \i tbl_ospostcodes_indexes.sql
 
+--16.  os wards table
+\i tbl_oswards_create_load.sql
+\i tbl_oswards_create_indexes.sql
+
+--16.  os districts table
+\i tbl_osdistricts_create_load.sql
+\i tbl_osdistricts_create_indexes.sql
+
+--16.  os counties table
+\i tbl_oscounties_create_load.sql
+\i tbl_oscounties_create_indexes.sql
+
 -- 16.  policy table 
 \i tbl_policy.sql
 \i tbl_policy_load.sql
@@ -116,3 +131,4 @@ set client_encoding = 'UTF8';
 \i vw_users.sql
 \i vw_users_libraries.sql
 \i vw_users_public.sql
+\i vw_users_geography.sql
