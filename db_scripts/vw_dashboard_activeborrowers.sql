@@ -10,3 +10,4 @@ union
 select user_key, fn_librarytoauthority(policy.policy_name) as auth from chargehist join policy on policy.policy_type = 'LIBR' and policy.policy_number = chargehist.library where date_charged >= '1-Apr-2016' and date_charged < '1-Apr-2017') c
 where auth is not null
 group by auth
+order by auth
