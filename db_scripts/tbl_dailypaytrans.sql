@@ -6,7 +6,7 @@
 create table dailypaytrans
 (
   key integer not null,
-  "timestamp" date,
+  "timestamp" timestamp,
   library_id integer,
   station_id integer,
   clerk integer,

@@ -49,7 +49,7 @@ create extension postgis;
 \i tbl_dailypaytrans_load.sql
 \i tbl_dailypaytrans_indexes.sql
 
--- 10.  daily pay trans amt table
+-- 10.  daily pay trans amount table
 \i tbl_dailypaytransamt.sql
 \i tbl_dailypaytransamt_load.sql
 \i tbl_dailypaytransamt_indexes.sql
@@ -74,49 +74,87 @@ create extension postgis;
 \i tbl_marc_load.sql
 \i tbl_marc_indexes.sql
 
--- 15.  os postcodes table 
-\i tbl_ospostcodes.sql
-\i tbl_ospostcodes_load.sql
-\i tbl_ospostcodes_indexes.sql
-
---16.  os wards table
-\i tbl_oswards_create_load.sql
-\i tbl_oswards_create_indexes.sql
-
---16.  os districts table
-\i tbl_osdistricts_create_load.sql
-\i tbl_osdistricts_create_indexes.sql
-
---16.  os counties table
-\i tbl_oscounties_create_load.sql
-\i tbl_oscounties_create_indexes.sql
-
--- 16.  policy table 
+-- 15.  policy table 
 \i tbl_policy.sql
 \i tbl_policy_load.sql
 \i tbl_policy_indexes.sql
 
--- 17.  transit table 
+-- 16.  transit table 
 \i tbl_transit.sql
 \i tbl_transit_load.sql
 \i tbl_transit_indexes.sql
 
--- 18.  ucat table 
+-- 17.  ucat table 
 \i tbl_ucat.sql
 \i tbl_ucat_load.sql
 \i tbl_ucat_indexes.sql
 
--- 19.  users table 
+-- 18.  users table 
 \i tbl_users.sql
 \i tbl_users_load.sql
 \i tbl_users_indexes.sql
 
--- 20.  users table 
+-- 19.  users table 
 \i tbl_userxinfo.sql
 \i tbl_userxinfo_load.sql
 \i tbl_userxinfo_indexes.sql
 
--- 21.  create the views
+-- 20.  os postcodes table 
+\i tbl_ospostcodes.sql
+\i tbl_ospostcodes_load.sql
+\i tbl_ospostcodes_indexes.sql
+
+--21.  os wards table
+-- this file is dynamically generated in a previous step.
+\i tbl_oswards.sql
+\i tbl_oswards_indexes.sql
+
+--22.  os districts table
+-- this file is dynamically generated in a previous step.
+\i tbl_osdistricts.sql
+\i tbl_osdistricts_indexes.sql
+
+--23.  os counties table
+-- this file is dynamically generated in a previous step.
+\i tbl_oscounties.sql
+\i tbl_oscounties_indexes.sql
+
+--24.  output areas table
+-- this file is dynamically generated in a previous step.
+\i tbl_ons_oas.sql
+\i tbl_ons_oas_load.sql
+\i tbl_ons_oas_indexes.sql
+
+--25.  output area lookups table
+\i tbl_ons_oas_lookups.sql
+\i tbl_ons_oas_lookups_indexes.sql
+
+--26.  lower super output areas table
+-- this file is dynamically generated in a previous step.
+\i tbl_ons_lsoas.sql
+\i tbl_ons_lsoas_indexes.sql
+
+--27.  lower super output area deprivation table
+\i tbl_ons_lsoas_imd.sql
+\i tbl_ons_lsoas_imd_load.sql
+\i tbl_ons_lsoas_imd_indexes.sql
+
+--28.  output area female population
+\i tbl_ons_oas_population_female.sql
+\i tbl_ons_oas_population_female_load.sql
+\i tbl_ons_oas_population_female_indexes.sql
+
+--29.  output area male population
+\i tbl_ons_oas_population_male.sql
+\i tbl_ons_oas_population_male_load.sql
+\i tbl_ons_oas_population_male_indexes.sql
+
+--30.  authority population
+\i tbl_ons_uk_population.sql
+\i tbl_ons_uk_population_load.sql
+\i tbl_ons_uk_population_indexes.sql
+
+-- .  create the views
 \i vw_billpayments.sql
 \i vw_bills_billpayments.sql
 \i vw_bills.sql
@@ -126,6 +164,11 @@ create extension postgis;
 \i vw_charges.sql
 \i vw_chargeshistory.sql
 \i vw_holds.sql
+\i vw_holds_interlending.sql
+\i vw_holds_interlending_av.sql
+\i vw_holds_interlending_books.sql
+\i vw_holds_fulfilment_external.sql
+\i vw_holds_fulfilment_internal.sql
 \i vw_items.sql
 \i vw_transits.sql
 \i vw_users.sql

@@ -5,6 +5,7 @@
 create table catalogue
 (
   catalogue_key integer not null,
+  flexible_key integer,
   status integer,
   year_of_publication integer,
   format integer,
