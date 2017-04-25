@@ -100,29 +100,28 @@ create extension postgis;
 \i tbl_userxinfo_indexes.sql
 
 -- 20.  os postcodes table 
-\i tbl_ospostcodes.sql
-\i tbl_ospostcodes_load.sql
-\i tbl_ospostcodes_indexes.sql
+\i tbl_os_postcodes.sql
+\i tbl_os_postcodes_load.sql
+\i tbl_os_postcodes_indexes.sql
 
 --21.  os wards table
 -- this file is dynamically generated in a previous step.
-\i tbl_oswards.sql
-\i tbl_oswards_indexes.sql
+\i tbl_os_wards.sql
+\i tbl_os_wards_indexes.sql
 
 --22.  os districts table
 -- this file is dynamically generated in a previous step.
-\i tbl_osdistricts.sql
-\i tbl_osdistricts_indexes.sql
+\i tbl_os_districts.sql
+\i tbl_os_districts_indexes.sql
 
 --23.  os counties table
 -- this file is dynamically generated in a previous step.
-\i tbl_oscounties.sql
-\i tbl_oscounties_indexes.sql
+\i tbl_os_counties.sql
+\i tbl_os_counties_indexes.sql
 
 --24.  output areas table
 -- this file is dynamically generated in a previous step.
 \i tbl_ons_oas.sql
-\i tbl_ons_oas_load.sql
 \i tbl_ons_oas_indexes.sql
 
 --25.  output area lookups table

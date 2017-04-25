@@ -6,6 +6,7 @@
 create or replace view public.vw_catalogue as 
 select
     c.catalogue_key as id,
+    c.flexible_key as flex_key,
     ( select (string_to_array(marc.tag, '~'::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '245'::text limit 1) as title,
     ( select (string_to_array(marc.tag, '~'::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '100'::text limit 1) as author,
     ( select (string_to_array(marc.tag, ' '::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '020'::text limit 1) as isbn,

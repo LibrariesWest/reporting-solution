@@ -1,5 +1,6 @@
-"c:\program files\postgresql\9.6\bin\shp2pqsql.exe" "c:\dbdata\os\district_borough_unitary_ward_region.shp" os_wards > os_wards_create_load.sql
-"c:\program files\postgresql\9.6\bin\shp2pqsql.exe" "c:\dbdata\os\district_borough_unitary_region.shp" os_districts > os_districts_create_load.sql
-"c:\program files\postgresql\9.6\bin\shp2pqsql.exe" "c:\dbdata\os\county_region.shp" os_counties > os_counties_create_load.sql
-"c:\program files\postgresql\9.6\bin\shp2pqsql.exe" "c:\dbdata\ons\Lower_Layer_Super_Output_Areas_December_2011_Full_Clipped__Boundaries_in_England_and_Wales.shp" ons_lsoas > ons_lsoas_create_load.sql
+"c:\program files\postgresql\9.6\bin\shp2pgsql.exe" "c:\dbdata\os\district_borough_unitary_ward_region.shp" os_wards > tbl_os_wards.sql
+"c:\program files\postgresql\9.6\bin\shp2pgsql.exe" "c:\dbdata\os\district_borough_unitary_region.shp" os_districts > tbl_os_districts.sql
+"c:\program files\postgresql\9.6\bin\shp2pgsql.exe" "c:\dbdata\os\county_region.shp" os_counties > tbl_os_counties.sql
+"c:\program files\postgresql\9.6\bin\shp2pgsql.exe" "c:\dbdata\ons\Output_Area_December_2011_Full_Clipped_Boundaries_in_England_and_Wales.shp" ons_oas > tbl_ons_oas.sql
+"c:\program files\postgresql\9.6\bin\shp2pgsql.exe" "c:\dbdata\ons\Lower_Layer_Super_Output_Areas_December_2011_Full_Clipped__Boundaries_in_England_and_Wales.shp" ons_lsoas > tbl_ons_lsoas.sql
 "c:\program files\postgresql\9.6\bin\psql.exe" -U username -f db_create.sql
