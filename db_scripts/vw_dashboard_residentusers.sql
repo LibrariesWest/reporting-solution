@@ -17,7 +17,7 @@ case when county is null then district
 else county end as authority_code,
 count(id) as active_users
 from vw_users_geography u
-where last_activity_date > (now() - interval '10 months')
+where last_activity_date > (now() - interval '6 months')
 group by authority, authority_code
 order by active_users desc
 limit 11) up
