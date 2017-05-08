@@ -23,14 +23,11 @@
 
 
 -- 4.  Current transits
--- The current transits export is one that should not overwrite previous data as it is
+-- the current transits export is one that should not overwrite previous data as it is
 -- a snapshot of the current situation.  for each time it's run create a datestamped file
-copy(select * from vw_transits) to "c:\opendata\lms\transits\transits.csv" csv
-
-
+copy(select * from vw_transits) to "c:\dbdata\opendata\transits.csv" csv
 
 -- 5.  Bills by month by library by type
-
 
 
 

@@ -29,8 +29,8 @@ select
     ( select ucp12.policy_name from ucat uc12 join policy ucp12 on ucp12.policy_type::text = 'CAT12'::text and ucp12.policy_number = uc12.value where uc12.user_key = u.user_key and uc12.category = 12 ) as notices_delivery,
     us.policy_name as status,
     case 
-	when u.birth_date = 0 then null
-	else ('J' || cast(u.birth_date as text))::date
+	    when u.birth_date = 0 then null
+	    else ('J' || cast(u.birth_date as text))::date
     end as birth_date,
     u.date_created as joined,
     u.last_activity_date as active,

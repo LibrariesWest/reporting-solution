@@ -13,4 +13,4 @@ join policy lp
 on lp.policy_type = 'LIBR'
 and lp.policy_number = ch.library
 group by authority, month
-order by authority, month
+order by authority, month;

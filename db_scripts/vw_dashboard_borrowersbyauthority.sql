@@ -12,4 +12,4 @@ from
 join policy lp
 on lp.policy_type = 'LIBR'
 and lp.policy_number = ch.library) us) auths
-group by authority
+group by authority;

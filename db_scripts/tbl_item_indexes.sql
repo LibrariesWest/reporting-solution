@@ -15,6 +15,14 @@ create unique index ix_item_id on item using btree (id);
 -- drop index ix_item_library;
 create index ix_item_library on item using btree (library);
 
+-- index: ix_item_category1
+-- drop index ix_item_category1;
+create index ix_item_category1 on item using btree (category1);
+
+-- index: ix_item_category2
+-- drop index ix_item_category2;
+create index ix_item_category2 on item using btree (category2);
+
 -- index: ix_item_homelocation
 -- drop index ix_item_homelocation;
 create index ix_item_homelocation on item using btree (home_location);
