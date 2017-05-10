@@ -9,3 +9,4 @@ copy(select * from vw_dashboard_issuesbylibrary) to 'c:\dbdata\dashboard\issuesb
 copy(select * from vw_dashboard_residentusers) to 'c:\dbdata\dashboard\residentusers.csv' csv;
 copy(select * from vw_dashboard_borrowersbylibrary) to 'c:\dbdata\dashboard\borrowersbylibrary.csv' csv;
 copy(select * from vw_dashboard_borrowersbyauthority) to 'c:\dbdata\dashboard\borrowersbyauthority.csv' csv;
+copy(select * from vw_dashboard_issuesbyward_geo) to 'c:\dbdata\dashboard\issuesbyward.geojson';

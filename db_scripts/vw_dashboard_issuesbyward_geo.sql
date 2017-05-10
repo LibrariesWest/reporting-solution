@@ -8,12 +8,12 @@ select row_to_json(fc)
 from (
 	select 'FeatureCollection' As type, array_to_json(array_agg(f)) as features
 	from (
-		select 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry, row_to_json((select l from (select ward, issues) As l)) as properties
+		select 'Feature' As type, ST_AsGeoJSON(lg.geom, 0)::json As geometry, row_to_json((select l from (select ward, issues) As l)) as properties
 		from (
 			select
 			ow.name as ward,
 			wc.issues,
-			ST_SimplifyPreserveTopology(ow.geom, 0.002) as geom
+			ST_SimplifyPreserveTopology(ow.geom, 10) as geom
 			from
 				(select
 				op.admin_ward_code as ward_code,

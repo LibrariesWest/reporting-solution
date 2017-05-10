@@ -153,7 +153,7 @@ create extension postgis;
 \i tbl_ons_uk_population_load.sql
 \i tbl_ons_uk_population_indexes.sql
 
--- .  create the views
+--31.  create the views
 \i vw_billpayments.sql
 \i vw_bills_billpayments.sql
 \i vw_bills.sql
@@ -162,6 +162,13 @@ create extension postgis;
 \i vw_charges_chargeshistory.sql
 \i vw_charges.sql
 \i vw_chargeshistory.sql
+\i vw_dashboard_borrowersbyauthority.sql
+\i vw_dashboard_borrowersbylibrary.sql
+\i vw_dashboard_holds.sql
+\i vw_dashboard_issues.sql
+\i vw_dashboard_issuesbylibrary.sql
+\i vw_dashboard_issuesbyward_geo.sql
+\i vw_dashboard_residentusers.sql
 \i vw_holds.sql
 \i vw_holds_interlending.sql
 \i vw_holds_interlending_av.sql
