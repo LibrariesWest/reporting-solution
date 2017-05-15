@@ -27,7 +27,7 @@ from (
 					end as postcode
 					from
 						( select user_key from charge where date_charged > (now() - interval '1 year')
-						union 
+						union all
 						select user_key from chargehist where date_charged > (now() - interval '1 year')) ch -- all user keys from charges in last year
 					join users u
 					on ch.user_key = u.user_key) chp -- all charges from last year with user postcode
