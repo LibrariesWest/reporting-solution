@@ -168,7 +168,10 @@ create extension postgis;
 \i vw_dashboard_issues.sql
 \i vw_dashboard_issuesbylibrary.sql
 \i vw_dashboard_issuesbyward_geo.sql
+\i vw_dashboard_longholds.sql
+\i vw_dashboard_longtransits.sql
 \i vw_dashboard_residentusers.sql
+\i vw_dashboard_transits.sql
 \i vw_holds.sql
 \i vw_holds_interlending.sql
 \i vw_holds_interlending_av.sql

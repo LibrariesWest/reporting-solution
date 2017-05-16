@@ -15,8 +15,8 @@ select
     fn_librarytoauthority(ipp.policy_name::text) as pickup_authority,
     h.hold_priority,
     case
-        when h.type::text = 'c'::text then 'Copy'::text
-        when h.type::text = 't'::text then 'Title'::text
+        when h.type::text = 'C'::text then 'Copy'::text
+        when h.type::text = 'T'::text then 'Title'::text
         else null::text
     end as level,
     rp.policy_name as range,
@@ -35,11 +35,11 @@ select
 from hold h
 join users u on u.user_key = h.user_key
 join item i on i.catalogue_key = h.catalogue_key and i.call_sequence = h.call_sequence and i.copy_number = h.copy_number
-join policy lp on lp.policy_number = h.library and lp.policy_type::text = 'libr'::text
-join policy ip on ip.policy_number = h.item_library and ip.policy_type::text = 'libr'::text
-join policy ipp on ipp.policy_number = h.pickup_library and ipp.policy_type::text = 'libr'::text
-join policy cp on cp.policy_type::text = 'ctyp'::text and cp.policy_number = h.client_used
-join policy sp on sp.policy_type::text = 'hold_status'::text and sp.policy_number = h.hold_status
-join policy hp on hp.policy_type::text = 'hold_reason_type'::text and hp.policy_number = h.inactive_reason
-join policy rep on rep.policy_type::text = 'recall_status'::text and rep.policy_number = h.recall_status
-join policy rp on rp.policy_type::text = 'hold_range'::text and rp.policy_number = h.range;
+join policy lp on lp.policy_number = h.library and lp.policy_type::text = 'LIBR'::text
+join policy ip on ip.policy_number = h.item_library and ip.policy_type::text = 'LIBR'::text
+join policy ipp on ipp.policy_number = h.pickup_library and ipp.policy_type::text = 'LIBR'::text
+join policy cp on cp.policy_type::text = 'CTYP'::text and cp.policy_number = h.client_used
+join policy sp on sp.policy_type::text = 'HOLD_STATUS'::text and sp.policy_number = h.hold_status
+join policy hp on hp.policy_type::text = 'HOLD_REASON_TYPE'::text and hp.policy_number = h.inactive_reason
+join policy rep on rep.policy_type::text = 'RECALL_STATUS'::text and rep.policy_number = h.recall_status
+join policy rp on rp.policy_type::text = 'HOLD_RANGE'::text and rp.policy_number = h.range;
