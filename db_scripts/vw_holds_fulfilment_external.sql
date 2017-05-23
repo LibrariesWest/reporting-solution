@@ -5,10 +5,10 @@
 -- drop view vw_holds_fulfilment_external;
 create or replace view vw_holds_fulfilment_external as 
 select 
-fn_librarytoauthority(pl.policy_name) as authority,
-to_char(h.date_placed, 'YYYY-MM'), 
-round(avg(h.date_available - h.date_placed)) as days, 
-count(h.key) as holds
+    fn_librarytoauthority(pl.policy_name) as authority,
+    to_char(h.date_placed, 'YYYY-MM'), 
+    round(avg(h.date_available - h.date_placed)) as days, 
+    count(h.key) as holds
 from hold h
 join item i
 on i.catalogue_key = h.catalogue_key

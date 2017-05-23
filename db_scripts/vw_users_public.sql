@@ -23,7 +23,10 @@ select
   vu.declared_disability,
   vu.notices_delivery,
   vu.status,
-  vu.birth_date,
+  case
+    when up.birth_date = 0 then null::date
+    else ('J'::text || up.birth_date::text)::date
+  end as birth_date,
   vu.joined,
   vu.active,
   vu.issued,
