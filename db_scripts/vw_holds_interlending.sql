@@ -5,12 +5,12 @@
 -- drop view vw_holds_interlending;
 create or replace view vw_holds_interlending as 
 select 
-fn_librarytoauthority(il.policy_name) as item_authority,
-fn_librarytoauthority(pl.policy_name) as pickup_authority,
-it.policy_name as item_type,
-to_char(h.date_placed, 'YYYY-MM') as month_placed,
-to_char(h.date_available, 'YYYY-MM') as month_available,
-count(h.key) as holds
+    fn_librarytoauthority(il.policy_name) as item_authority,
+    fn_librarytoauthority(pl.policy_name) as pickup_authority,
+    it.policy_name as item_type,
+    to_char(h.date_placed, 'YYYY-MM') as month_placed,
+    to_char(h.date_available, 'YYYY-MM') as month_available,
+    count(h.key) as holds
 from hold h
 join item i
 on i.catalogue_key = h.catalogue_key
