@@ -1,16 +1,16 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_transits
+-- view: vw_opendata_transits
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_transits;
+-- drop view vw_opendata_transits;
 create or replace view vw_opendata_transits as
 select
-i.id as item_id,
-ity.policy_name as item_type
-fn_librarytoauthority(lpf.policy_name) as from_authority,
-lpf.policy_name as from_library,
-fn_librarytoauthority(lpt.policy_name) as to_authority,
-lpt.policy_name as to_library
+    i.id as item_id,
+    ity.policy_name as item_type,
+    fn_librarytoauthority(lpf.policy_name) as from_authority,
+    lpf.policy_name as from_library,
+    fn_librarytoauthority(lpt.policy_name) as to_authority,
+    lpt.policy_name as to_library
 from transit t
 join item i
 on i.catalogue_key = t.catalogue_key

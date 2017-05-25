@@ -3,7 +3,7 @@
 ---------------------------------------------------------------
 
 -- drop view vw_dashboard_issuesbyward_geo;
-create view vw_dashboard_issuesbyward_geo as 
+create or replace view vw_dashboard_issuesbyward_geo as 
 select row_to_json(fc)
 from (
 	select 'FeatureCollection' As type, array_to_json(array_agg(f)) as features

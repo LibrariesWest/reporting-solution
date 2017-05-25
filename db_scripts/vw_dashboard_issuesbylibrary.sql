@@ -3,7 +3,7 @@
 ---------------------------------------------------------------
 
 -- drop view vw_dashboard_issuesbylibrary;
-create view vw_dashboard_issuesbylibrary as 
+create or replace view vw_dashboard_issuesbylibrary as 
 select lp.policy_name as library, 
 count(ch.key) as issues
 from
