@@ -5,9 +5,10 @@
 -- drop view vw_dashboard_mosttravelleditems;
 create or replace view vw_dashboard_mosttravelleditems as 
 select 
-    ( select (string_to_array(marc.tag, '~'::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '245'::text limit 1) as title,
+    ( select replace((string_to_array(marc.tag, '~'::text))[1], ' /', '') as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '245'::text limit 1) as title,
     ( select (string_to_array(marc.tag, '~'::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '100'::text limit 1) as author,
     ( select (string_to_array(marc.tag, ' '::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '20'::text limit 1) as isbn,
+    distances.item_id,
     sum(distances.total_distance) as distance,
     count(key) as issues
 from
@@ -19,20 +20,15 @@ from
         clp.postcode issuing_postcode,
         up.postcode user_postcode,
         rlp.postcode as return_postcode,
-        -- holding library to issuing library
         round(ST_Distance(ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700),ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700)) / 1609) as holding_issuing_distance,
-        -- issuing library to user
         round(ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700)) / 1609) as issuing_user_distance,
-        -- user to return library
         round(ST_Distance(ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) / 1609) as user_return_distance,
-        -- return library to item library
         round(ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700)) / 1609) as return_holding_distance,
         round(
-		(ST_Distance(ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700),ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700)) +
-		ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700)) +
-		ST_Distance(ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) +
-		ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700)))
-		/ 1609) as total_distance
+		    (ST_Distance(ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700),ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700)) +
+		    ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700)) +
+		    ST_Distance(ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) +
+		    ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700))) / 1609) as total_distance
     from
         (select
 	    ch.key,
@@ -94,5 +90,5 @@ from
     on ilp.postcode = charges.itemlib_postcode) as distances
 join catalogue c
 on c.catalogue_key = distances.catalogue_key
-group by title, author, isbn
+group by title, author, isbn, item_id
 order by distance desc limit 100;
