@@ -182,5 +182,10 @@ create extension postgis;
 \i vw_dashboard_issuesbyward_geo.sql
 \i vw_dashboard_longholds.sql
 \i vw_dashboard_longtransits.sql
+\i vw_dashboard_mostissueditems.sql
+\i vw_dashboard_mosttravelleditems.sql
 \i vw_dashboard_residentusers.sql
 \i vw_dashboard_transits.sql
+\i vw_opendata_billpayments.sql
+\i vw_opendata_holds.sql
+\i vw_opendata_transits.sql
