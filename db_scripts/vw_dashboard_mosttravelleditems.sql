@@ -9,7 +9,7 @@ select
     ( select (string_to_array(marc.tag, '~'::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '100'::text limit 1) as author,
     ( select (string_to_array(marc.tag, ' '::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '20'::text limit 1) as isbn,
     distances.item_id,
-    sum(distances.total_distance) as distance,
+    sum(distances.library_distance) as distance,
     count(key) as issues
 from
     (select
@@ -26,9 +26,8 @@ from
         round(ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700)) / 1609) as return_holding_distance,
         round(
 		    (ST_Distance(ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700),ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700)) +
-		    ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700)) +
-		    ST_Distance(ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) +
-		    ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700))) / 1609) as total_distance
+            ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) +
+		    ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700))) / 1609) as library_distance
     from
         (select
 	    ch.key,

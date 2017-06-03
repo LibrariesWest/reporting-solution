@@ -37,5 +37,5 @@ from (
 				having count(chp.postcode) > 5) wc -- ward code and number of charges
 			join os_wards ow
 			on ow.code = wc.ward_code ) as lg -- ward name, number of charges, and geometry  
-		) f -- feature
-) fc; -- feature collection
+		) as f -- feature
+) as fc; -- feature collection

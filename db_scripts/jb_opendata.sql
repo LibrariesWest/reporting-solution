@@ -25,10 +25,10 @@
 -- 4.  Current transits
 -- the current transits export is one that should not overwrite previous data as it is
 -- a snapshot of the current situation.  for each time it's run create a datestamped file
-copy(select * from vw_transits) to "c:\dbdata\opendata\transits.csv" csv header;
+copy(select * from vw_opendata_transits) to "c:\dbdata\opendata\transits.csv" csv header;
 
--- 5.  Bills by month by library by type
-copy() to "
+-- 5.  Bill payments by month by library by type
+copy(select * from vw_opendata_billpayments) to "c:\dbdata\opendata\billpayments.csv" csv header;
 
 
 -- 6.  Holds by day, by item type, by library, by user multiple deprivation index

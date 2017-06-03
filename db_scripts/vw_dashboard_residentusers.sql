@@ -24,7 +24,7 @@ from
     where last_activity_date > (now() - interval '12 months')
     group by authority, authority_code
     order by active_users desc
-    limit 11) up
+    limit 11) as up
 join ons_uk_population p
 on p.code = up.authority_code
 where up.authority is not null;
