@@ -19,4 +19,4 @@ and i.call_sequence = ch.call_sequence
 and i.copy_number = ch.copy_number
 group by item_id
 order by issues desc
-limit by 100;
+limit 100;

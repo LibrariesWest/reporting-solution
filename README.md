@@ -1,14 +1,17 @@
-# Custom reporting solution
+Custom reporting solution
+=========================
 
 This project is designed to pull in data from our Symphony Library Management system, as well as other open data sources, such as Ordnance Survey boundary lines, ONS deprivation statistics, and more.
 
 Due to the nature of these additional sources, this solution is tailored to English public library reporting requirements. However, many aspects of it could be applicable to other library services as well.
 
-## What does it do?
+What does it do?
+----------------
 
 SirsiDynix have plenty of options for reporting on library data held in the Symphony LMS.  However, with the need for greater control over reporting, and linking with other sources we have created a custom reporting database.
 
-## Supporting technologies
+Supporting technologies
+-----------------------
 
 | Technology | Description |
 | ---------- | ----------- |
@@ -17,12 +20,14 @@ SirsiDynix have plenty of options for reporting on library data held in the Symp
 | PostgreSQL | An open source database technology  |
 | PostGIS | Extensions to PostgreSQL to create databases with spatial capabilities |
 
-## Pre-requisites
+Pre-requisites
+--------------
 
 - A Symphony library management system.
 - A PosgreSQL database server with PostGIS extensions installed.
 
-## Build instructions
+Build instructions
+------------------
 
 ### Install the Symphony custom report
 

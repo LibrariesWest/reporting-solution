@@ -24,5 +24,5 @@ where item_type in (
     'LP_FIC',
     'ADU_NF',
     'YA_NF',
-    'CH_NF',
+    'CH_NF'
 );

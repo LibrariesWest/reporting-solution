@@ -24,5 +24,5 @@ where h.date_available is not null
 and h.hold_status = 1
 and h.date_placed > '7-Jun-2016'
 and fn_librarytoauthority(pl.policy_name) <> fn_librarytoauthority(il.policy_name)
-group by to_char(h.date_placed, 'YYYY-MM'), fn_librarytoauthority(pl.policy_name)
-order by to_char(h.date_placed, 'YYYY-MM'), fn_librarytoauthority(pl.policy_name);
+group by to_char(h.date_placed, 'YYYYMM'), fn_librarytoauthority(pl.policy_name)
+order by to_char(h.date_placed, 'YYYYMM'), fn_librarytoauthority(pl.policy_name);
