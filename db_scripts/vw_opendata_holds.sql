@@ -23,4 +23,4 @@ join policy ip on ip.policy_type = 'LIBR' and ip.policy_number = h.item_library
 join policy ipp on ipp.policy_type = 'LIBR' and ipp.policy_number = h.pickup_library
 join policy cp on cp.policy_type = 'CTYP' and cp.policy_number = h.client_used
 where h.date_available is not null
-group by hold_library, hold_authority, item_library, item_authority, pickup_library, pickup_authority, client;
+group by month_placed, hold_library, hold_authority, ip.policy_name, item_authority, ipp.policy_name, pickup_authority, client;
