@@ -18,7 +18,7 @@ select
     i.price,
     i.shadow as shadowed
 from item i
-join policy ip on ip.policy_type::text = 'LIBR'::text and ip.policy_number = i.library
-join policy it on it.policy_type::text = 'ITYP'::text and it.policy_number = i.type 
-join policy il on il.policy_type::text = 'LOCN'::text and il.policy_number = i.current_location
-join policy ihl on ihl.policy_type::text = 'LOCN'::text and ihl.policy_number = i.home_location;
+join policy ip on ip.policy_type = 'LIBR' and ip.policy_number = i.library
+join policy it on it.policy_type = 'ITYP' and it.policy_number = i.type 
+join policy il on il.policy_type = 'LOCN' and il.policy_number = i.current_location
+join policy ihl on ihl.policy_type = 'LOCN' and ihl.policy_number = i.home_location;

@@ -8,16 +8,16 @@ select
     u.id as user_id,
     i.id as item_id,
     lp.policy_name as library,
-    fn_librarytoauthority(lp.policy_name::text) as authority,
+    fn_librarytoauthority(lp.policy_name) as authority,
     ip.policy_name as item_library,
-    fn_librarytoauthority(ip.policy_name::text) as item_authority,
+    fn_librarytoauthority(ip.policy_name) as item_authority,
     ipp.policy_name as pickup_library,
-    fn_librarytoauthority(ipp.policy_name::text) as pickup_authority,
+    fn_librarytoauthority(ipp.policy_name) as pickup_authority,
     h.hold_priority,
     case
-        when h.type::text = 'C'::text then 'Copy'::text
-        when h.type::text = 'T'::text then 'Title'::text
-        else null::text
+        when h.type = 'C' then 'Copy'
+        when h.type = 'T' then 'Title'
+        else null
     end as level,
     rp.policy_name as range,
     sp.policy_name as status,
@@ -35,11 +35,11 @@ select
 from hold h
 join users u on u.user_key = h.user_key
 join item i on i.catalogue_key = h.catalogue_key and i.call_sequence = h.call_sequence and i.copy_number = h.copy_number
-join policy lp on lp.policy_number = h.library and lp.policy_type::text = 'LIBR'::text
-join policy ip on ip.policy_number = h.item_library and ip.policy_type::text = 'LIBR'::text
-join policy ipp on ipp.policy_number = h.pickup_library and ipp.policy_type::text = 'LIBR'::text
-join policy cp on cp.policy_type::text = 'CTYP'::text and cp.policy_number = h.client_used
-join policy sp on sp.policy_type::text = 'HOLD_STATUS'::text and sp.policy_number = h.hold_status
-join policy hp on hp.policy_type::text = 'HOLD_REASON_TYPE'::text and hp.policy_number = h.inactive_reason
-join policy rep on rep.policy_type::text = 'RECALL_STATUS'::text and rep.policy_number = h.recall_status
-join policy rp on rp.policy_type::text = 'HOLD_RANGE'::text and rp.policy_number = h.range;
+join policy lp on lp.policy_number = h.library and lp.policy_type = 'LIBR'
+join policy ip on ip.policy_number = h.item_library and ip.policy_type = 'LIBR'
+join policy ipp on ipp.policy_number = h.pickup_library and ipp.policy_type = 'LIBR'
+join policy cp on cp.policy_type = 'CTYP' and cp.policy_number = h.client_used
+join policy sp on sp.policy_type = 'HOLD_STATUS' and sp.policy_number = h.hold_status
+join policy hp on hp.policy_type = 'HOLD_REASON_TYPE' and hp.policy_number = h.inactive_reason
+join policy rep on rep.policy_type = 'RECALL_STATUS' and rep.policy_number = h.recall_status
+join policy rp on rp.policy_type = 'HOLD_RANGE' and rp.policy_number = h.range;

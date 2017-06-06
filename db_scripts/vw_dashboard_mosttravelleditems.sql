@@ -5,9 +5,9 @@
 -- drop view vw_dashboard_mosttravelleditems;
 create or replace view vw_dashboard_mosttravelleditems as 
 select 
-    ( select replace((string_to_array(marc.tag, '~'::text))[1], ' /', '') as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '245'::text limit 1) as title,
-    ( select (string_to_array(marc.tag, '~'::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '100'::text limit 1) as author,
-    ( select (string_to_array(marc.tag, ' '::text))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number::text = '20'::text limit 1) as isbn,
+    ( select replace((string_to_array(marc.tag, '~'))[1], ' /', '') as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '245' limit 1) as title,
+    ( select (string_to_array(marc.tag, '~'))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '100' limit 1) as author,
+    ( select (string_to_array(marc.tag, ' '))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '20' limit 1) as isbn,
     distances.item_id,
     sum(distances.library_distance) as distance,
     count(key) as issues
@@ -37,25 +37,25 @@ from
                 when u.mailing_address = 1 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_1 and userxinfo.entry_number = 9000 limit 1)
                 when u.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_2 AND userxinfo.entry_number = 9036 limit 1)
                 when u.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_3 AND userxinfo.entry_number = 9036 limit 1)
-                else null::text
+                else null
             end as user_postcode,
             case
                 when clu.mailing_address = 1 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = clu.address_offset_1 and userxinfo.entry_number = 9000 limit 1)
                 when clu.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = clu.address_offset_2 AND userxinfo.entry_number = 9036 limit 1)
                 when clu.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = clu.address_offset_3 AND userxinfo.entry_number = 9036 limit 1)
-                else null::text
+                else null
             end as chargelib_postcode,
             case
                 when rlu.mailing_address = 1 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = rlu.address_offset_1 and userxinfo.entry_number = 9000 limit 1)
                 when rlu.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = rlu.address_offset_2 AND userxinfo.entry_number = 9036 limit 1)
                 when rlu.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = rlu.address_offset_3 AND userxinfo.entry_number = 9036 limit 1)
-                else null::text
+                else null
             end as returnlib_postcode,
             case
                 when ilu.mailing_address = 1 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = ilu.address_offset_1 and userxinfo.entry_number = 9000 limit 1)
                 when ilu.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = ilu.address_offset_2 AND userxinfo.entry_number = 9036 limit 1)
                 when ilu.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = ilu.address_offset_3 AND userxinfo.entry_number = 9036 limit 1)
-                else null::text
+                else null
             end as itemlib_postcode
         from item i
         join chargehist ch

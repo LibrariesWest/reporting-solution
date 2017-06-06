@@ -11,7 +11,7 @@ select
         when u.mailing_address = 1 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_1 and userxinfo.entry_number = 9000 limit 1)
         when u.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_2 and userxinfo.entry_number = 9036 limit 1)
         when u.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_3 and userxinfo.entry_number = 9036 limit 1)
-        else null::text
+        else null
     end as postcode,
     ul.policy_name as library,
     fn_librarytoauthority(ul.policy_name::text) as authority,
@@ -42,9 +42,9 @@ select
         select charge.date_renewed from charge where charge.user_key = u.user_key
         union all
         select chargehist.date_renewed from chargehist where chargehist.user_key = u.user_key) c) as renewed,
-    coalesce(( select sum(coalesce(bill.amount_billed, 0::numeric)) as sum from bill where bill.user_key = u.user_key), 0::numeric) as billed,
-    coalesce(( select sum(coalesce(billpayment.payment_amount, 0::numeric)) as sum from billpayment where billpayment.user_key = u.user_key), 0::numeric) as paid
+    coalesce(( select sum(coalesce(bill.amount_billed, 0)) as sum from bill where bill.user_key = u.user_key), 0) as billed,
+    coalesce(( select sum(coalesce(billpayment.payment_amount, 0)) as sum from billpayment where billpayment.user_key = u.user_key), 0) as paid
 from users u
-join policy ul on ul.policy_type::text = 'LIBR'::text and ul.policy_number = u.library
-join policy us on us.policy_type::text = 'USTN'::text and us.policy_number = u.status
-join policy up on up.policy_type::text = 'UPRF'::text and up.policy_number = u.profile;
+join policy ul on ul.policy_type = 'LIBR' and ul.policy_number = u.library
+join policy us on us.policy_type = 'USTN' and us.policy_number = u.status
+join policy up on up.policy_type = 'UPRF' and up.policy_number = u.profile;
