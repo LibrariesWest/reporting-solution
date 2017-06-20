@@ -174,6 +174,7 @@ create extension postgis;
 \i vw_users_libraries.sql
 \i vw_users_public.sql
 \i vw_users_geography.sql
+\i vw_dashboard_booksonprescription.sql
 \i vw_dashboard_borrowersbyauthority.sql
 \i vw_dashboard_borrowersbylibrary.sql
 \i vw_dashboard_holds.sql

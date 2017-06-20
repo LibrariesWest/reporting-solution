@@ -4,7 +4,7 @@
 
 -- drop view vw_holds_interlending;
 create or replace view vw_holds_interlending as 
-select 
+select
     fn_librarytoauthority(il.policy_name) as item_authority,
     fn_librarytoauthority(pl.policy_name) as pickup_authority,
     it.policy_name as item_type,

@@ -14,7 +14,7 @@ select
 	count(key) as issues,
 	sum(renewals) as renewals
 from
-	(select 
+	(select
 	    ( select replace(replace((string_to_array(marc.tag, '~'))[1] || (string_to_array(marc.tag, '~'))[2], '/c', ''), ':b','') as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '245' limit 1) as title,
 	    ( select (string_to_array(marc.tag, '~'))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '100' limit 1) as author,
 	    ( select (string_to_array(marc.tag, ' '))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '20' limit 1) as isbn,

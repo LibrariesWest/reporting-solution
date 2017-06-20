@@ -9,9 +9,9 @@ select
     to_char(date_charged, 'YYYYMM') as month, 
     count(ch.key) as issues
 from
-    (select key, library, date_charged from charge where date_charged > (now() - interval '1 year')
+    (select key, library, date_charged from charge where date_charged > (now() - interval '6 months')
     union 
-    select key, library, date_charged from chargehist where date_charged > (now() - interval '1 year')
+    select key, library, date_charged from chargehist where date_charged > (now() - interval '6 months')
     ) as ch
 join policy lp
 on lp.policy_type = 'LIBR'
