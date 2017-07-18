@@ -1,5 +1,5 @@
 ---------------------------------------------------------------
--- table: policy.  load data
+-- table: policy.  create indexes
 ---------------------------------------------------------------
 
 -- index: cuix_policy_numbertype

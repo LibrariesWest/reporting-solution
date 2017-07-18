@@ -23,6 +23,18 @@ create index ix_item_category1 on item using btree (category1);
 -- drop index ix_item_category2;
 create index ix_item_category2 on item using btree (category2);
 
+-- index: ix_item_category3
+-- drop index ix_item_category3;
+create index ix_item_category3 on item using btree (category3);
+
+-- index: ix_item_category4
+-- drop index ix_item_category4;
+create index ix_item_category4 on item using btree (category4);
+
+-- index: ix_item_category5
+-- drop index ix_item_category5;
+create index ix_item_category5 on item using btree (category5);
+
 -- index: ix_item_homelocation
 -- drop index ix_item_homelocation;
 create index ix_item_homelocation on item using btree (home_location);

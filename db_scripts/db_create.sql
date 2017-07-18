@@ -153,7 +153,7 @@ create extension postgis;
 \i tbl_ons_uk_population_load.sql
 \i tbl_ons_uk_population_indexes.sql
 
---31.  create the views
+--31.  create the base views.  used for browsing the tables by administrators
 \i vw_billpayments.sql
 \i vw_bills_billpayments.sql
 \i vw_bills.sql
@@ -174,19 +174,11 @@ create extension postgis;
 \i vw_users_libraries.sql
 \i vw_users_public.sql
 \i vw_users_geography.sql
-\i vw_dashboard_booksonprescription.sql
-\i vw_dashboard_borrowersbyauthority.sql
-\i vw_dashboard_borrowersbylibrary.sql
-\i vw_dashboard_holds.sql
-\i vw_dashboard_issues.sql
-\i vw_dashboard_issuesbylibrary.sql
-\i vw_dashboard_issuesbyward_geo.sql
-\i vw_dashboard_longholds.sql
-\i vw_dashboard_longtransits.sql
-\i vw_dashboard_mostissueditems.sql
-\i vw_dashboard_mosttravelleditems.sql
-\i vw_dashboard_residentusers.sql
-\i vw_dashboard_transits.sql
+
+--32. create the open data views. these will ensure anonymisation and privacy considerations.
 \i vw_opendata_billpayments.sql
 \i vw_opendata_holds.sql
 \i vw_opendata_transits.sql
+
+--33. create the dashboard views. these are used in visualisations so should only return specific aspects of the data
+
