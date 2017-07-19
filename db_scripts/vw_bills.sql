@@ -13,12 +13,13 @@ select
     fn_librarytoauthority(li.policy_name) as item_authority,
     lp.policy_name as bill_library,
     fn_librarytoauthority(lp.policy_name) as bill_authority,
-    bp.policy_name as reason,
+    br.policy_name as reason,
     b.amount_billed as amount,
     b.paid_in_full_flag as paid
 from bill b
+join users u on u.user_key = b.user_key
 join item i on i.catalogue_key = b.catalogue_key and i.call_sequence = b.call_sequence and i.copy_number = b.copy_number
 join policy itp on itp.policy_number = i.type and itp.policy_type = 'ITYP'
-join users u on u.user_key = b.user_key
+join policy br on br.policy_number = b.reason and br.policy_type = 'BRSN'
 join policy lp on lp.policy_number = b.library and lp.policy_type = 'LIBR'
 join policy li on li.policy_number = i.library and li.policy_type = 'LIBR';

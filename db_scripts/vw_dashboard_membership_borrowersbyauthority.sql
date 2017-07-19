@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_borrowersbyauthority
+-- view: vw_dashboard_membership_borrowersbyauthority
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_borrowersbyauthority;
-create or replace view vw_dashboard_borrowersbyauthority as
+-- drop view vw_dashboard_membership_borrowersbyauthority;
+create or replace view vw_dashboard_membership_borrowersbyauthority as
 select 
     auths.authority as authority, 
     count(auths.user_key) as borrowers

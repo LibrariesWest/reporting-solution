@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_issuesbyward_geo
+-- view: vw_dashboard_usage_renewalsbyward
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_issuesbyward_geo;
-create or replace view vw_dashboard_issuesbyward_geo as 
+-- drop view vw_dashboard_usage_renewalsbyward;
+create or replace view vw_dashboard_usage_renewalsbyward as 
 select row_to_json(fc)
 from (
 	select 'FeatureCollection' As type, array_to_json(array_agg(f)) as features
@@ -16,7 +16,7 @@ from (
 			from
 				( select
 				op.admin_ward_code as ward_code,
-				count(chp.postcode) as issues
+				sum(chp.renewals) as issues
 				from
 					( select
 					case
@@ -24,11 +24,12 @@ from (
 						when u.mailing_address = 2 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_2 and userxinfo.entry_number = 9036 limit 1)
 						when u.mailing_address = 3 then ( select userxinfo.entry from userxinfo where userxinfo."offset" = u.address_offset_3 and userxinfo.entry_number = 9036 limit 1)
 						else null::text
-					end as postcode
+					end as postcode,
+					sum(ch.renewals) as renewals
 					from
-						( select user_key from charge where date_charged > (now() - interval '1 year')
+						( select user_key, renewals from charge where date_charged > (now() - interval '1 year')
 						union all
-						select user_key from chargehist where date_charged > (now() - interval '1 year')) ch -- all user keys from charges in last year
+						select user_key, renewals from chargehist where date_charged > (now() - interval '1 year')) ch -- all user keys from charges in last year
 					join users u
 					on ch.user_key = u.user_key) chp -- all charges from last year with user postcode
 				join os_postcodes op

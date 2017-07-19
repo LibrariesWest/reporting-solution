@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_borrowersbylibrary
+-- view: vw_dashboard_membership_borrowersbylibraryanddeprivation
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_borrowersbylibrary;
-create or replace view vw_dashboard_borrowersbylibrary as
+-- drop view vw_dashboard_membership_borrowersbylibraryanddeprivation;
+create or replace view vw_dashboard_membership_borrowersbylibraryanddeprivation as
 select 
     fn_librarytoauthority(lp.policy_name) as authority, 
     lp.policy_name as library, 

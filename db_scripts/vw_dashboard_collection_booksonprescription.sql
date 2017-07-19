@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_booksonprescription
+-- view: vw_dashboard_collection_booksonprescription
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_booksonprescription;
-create or replace view vw_dashboard_booksonprescription as
+-- drop view vw_dashboard_collection_booksonprescription;
+create or replace view vw_dashboard_collection_booksonprescription as
 select
 	title,
 	author,

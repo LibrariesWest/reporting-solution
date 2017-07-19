@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_mosttravelleditems
+-- view: vw_dashboard_collection_mosttravelleditems
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_mosttravelleditems;
-create or replace view vw_dashboard_mosttravelleditems as 
+-- drop view vw_dashboard_collection_mosttravelleditems;
+create or replace view vw_dashboard_collection_mosttravelleditems as 
 select 
     ( select replace((string_to_array(marc.tag, '~'))[1], ' /', '') as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '245' limit 1) as title,
     ( select (string_to_array(marc.tag, '~'))[1] as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '100' limit 1) as author,

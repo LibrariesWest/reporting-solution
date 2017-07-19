@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_mostissueditems
+-- view: vw_dashboard_collection_mostissueditems
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_mostissueditems;
-create or replace view vw_dashboard_mostissueditems as 
+-- drop view vw_dashboard_collection_mostissueditems;
+create or replace view vw_dashboard_collection_mostissueditems as 
 select 
     i.id as item_id,
     count(ch.key) as issues

@@ -1,17 +1,17 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_issues
+-- view: vw_dashboard_usage_renewalsbyauthority
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_issues;
-create or replace view vw_dashboard_issues as 
+-- drop view vw_dashboard_usage_renewalsbyauthority;
+create or replace view vw_dashboard_usage_renewalsbyauthority as 
 select 
     fn_librarytoauthority(lp.policy_name) as authority, 
     to_char(date_charged, 'YYYYMM') as month, 
-    count(ch.key) as issues
+    sum(ch.renewals) as renewals
 from
-    (select key, library, date_charged from charge where date_charged > (now() - interval '6 months')
+    (select key, renewals, library, date_charged from charge where date_charged > (now() - interval '6 months')
     union 
-    select key, library, date_charged from chargehist where date_charged > (now() - interval '6 months')
+    select key, renewals, library, date_charged from chargehist where date_charged > (now() - interval '6 months')
     ) as ch
 join policy lp
 on lp.policy_type = 'LIBR'

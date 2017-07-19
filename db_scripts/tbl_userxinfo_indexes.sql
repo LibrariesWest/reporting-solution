@@ -14,3 +14,7 @@ create index ix_userxinfo_offset on userxinfo using btree ("offset");
 -- index: ix_userxinfo_entrynumber
 -- drop index ix_userxinfo_entrynumber;
 create index ix_userxinfo_entrynumber on userxinfo using btree (entry_number);
+
+-- index: ix_userxinfo_entry
+-- drop index ix_userxinfo_entry;
+create index ix_userxinfo_entry on userxinfo using btree (entry);

@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_holds
+-- view: vw_dashboard_reservations_holdsbyauthority
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_holds;
-create or replace view vw_dashboard_holds as 
+-- drop view vw_dashboard_reservations_holdsbyauthority;
+create or replace view vw_dashboard_reservations_holdsbyauthority as 
 select 
     fn_librarytoauthority(lp.policy_name) as authority,
     to_char(h.date_placed, 'YYYY-MM') as month,

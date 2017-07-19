@@ -1,22 +1,20 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_mostissueditems
+-- view: vw_dashboard_collection_itemsbytypeandauthority
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_mostissueditems;
-create or replace view vw_dashboard_mostissueditems as 
-select 
-    i.id as item_id,
-    count(ch.key) as issues
-from
-    (
-        select key, catalogue_key, call_sequence, copy_number from charge 
-        union all
-        select key, catalogue_key, call_sequence, copy_number from charge
-    ) as ch
-join item i
-on i.catalogue_key = ch.catalogue_key
-and i.call_sequence = ch.call_sequence
-and i.copy_number = ch.copy_number
-group by item_id
-order by issues desc
-limit 100;
+-- drop view vw_dashboard_collection_itemsbytypeandauthority;
+create or replace view vw_dashboard_collection_itemsbytypeandauthority as 
+select
+    fn_librarytoauthority(ip.policy_name) as authority,
+    it.policy_name as type,
+    count(*)
+from item i
+join catalogue c
+on c.catalogue_key = i.catalogue_key
+join policy ip on ip.policy_type = 'LIBR' and ip.policy_number = i.library
+join policy it on it.policy_type = 'ITYP' and it.policy_number = i.type
+join policy il on il.policy_type = 'LOCN' and il.policy_number = i.current_location
+where i.shadow = 0
+and il.policy_name not in ('DISCARD')
+group by fn_librarytoauthority(ip.policy_name), it.policy_name
+order by fn_librarytoauthority(ip.policy_name), it.policy_name;
