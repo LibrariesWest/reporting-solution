@@ -9,14 +9,11 @@ select
     count(ch.key) as issues
 from
     (
-        select key, catalogue_key, call_sequence, copy_number from charge 
+        select key, catalogue_key, call_sequence, copy_number from charge where date_charged > now() - interval '1 year' 
         union all
-        select key, catalogue_key, call_sequence, copy_number from charge
+        select key, catalogue_key, call_sequence, copy_number from charge where date_charged > now() - interval '1 year'
     ) as ch
-join item i
-on i.catalogue_key = ch.catalogue_key
-and i.call_sequence = ch.call_sequence
-and i.copy_number = ch.copy_number
+join item i on i.catalogue_key = ch.catalogue_key and i.call_sequence = ch.call_sequence and i.copy_number = ch.copy_number
 group by item_id
-order by issues desc
+order by issues desc 
 limit 100;

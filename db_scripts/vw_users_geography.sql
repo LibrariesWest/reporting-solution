@@ -21,6 +21,7 @@ select
     od.name as district_name, 
     oc.code as county,
     oc.name as county_name, 
+    ow.code as ward,
     ow.name as ward_name,
     oa.oa11cd as oa,
     ol.lsoa11cd as lsoa,

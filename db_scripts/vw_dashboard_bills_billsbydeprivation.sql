@@ -9,7 +9,7 @@ select
 	pr.policy_name as reason,
     u.imd_decile,
     count(*) as number_of_bills,
-    sum(amount_billed)
+    sum(amount_billed) as total_billed
 from bill b
 join vw_users_geography u on u.user_key = b.user_key
 join policy pr on pr.policy_type = 'BRSN' and pr.policy_number = b.reason

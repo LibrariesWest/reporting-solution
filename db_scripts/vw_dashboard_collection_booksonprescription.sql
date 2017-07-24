@@ -25,9 +25,9 @@ from
 	    number_of_renewals as renewals,
 	    date_charged
 	from
-		( select user_key, date_charged, key, catalogue_key, call_sequence, copy_number, library, number_of_renewals from charge where date_charged >= '7-Jun-2016' 
+		( select user_key, date_charged, key, catalogue_key, call_sequence, copy_number, library, number_of_renewals from charge where date_charged > now() - interval '1 year' 
 		union all 
-		select user_key, date_charged, key, catalogue_key, call_sequence, copy_number, library, number_of_renewals from chargehist where date_charged >= '7-Jun-2016') as ch
+		select user_key, date_charged, key, catalogue_key, call_sequence, copy_number, library, number_of_renewals from chargehist where date_charged > now() - interval '1 year') as ch
 	join item i
 	on i.catalogue_key = ch.catalogue_key
 	and i.call_sequence = ch.call_sequence
@@ -41,4 +41,5 @@ from
 	and lp.policy_number = ch.library
 	join catalogue c
 	on c.catalogue_key = i.catalogue_key) as bop
-group by title, author, isbn, library, authority;
+group by title, author, isbn, library, authority
+order by title, author, isbn, library, authority;

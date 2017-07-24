@@ -182,3 +182,53 @@ create extension postgis;
 
 --33. create the dashboard views. these are used in visualisations so should only return specific aspects of the data
 
+\i vw_dashboard_bills_billsbydeprivation.sql
+\i vw_dashboard_bills_billsbyreasonauthority.sql
+\i vw_dashboard_bills_billsbyreasonlibrary.sql
+\i vw_dashboard_bills_paymentsbyauthority.sql
+\i vw_dashboard_bills_paymentsbylibrary.sql
+
+\i vw_dashboard_collection_booksonprescription.sql
+\i vw_dashboard_collection_itemsbytypeandauthority.sql
+\i vw_dashboard_collection_itemsbytypeandlibrary.sql
+\i vw_dashboard_collection_mostissueditems.sql
+\i vw_dashboard_collection_mosttravelleditems.sql
+
+\i vw_dashboard_membership_borrowersbyauthority.sql
+\i vw_dashboard_membership_borrowersbyauthorityanddeprivation.sql
+\i vw_dashboard_membership_borrowersbylibrary.sql
+\i vw_dashboard_membership_borrowersbylibraryanddeprivation.sql
+\i vw_dashboard_membership_borrowersbyward_geo.sql
+\i vw_dashboard_membership_borrowersbyward.sql
+\i vw_dashboard_membership_registeredactivebyauthority.sql
+\i vw_dashboard_membership_registeredactivebylibrary.sql
+\i vw_dashboard_membership_registeredactivebyresidentauthority.sql
+\i vw_dashboard_membership_registeredbyauthority.sql
+\i vw_dashboard_membership_registeredbylibrary.sql
+\i vw_dashboard_membership_registeredbyward_geo.sql
+\i vw_dashboard_membership_registeredbyward.sql
+
+\i vw_dashboard_movement_transitsbyitemauthority.sql
+\i vw_dashboard_movement_transitsoversixweeks.sql
+
+\i vw_dashboard_reservations_fulfilledholdsbyauthority.sql
+\i vw_dashboard_reservations_fulfilledholdsbyinternalexternal.sql
+\i vw_dashboard_reservations_fulfilledholdsbylibrary.sql
+\i vw_dashboard_reservations_holdsbyauthority.sql
+\i vw_dashboard_reservations_holdsbyclient.sql
+\i vw_dashboard_reservations_holdsbylibrary.sql
+\i vw_dashboard_reservations_holdsbyward.sql
+\i vw_dashboard_reservations_holdsoversixweeks.sql
+\i vw_dashboard_reservations_interlendingbyauthorityav.sql
+\i vw_dashboard_reservations_interlendingbyauthoritybooks.sql
+
+\i vw_dashboard_usage_loansbyauthority.sql
+\i vw_dashboard_usage_loansbyauthorityanddeprivation.sql
+\i vw_dashboard_usage_loansbylibrary.sql
+\i vw_dashboard_usage_loansbyward_geo.sql
+\i vw_dashboard_usage_loansbyward.sql
+\i vw_dashboard_usage_renewalsbyauthority.sql
+\i vw_dashboard_usage_renewalsbyauthorityanddeprivation.sql
+\i vw_dashboard_usage_renewalsbylibrary.sql
+\i vw_dashboard_usage_renewalsbyward_geo.sql
+\i vw_dashboard_usage_renewalsbyward.sql

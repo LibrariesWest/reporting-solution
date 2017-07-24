@@ -4,22 +4,13 @@
 
 -- drop view vw_dashboard_membership_borrowersbyward;
 create or replace view vw_dashboard_membership_borrowersbyward as
-select 
-    fn_librarytoauthority(lp.policy_name) as authority, 
-    lp.policy_name as library, 
-    count(user_key) as borrowers
+select
+    vu.ward as ward,
+    sum(ch.number_of_renewals) as renewals
 from
-    (select distinct user_key, library 
-    from 
-        (select user_key, library 
-        from charge 
-        where date_charged > now() - interval '1 year' 
+    (	select user_key, number_of_renewals from charge where date_charged > (now() - interval '1 year')
         union all
-        select user_key, library from chargehist where date_charged > now() - interval '1 year'
-        ) as ch 
-    ) as us
-join policy lp
-on lp.policy_type = 'LIBR'
-and lp.policy_number = us.library
-where fn_librarytoauthority(lp.policy_name) is not null
-group by authority, lp.policy_name;
+        select user_key, number_of_renewals from chargehist where date_charged > (now() - interval '1 year')
+	) ch
+join vw_users_geography vu on ch.user_key = vu.user_key
+group by vu.ward;

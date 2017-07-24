@@ -15,9 +15,7 @@ from
             union all 
             select user_key, library from chargehist where date_charged > now() - interval '1 year'
             ) as ch
-        join policy lp
-        on lp.policy_type = 'LIBR'
-        and lp.policy_number = ch.library
+        join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = ch.library
         ) as us
     ) as auths
 where auths.authority is not null

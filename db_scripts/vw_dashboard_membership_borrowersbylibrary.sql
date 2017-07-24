@@ -18,8 +18,6 @@ from
         select user_key, library from chargehist where date_charged > now() - interval '1 year'
         ) as ch 
     ) as us
-join policy lp
-on lp.policy_type = 'LIBR'
-and lp.policy_number = us.library
+join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = us.library
 where fn_librarytoauthority(lp.policy_name) is not null
 group by authority, lp.policy_name;

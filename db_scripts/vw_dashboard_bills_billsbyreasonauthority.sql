@@ -8,7 +8,7 @@ select
     fn_librarytoauthority(bl.policy_name) as authority,
     br.policy_name as reason,
     count(*) as number_of_bills,
-	sum(b.amount_billed) total_billed
+	sum(b.amount_billed) as total_billed
 from bill b
 join users u
 on u.user_key = b.user_key

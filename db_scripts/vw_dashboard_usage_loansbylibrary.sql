@@ -5,6 +5,7 @@
 -- drop view vw_dashboard_issuesbylibrary;
 create or replace view vw_dashboard_issuesbylibrary as 
 select 
+    fn_librarytoauthority(lp.policy_name) as authority,
     lp.policy_name as library, 
     count(ch.key) as issues
 from
@@ -12,9 +13,7 @@ from
     union all
     select key, library, date_charged from chargehist where date_charged > (now() - interval '1 year')
     ) as ch
-join policy lp
-on lp.policy_type = 'LIBR'
-and lp.policy_number = ch.library
+join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = ch.library
 where fn_librarytoauthority(lp.policy_name) is not null
 group by lp.policy_name
-order by issues desc;
+order by fn_librarytoauthority(lp.policy_name), lp.policy_name, issues desc;
