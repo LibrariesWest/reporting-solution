@@ -8,7 +8,7 @@ select
     fn_librarytoauthority(lp.policy_name) as authority,
     lp.policy_name as library,
     tp.policy_name as payment_type,
-    count(bill_payment_key) as number_payments,
+    count(bill_payment_key) as number_of_payments,
     sum(payment_amount) as total_paid
 from billpayment bp
 join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = bp.library

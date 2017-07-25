@@ -217,6 +217,7 @@ create extension postgis;
 \i vw_dashboard_reservations_holdsbyauthority.sql
 \i vw_dashboard_reservations_holdsbyclient.sql
 \i vw_dashboard_reservations_holdsbylibrary.sql
+\i vw_dashboard_reservations_holdsbyward_geo.sql
 \i vw_dashboard_reservations_holdsbyward.sql
 \i vw_dashboard_reservations_holdsoversixweeks.sql
 \i vw_dashboard_reservations_interlendingbyauthorityav.sql

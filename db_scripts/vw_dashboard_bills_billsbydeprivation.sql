@@ -14,7 +14,7 @@ from bill b
 join vw_users_geography u on u.user_key = b.user_key
 join policy pr on pr.policy_type = 'BRSN' and pr.policy_number = b.reason
 join policy pl on pl.policy_type = 'LIBR' and pl.policy_number = b.library
-where date_billed > now() - interval '1 year'
+where date_billed > (now() - interval '1 year')
 and u.imd_decile is not null
 group by fn_librarytoauthority(pl.policy_name), pr.policy_name, u.imd_decile
 order by fn_librarytoauthority(pl.policy_name), pr.policy_name, u.imd_decile;

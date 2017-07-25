@@ -14,6 +14,6 @@ join users u
 on u.user_key = b.user_key
 join policy br on br.policy_type = 'BRSN' and br.policy_number = b.reason
 join policy bl on bl.policy_type = 'LIBR' and bl.policy_number = b.library
-where b.date_billed > now() - interval '1 year'
+where b.date_billed > (now() - interval '1 year')
 group by fn_librarytoauthority(bl.policy_name), br.policy_name
 order by fn_librarytoauthority(bl.policy_name), br.policy_name;
