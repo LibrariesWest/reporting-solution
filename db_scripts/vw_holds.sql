@@ -21,15 +21,15 @@ select
     end as level,
     rp.policy_name as range,
     sp.policy_name as status,
-    h.date_placed as placed,
-    h.date_expires as expired,
-    h.date_notified as notified,
-    h.date_inactive as inactive,
+    h.date_placed as date_placed,
+    h.date_expires as date_expires,
+    h.date_notified as date_notified,
+    h.date_inactive as date_inactive,
     hp.policy_name as inactive_reason,
-    h.date_available as available,
-    h.date_available_expires as available_expires,
+    h.date_available as date_available,
+    h.date_available_expires as date_available_expires,
     rep.policy_name as recall_status,
-    h.date_recalled as recalled,
+    h.date_recalled as date_recalled,
     h.position,
     cp.policy_name as client
 from hold h
@@ -42,4 +42,5 @@ join policy cp on cp.policy_type = 'CTYP' and cp.policy_number = h.client_used
 join policy sp on sp.policy_type = 'HOLD_STATUS' and sp.policy_number = h.hold_status
 join policy hp on hp.policy_type = 'HOLD_REASON_TYPE' and hp.policy_number = h.inactive_reason
 join policy rep on rep.policy_type = 'RECALL_STATUS' and rep.policy_number = h.recall_status
-join policy rp on rp.policy_type = 'HOLD_RANGE' and rp.policy_number = h.range;
+join policy rp on rp.policy_type = 'HOLD_RANGE' and rp.policy_number = h.range
+where fn_librarytoauthority(lp.policy_name) is not null;

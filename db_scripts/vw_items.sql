@@ -10,7 +10,7 @@ select
     i.call_sequence,
     i.id as item_id,
     ip.policy_name as library,
-    fn_librarytoauthority(ip.policy_name::text) as authority,
+    fn_librarytoauthority(ip.policy_name) as authority,
     it.policy_name as type,
     ihl.policy_name as home_location,
     il.policy_name as current_location,
@@ -20,13 +20,12 @@ select
     c4.policy_name as category_4,
     c5.policy_name as category_5,
     i.date_created as created,
-    i.last_activity_date as activity,
-    i.date_last_charged as charged,
+    i.last_activity_date as last_activity_date,
+    i.date_last_charged as date_last_charged,
     i.price,
     i.shadow as shadowed
 from item i
-join catalogue c
-on c.catalogue_key = i.catalogue_key
+join catalogue c on c.catalogue_key = i.catalogue_key
 join policy ip on ip.policy_type = 'LIBR' and ip.policy_number = i.library
 join policy it on it.policy_type = 'ITYP' and it.policy_number = i.type 
 join policy il on il.policy_type = 'LOCN' and il.policy_number = i.current_location

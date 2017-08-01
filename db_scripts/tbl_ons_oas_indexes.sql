@@ -9,8 +9,8 @@ select updategeometrysrid('ons_oas', 'geom', 27700);
 create unique index cuix_oas_oacd on ons_oas using btree (oa11cd);
 alter table ons_oas cluster on cuix_oas_oacd;
 
--- index: ix_oas_oalacd.  a unique index on the oa code.
+-- index: ix_oas_oalacd.  an index on the local authority code.
 create index ix_oas_oalacd on ons_oas using btree (lad11cd);
 
--- Index: ix_onsoas_geom.  a spatial index on the geometry.
+-- index: ix_onsoas_geom.  a spatial index on the geometry.
 create index ix_onsoas_geom on ons_oas using gist (geom);

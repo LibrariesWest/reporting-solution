@@ -5,33 +5,9 @@
 -- drop view vw_users_public;
 create or replace view vw_users_public as 
 select
-  vu.id,
-  vu.profile,
-  vu.postcode,
-  vu.library,
-  vu.authority,
-  vu.gender,
-  vu.id_check,
-  vu.ethnicity,
-  vu.peoples_network,
-  vu.marketing,
-  vu.religion_belief,
-  vu.how_heard,
-  vu.data_protection,
-  vu.school,
-  vu.mobile_route,
-  vu.declared_disability,
-  vu.notices_delivery,
-  vu.status,
-  vu.birth_date,
-  vu.joined,
-  vu.active,
-  vu.issued,
-  vu.renewed,
-  vu.billed,
-  vu.paid
+  *
 from vw_users vu
-where vu.profile = any (array[
+where vu.profile in (
   'ACC_0-11', 
   'ACC_12-14', 
   'ACC_15-17', 
@@ -77,4 +53,4 @@ where vu.profile = any (array[
   'VIS_0-11', 
   'VIS_12-14', 
   'VIS_15-17', 
-  'VIS_ADU']);
+  'VIS_ADU' );

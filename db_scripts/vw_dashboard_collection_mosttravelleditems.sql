@@ -13,21 +13,21 @@ select
     count(key) as issues
 from
     (select
-	charges.key,
+        charges.key,
         charges.catalogue_key,
         charges.item_id,
         ilp.postcode as item_postcode,
         clp.postcode issuing_postcode,
         up.postcode user_postcode,
         rlp.postcode as return_postcode,
-        round(ST_Distance(ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700),ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700)) / 1609) as holding_issuing_distance,
-        round(ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700)) / 1609) as issuing_user_distance,
-        round(ST_Distance(ST_SetSRID(ST_MakePoint(up.eastings, up.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) / 1609) as user_return_distance,
-        round(ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700)) / 1609) as return_holding_distance,
+        round(ST_Distance(ilp.geom, clp.geom) / 1609) as holding_issuing_distance,
+        round(ST_Distance(clp.geom, up.geom) / 1609) as issuing_user_distance,
+        round(ST_Distance(up.geom, rlp.geom) / 1609) as user_return_distance,
+        round(ST_Distance(rlp.geom, ilp.geom) / 1609) as return_holding_distance,
         round(
-		    (ST_Distance(ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700),ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700)) +
-            ST_Distance(ST_SetSRID(ST_MakePoint(clp.eastings, clp.northings), 27700),ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700)) +
-		    ST_Distance(ST_SetSRID(ST_MakePoint(rlp.eastings, rlp.northings), 27700),ST_SetSRID(ST_MakePoint(ilp.eastings, ilp.northings), 27700))) / 1609) as library_distance
+		    (ST_Distance(ilp.geom, clp.geom) +
+            ST_Distance(clp.geom, rlp.geom) +
+		    ST_Distance(rlp.geom, ilp.geom)) / 1609) as library_distance
     from
         (select
 	        ch.key,

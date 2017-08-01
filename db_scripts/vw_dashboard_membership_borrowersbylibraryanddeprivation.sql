@@ -13,9 +13,9 @@ from
     (select distinct us.user_key, us.authority, us.library, vu.imd_decile from
         (select user_key, fn_librarytoauthority(lp.policy_name) as authority, lp.policy_name as library
         from
-            (select user_key, library from charge where date_charged > now() - interval '1 year' 
+            (select user_key, library from charge where date_charged > (now() - interval '1 year')
             union all 
-            select user_key, library from chargehist where date_charged > now() - interval '1 year'
+            select user_key, library from chargehist where date_charged > (now() - interval '1 year')
             ) as ch
         join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = ch.library
         ) as us

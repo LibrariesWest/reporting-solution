@@ -21,7 +21,7 @@ from
         end as authority_code,
         count(id) as active_users
     from vw_users_geography u
-    where last_activity_date > (now() - interval '12 months')
+    where last_activity_date > (now() - interval '1 year')
     group by authority, authority_code
     order by active_users desc
     limit 11) as up
