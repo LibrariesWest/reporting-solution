@@ -7,8 +7,8 @@ create or replace view vw_holds as
 select 
     u.id as user_id,
     i.id as item_id,
-    lp.policy_name as library,
-    fn_librarytoauthority(lp.policy_name) as authority,
+    lp.policy_name as placed_library,
+    fn_librarytoauthority(lp.policy_name) as placed_authority,
     ip.policy_name as item_library,
     fn_librarytoauthority(ip.policy_name) as item_authority,
     ipp.policy_name as pickup_library,
@@ -18,9 +18,9 @@ select
         when h.type = 'C' then 'Copy'
         when h.type = 'T' then 'Title'
         else null
-    end as level,
-    rp.policy_name as range,
-    sp.policy_name as status,
+    end as hold_level,
+    rp.policy_name as hold_range,
+    sp.policy_name as hold_status,
     h.date_placed as date_placed,
     h.date_expires as date_expires,
     h.date_notified as date_notified,
@@ -35,9 +35,9 @@ select
 from hold h
 join users u on u.user_key = h.user_key
 join item i on i.catalogue_key = h.catalogue_key and i.call_sequence = h.call_sequence and i.copy_number = h.copy_number
-join policy lp on lp.policy_number = h.library and lp.policy_type = 'LIBR'
-join policy ip on ip.policy_number = h.item_library and ip.policy_type = 'LIBR'
-join policy ipp on ipp.policy_number = h.pickup_library and ipp.policy_type = 'LIBR'
+join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = h.library
+join policy ip on ip.policy_type = 'LIBR' and ip.policy_number = h.item_library 
+join policy ipp on ipp.policy_type = 'LIBR' and ipp.policy_number = h.pickup_library 
 join policy cp on cp.policy_type = 'CTYP' and cp.policy_number = h.client_used
 join policy sp on sp.policy_type = 'HOLD_STATUS' and sp.policy_number = h.hold_status
 join policy hp on hp.policy_type = 'HOLD_REASON_TYPE' and hp.policy_number = h.inactive_reason

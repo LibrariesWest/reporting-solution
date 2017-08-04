@@ -3,25 +3,25 @@
 ---------------------------------------------------------------
 
 -- drop view vw_users;
-create or replace view vw_users as 
-select 
+create or replace view vw_users as
+select
     u.id,
     up.policy_name as profile,
+    us.policy_name as status,
     ul.policy_name as library,
     fn_librarytoauthority(ul.policy_name) as authority,
-    ucp1.policy_name as gender,
-    ucp2.policy_name as id_check,
-    ucp3.policy_name as ethnicity,
-    ucp4.policy_name as peoples_network,
-    ucp5.policy_name as marketing,
-    ucp6.policy_name as religion_belief,
-    ucp7.policy_name as sexual_orientation,
-    ucp8.policy_name as data_protection,
-    ucp9.policy_name as school,
-    ucp10.policy_name as mobile_route,
-    ucp11.policy_name as declared_disability,
-    ucp12.policy_name as notices_delivery,
-    us.policy_name as status,
+    ucp1.policy_name as user_cat1,
+    ucp2.policy_name as user_cat2,
+    ucp3.policy_name as user_cat3,
+    ucp4.policy_name as user_cat4,
+    ucp5.policy_name as user_cat5,
+    ucp6.policy_name as user_cat6,
+    ucp7.policy_name as user_cat7,
+    ucp8.policy_name as user_cat8,
+    ucp9.policy_name as user_cat9,
+    ucp10.policy_name as user_cat10,
+    ucp11.policy_name as user_cat11,
+    ucp12.policy_name as user_cat12,
     u.postcode_trim,
     case
 	    when u.birth_date = 0 then null

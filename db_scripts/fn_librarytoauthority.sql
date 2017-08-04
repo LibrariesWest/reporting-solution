@@ -10,14 +10,14 @@ $BODY$
 begin
 return 
   case
-    when s::text ~~ 'BN%'::text then 'Bath and North East Somerset'::text
-    when s::text ~~ 'BS%'::text then 'Bristol'::text
-    when s::text ~~ 'DO%'::text then 'Dorset'::text
-    when s::text ~~ 'PO%'::text then 'Poole'::text
-    when s::text ~~ 'SG%'::text then 'South Gloucestershire'::text
-    when s::text ~~ 'SO%'::text then 'Somerset'::text
-    when s::text ~~ 'NS%'::text then 'North Somerset'::text
-    else null::text
+    when s LIKE 'BN%' then 'Bath and North East Somerset'
+    when s LIKE 'BS%' then 'Bristol'
+    when s LIKE 'DO%' then 'Dorset'
+    when s LIKE 'PO%' then 'Poole'
+    when s LIKE 'SG%' then 'South Gloucestershire'
+    when s LIKE 'SO%' then 'Somerset'
+    when s LIKE 'NS%' then 'North Somerset'
+    else null
   end;
 end;
 $BODY$ 
