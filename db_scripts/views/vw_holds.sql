@@ -5,6 +5,7 @@
 -- drop view vw_holds;
 create or replace view vw_holds as 
 select 
+    h.key,
     u.id as user_id,
     i.id as item_id,
     lp.policy_name as placed_library,

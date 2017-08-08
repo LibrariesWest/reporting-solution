@@ -16,7 +16,6 @@ create table catalogue
   create_name character varying(20),
   modify_name character varying(20),
   heading_offset integer,
-  marclist_offset integer,
   shadow integer,
   number_of_copies_on_open_order integer,
   marc_file integer,

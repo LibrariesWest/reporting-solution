@@ -2,10 +2,6 @@
 -- table: transit.  indexes
 ---------------------------------------------------------------
 
--- index: cix_transit_date
--- drop index cix_transit_date;
-create index cix_transit_date on transit using btree (date_time_transited);
-
 -- index: cuix_transit_catkey_callsequence_copynumber
 -- drop index cuix_transit_catkey_callsequence_copynumber;
 create unique index cuix_transit_catkey_callsequence_copynumber on transit using btree (catalogue_key, call_sequence, copy_number);

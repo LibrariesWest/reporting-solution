@@ -26,3 +26,7 @@ create index ix_billpayment_type on billpayment using btree (payment_type);
 -- index: ix_billpayment_date
 -- drop index ix_billpayment_date;
 create index ix_billpayment_date on billpayment using btree (payment_date);
+
+-- index: ix_billpayment_library
+-- drop index ix_billpayment_library;
+create index ix_billpayment_library on billpayment using btree (library);

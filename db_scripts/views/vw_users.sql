@@ -56,4 +56,5 @@ left outer join policy ucp10 on ucp10.policy_type = 'CAT10' and ucp10.policy_num
 left outer join ucat uc11 on uc11.user_key = u.user_key and uc11.category = 11
 left outer join policy ucp11 on ucp11.policy_type = 'CAT11' and ucp11.policy_number = uc11.value
 left outer join ucat uc12 on uc12.user_key = u.user_key and uc12.category = 12
-left outer join policy ucp12 on ucp12.policy_type = 'CAT12' and ucp12.policy_number = uc12.value;
+left outer join policy ucp12 on ucp12.policy_type = 'CAT12' and ucp12.policy_number = uc12.value
+where fn_librarytoauthority(ul.policy_name) is not null;

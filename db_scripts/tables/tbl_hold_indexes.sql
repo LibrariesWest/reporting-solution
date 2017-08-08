@@ -35,9 +35,17 @@ create index ix_hold_pickuplibrary on hold using btree (pickup_library);
 -- drop index ix_hold_dateplaced;
 create index ix_hold_dateplaced on hold using btree (date_placed);
 
+-- index: ix_hold_recallstatus
+-- drop index ix_hold_recallstatus;
+create index ix_hold_recallstatus on hold using btree (recall_status);
+
 -- index: ix_hold_status
 -- drop index ix_hold_status;
 create index ix_hold_status on hold using btree (hold_status);
+
+-- index: ix_hold_inactivereason
+-- drop index ix_hold_inactivereason;
+create index ix_hold_inactivereason on hold using btree (inactive_reason);
 
 -- index: ix_hold_range
 -- drop index ix_hold_range;

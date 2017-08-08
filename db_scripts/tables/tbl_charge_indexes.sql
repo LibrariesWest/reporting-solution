@@ -22,3 +22,11 @@ create index ix_charge_library on charge using btree (library);
 -- index: ix_charge_datecharged
 -- drop index ix_charge_datecharged;
 create index ix_charge_datecharged on charge using btree (date_charged);
+
+-- index: ix_charge_location
+-- drop index ix_charge_location;
+create index ix_charge_location on charge using btree (location);
+
+-- index: ix_charge_status
+-- drop index ix_charge_status;
+create index ix_charge_status on charge using btree (status);

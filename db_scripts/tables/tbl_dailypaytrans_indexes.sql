@@ -19,6 +19,10 @@ create index ix_dailypaytrans_library on dailypaytrans using btree (library_id);
 -- drop index ix_dailypaytrans_station;
 create index ix_dailypaytrans_station on dailypaytrans using btree (station_id);
 
+-- Index: ix_dailypaytrans_clerk
+-- drop index ix_dailypaytrans_clerk;
+create index ix_dailypaytrans_clerk on dailypaytrans using btree (clerk);
+
 -- Index: ix_dailypaytrans_patron
 -- drop index ix_dailypaytrans_patron;
 create index ix_dailypaytrans_patron on dailypaytrans using btree (patron);

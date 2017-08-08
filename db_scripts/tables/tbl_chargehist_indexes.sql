@@ -22,3 +22,11 @@ create index ix_chargehist_library on chargehist using btree (library);
 -- index: ix_chargehist_datecharged
 -- drop index ix_chargehist_datecharged;
 create index ix_chargehist_datecharged on chargehist using btree (date_charged);
+
+-- index: ix_chargehist_datedischarged
+-- drop index ix_chargehist_datedischarged;
+create index ix_chargehist_datedischarged on chargehist using btree (date_time_discharged);
+
+-- index: ix_chargehist_dischargelibrary
+-- drop index ix_chargehist_dischargelibrary;
+create index ix_chargehist_dischargelibrary on chargehist using btree (discharge_library);

@@ -5,6 +5,8 @@
 -- drop view vw_bills;
 create or replace view vw_bills as 
 select 
+    u.user_key,
+    b.bill_number,
     b.date_billed,
     u.id as user_id,
     i.id as item_id,
@@ -22,4 +24,5 @@ join item i on i.catalogue_key = b.catalogue_key and i.call_sequence = b.call_se
 join policy itp on itp.policy_number = i.type and itp.policy_type = 'ITYP'
 join policy br on br.policy_number = b.reason and br.policy_type = 'BRSN'
 join policy lp on lp.policy_number = b.library and lp.policy_type = 'LIBR'
-join policy li on li.policy_number = i.library and li.policy_type = 'LIBR';
+join policy li on li.policy_number = i.library and li.policy_type = 'LIBR'
+where fn_librarytoauthority(li.policy_name) is not null;
