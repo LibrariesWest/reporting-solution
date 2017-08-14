@@ -15,6 +15,6 @@ select
     client,
     round(avg(date_available - date_placed)) as days_taken,
     count(h.key) as holds
-from vw_hold
+from vw_holds h
 where h.date_available is not null
 group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, client;

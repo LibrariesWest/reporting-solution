@@ -22,6 +22,6 @@ select
     date_last_charged,
     price,
     shadowed
-from vw_items
+from vw_items 
 where shadowed = 0
-and il.policy_name not in ('DISCARD');
+and current_location not in ('DISCARD');

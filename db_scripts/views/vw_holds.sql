@@ -12,6 +12,7 @@ select
     fn_librarytoauthority(lp.policy_name) as placed_authority,
     ip.policy_name as item_library,
     fn_librarytoauthority(ip.policy_name) as item_authority,
+    it.policy_name as item_type,
     ipp.policy_name as pickup_library,
     fn_librarytoauthority(ipp.policy_name) as pickup_authority,
     h.hold_priority,
@@ -36,6 +37,7 @@ select
 from hold h
 join users u on u.user_key = h.user_key
 join item i on i.catalogue_key = h.catalogue_key and i.call_sequence = h.call_sequence and i.copy_number = h.copy_number
+join policy it on it.policy_type = 'ITYP' and it.policy_number = i.type
 join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = h.library
 join policy ip on ip.policy_type = 'LIBR' and ip.policy_number = h.item_library 
 join policy ipp on ipp.policy_type = 'LIBR' and ipp.policy_number = h.pickup_library 

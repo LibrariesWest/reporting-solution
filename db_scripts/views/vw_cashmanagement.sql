@@ -6,7 +6,6 @@
 create or replace view vw_cashmanagement as 
 select 
     t.timestamp as day_time,
-    tp.policy_name as transaction_type,
     l.policy_name as library,
     fn_librarytoauthority(l.policy_name) as authority,
     sp.policy_name as station,

@@ -154,14 +154,14 @@ create extension postgis;
 \i 'tables/tbl_users_indexes.sql'
 
 -- create the base views.  used for browsing the tables by administrators
+\i 'views/vw_bills.sql'
 \i 'views/vw_billpayments.sql'
 \i 'views/vw_bills_billpayments.sql'
-\i 'views/vw_bills.sql'
 \i 'views/vw_cashmanagement.sql'
 \i 'views/vw_catalogue.sql'
-\i 'views/vw_charges_chargeshistory.sql'
 \i 'views/vw_charges.sql'
 \i 'views/vw_chargeshistory.sql'
+\i 'views/vw_charges_chargeshistory.sql'
 \i 'views/vw_holds.sql'
 \i 'views/vw_holds_interlending.sql'
 \i 'views/vw_holds_interlending_av.sql'
