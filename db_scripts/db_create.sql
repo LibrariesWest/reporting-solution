@@ -11,149 +11,149 @@ set client_encoding = 'UTF8';
 -- Add PostGIS extensions
 create extension postgis;
 
--- 2.  authorities function
+-- authorities function
 \i 'functions/fn_librarytoauthority.sql'
 
--- 3.  bill table
-\i 'tables/tbl_bill.sql'
-\i 'tables/tbl_bill_load.sql'
-\i 'tables/tbl_bill_indexes.sql'
-
--- 4.  billpayments table
-\i 'tables/tbl_billpayment.sql'
-\i 'tables/tbl_billpayment_load.sql'
-\i 'tables/tbl_billpayment_indexes.sql'
-
--- 5.  callnum table
-\i 'tables/tbl_callnum.sql'
-\i 'tables/tbl_callnum_load.sql'
-\i 'tables/tbl_callnum_indexes.sql'
-
--- 6.  catalogue table
-\i 'tables/tbl_catalogue.sql'
-\i 'tables/tbl_catalogue_load.sql'
-\i 'tables/tbl_catalogue_indexes.sql'
-
--- 7.  charge table
-\i 'tables/tbl_charge.sql'
-\i 'tables/tbl_charge_load.sql'
-\i 'tables/tbl_charge_indexes.sql'
-
--- 8.  charge history table
-\i 'tables/tbl_chargehist.sql'
-\i 'tables/tbl_chargehist_load.sql'
-\i 'tables/tbl_chargehist_indexes.sql'
-
--- 9.  daily pay trans table
-\i 'tables/tbl_dailypaytrans.sql'
-\i 'tables/tbl_dailypaytrans_load.sql'
-\i 'tables/tbl_dailypaytrans_indexes.sql'
-
--- 10.  daily pay trans amount table
-\i 'tables/tbl_dailypaytransamt.sql'
-\i 'tables/tbl_dailypaytransamt_load.sql'
-\i 'tables/tbl_dailypaytransamt_indexes.sql'
-
--- 11.  daily pay trans item table
-\i 'tables/tbl_dailypaytransitem.sql'
-\i 'tables/tbl_dailypaytransitem_load.sql'
-\i 'tables/tbl_dailypaytransitem_indexes.sql'
-
--- 12.  hold table
-\i 'tables/tbl_hold.sql'
-\i 'tables/tbl_hold_load.sql'
-\i 'tables/tbl_hold_indexes.sql'
-
--- 13.  item table 
-\i 'tables/tbl_item.sql'
-\i 'tables/tbl_item_load.sql'
-\i 'tables/tbl_item_indexes.sql'
-
--- 14.  marc table 
-\i 'tables/tbl_marc.sql'
-\i 'tables/tbl_marc_load.sql'
-\i 'tables/tbl_marc_indexes.sql'
-
--- 15.  policy table 
-\i 'tables/tbl_policy.sql'
-\i 'tables/tbl_policy_load.sql'
-\i 'tables/tbl_policy_indexes.sql'
-
--- 16.  transit table 
-\i 'tables/tbl_transit.sql'
-\i 'tables/tbl_transit_load.sql'
-\i 'tables/tbl_transit_indexes.sql'
-
--- 17.  ucat table 
-\i 'tables/tbl_ucat.sql'
-\i 'tables/tbl_ucat_load.sql'
-\i 'tables/tbl_ucat_indexes.sql'
-
--- 18.  users table 
-\i 'tables/tbl_users.sql'
-\i 'tables/tbl_users_load.sql'
-\i 'tables/tbl_users_indexes.sql'
-
--- 19.  users table 
-\i 'tables/tbl_userxinfo.sql'
-\i 'tables/tbl_userxinfo_load.sql'
-\i 'tables/tbl_userxinfo_indexes.sql'
-
--- 20.  os postcodes table 
-\i 'tables/tbl_os_postcodes.sql'
-\i 'tables/tbl_os_postcodes_load.sql'
-\i 'tables/tbl_os_postcodes_indexes.sql'
-
---21.  os wards table
+-- os wards table
 -- this file is dynamically generated in a previous step.
 \i 'tables/tbl_os_wards.sql'
 \i 'tables/tbl_os_wards_indexes.sql'
 
---22.  os districts table
+-- os districts table
 -- this file is dynamically generated in a previous step.
 \i 'tables/tbl_os_districts.sql'
 \i 'tables/tbl_os_districts_indexes.sql'
 
---23.  os counties table
+-- os counties table
 -- this file is dynamically generated in a previous step.
 \i 'tables/tbl_os_counties.sql'
 \i 'tables/tbl_os_counties_indexes.sql'
 
---24.  output areas table
+-- output areas table
 -- this file is dynamically generated in a previous step.
 \i 'tables/tbl_ons_oas.sql'
 \i 'tables/tbl_ons_oas_indexes.sql'
 
---25.  output area lookups table
+-- output area lookups table
 \i 'tables/tbl_ons_oas_lookups.sql'
 \i 'tables/tbl_ons_oas_lookups_indexes.sql'
 
---26.  lower super output areas table
+-- lower super output areas table
 -- this file is dynamically generated in a previous step.
 \i 'tables/tbl_ons_lsoas.sql'
 \i 'tables/tbl_ons_lsoas_indexes.sql'
 
---27.  lower super output area deprivation table
+-- lower super output area deprivation table
 \i 'tables/tbl_ons_lsoas_imd.sql'
 \i 'tables/tbl_ons_lsoas_imd_load.sql'
 \i 'tables/tbl_ons_lsoas_imd_indexes.sql'
 
---28.  output area female population
+-- output area female population
 \i 'tables/tbl_ons_oas_population_female.sql'
 \i 'tables/tbl_ons_oas_population_female_load.sql'
 \i 'tables/tbl_ons_oas_population_female_indexes.sql'
 
---29.  output area male population
+-- output area male population
 \i 'tables/tbl_ons_oas_population_male.sql'
 \i 'tables/tbl_ons_oas_population_male_load.sql'
 \i 'tables/tbl_ons_oas_population_male_indexes.sql'
 
---30.  authority population
+-- authority population
 \i 'tables/tbl_ons_uk_population.sql'
 \i 'tables/tbl_ons_uk_population_load.sql'
 \i 'tables/tbl_ons_uk_population_indexes.sql'
 
---31.  create the base views.  used for browsing the tables by administrators
+-- OS postcodes table 
+\i 'tables/tbl_os_postcodes.sql'
+\i 'tables/tbl_os_postcodes_load.sql'
+\i 'tables/tbl_os_postcodes_indexes.sql'
+
+-- bill table
+\i 'tables/tbl_bill.sql'
+\i 'tables/tbl_bill_load.sql'
+\i 'tables/tbl_bill_indexes.sql'
+
+-- billpayments table
+\i 'tables/tbl_billpayment.sql'
+\i 'tables/tbl_billpayment_load.sql'
+\i 'tables/tbl_billpayment_indexes.sql'
+
+-- callnum table
+\i 'tables/tbl_callnum.sql'
+\i 'tables/tbl_callnum_load.sql'
+\i 'tables/tbl_callnum_indexes.sql'
+
+-- catalogue table
+\i 'tables/tbl_catalogue.sql'
+\i 'tables/tbl_catalogue_load.sql'
+\i 'tables/tbl_catalogue_indexes.sql'
+
+-- charge table
+\i 'tables/tbl_charge.sql'
+\i 'tables/tbl_charge_load.sql'
+\i 'tables/tbl_charge_indexes.sql'
+
+-- charge history table
+\i 'tables/tbl_chargehist.sql'
+\i 'tables/tbl_chargehist_load.sql'
+\i 'tables/tbl_chargehist_indexes.sql'
+
+-- daily pay trans table
+\i 'tables/tbl_dailypaytrans.sql'
+\i 'tables/tbl_dailypaytrans_load.sql'
+\i 'tables/tbl_dailypaytrans_indexes.sql'
+
+-- daily pay trans amount table
+\i 'tables/tbl_dailypaytransamt.sql'
+\i 'tables/tbl_dailypaytransamt_load.sql'
+\i 'tables/tbl_dailypaytransamt_indexes.sql'
+
+-- daily pay trans item table
+\i 'tables/tbl_dailypaytransitem.sql'
+\i 'tables/tbl_dailypaytransitem_load.sql'
+\i 'tables/tbl_dailypaytransitem_indexes.sql'
+
+-- hold table
+\i 'tables/tbl_hold.sql'
+\i 'tables/tbl_hold_load.sql'
+\i 'tables/tbl_hold_indexes.sql'
+
+-- item table 
+\i 'tables/tbl_item.sql'
+\i 'tables/tbl_item_load.sql'
+\i 'tables/tbl_item_indexes.sql'
+
+-- marc table 
+\i 'tables/tbl_marc.sql'
+\i 'tables/tbl_marc_load.sql'
+\i 'tables/tbl_marc_indexes.sql'
+
+-- policy table 
+\i 'tables/tbl_policy.sql'
+\i 'tables/tbl_policy_load.sql'
+\i 'tables/tbl_policy_indexes.sql'
+
+-- transit table 
+\i 'tables/tbl_transit.sql'
+\i 'tables/tbl_transit_load.sql'
+\i 'tables/tbl_transit_indexes.sql'
+
+-- ucat table 
+\i 'tables/tbl_ucat.sql'
+\i 'tables/tbl_ucat_load.sql'
+\i 'tables/tbl_ucat_indexes.sql'
+
+-- users table 
+\i 'tables/tbl_userxinfo.sql'
+\i 'tables/tbl_userxinfo_load.sql'
+\i 'tables/tbl_userxinfo_indexes.sql'
+
+-- users table 
+\i 'tables/tbl_users.sql'
+\i 'tables/tbl_users_load.sql'
+\i 'tables/tbl_users_indexes.sql'
+
+-- create the base views.  used for browsing the tables by administrators
 \i 'views/vw_billpayments.sql'
 \i 'views/vw_bills_billpayments.sql'
 \i 'views/vw_bills.sql'
@@ -175,14 +175,14 @@ create extension postgis;
 \i 'views/vw_users_public.sql'
 \i 'views/vw_users_geography.sql'
 
---32. create the open data views. these will ensure anonymisation and privacy considerations.
+-- create the open data views. these will ensure anonymisation and privacy considerations.
 \i 'views/vw_opendata_billpayments.sql'
 \i 'views/vw_opendata_catalogue.sql'
 \i 'views/vw_opendata_holds.sql'
 \i 'views/vw_opendata_items.sql'
 \i 'views/vw_opendata_transits.sql'
 
---33. create the dashboard views. these are used in visualisations so should only return specific aspects of the data
+-- create the dashboard views. these are used in visualisations so should only return specific aspects of the data
 \i 'views/vw_dashboard_bills_billsbydeprivation.sql'
 \i 'views/vw_dashboard_bills_billsbyreasonauthority.sql'
 \i 'views/vw_dashboard_bills_billsbyreasonlibrary.sql'
