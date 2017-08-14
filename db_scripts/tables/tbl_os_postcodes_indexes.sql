@@ -5,7 +5,7 @@
 -- index: cuix_ospostcodes_postcode
 -- drop index cuix_ospostcodes_postcode;
 create unique index cuix_ospostcodes_postcode on os_postcodes using btree (postcode);
-alter table os_postcodes cluster on cix_postcode;
+alter table os_postcodes cluster on cuix_ospostcodes_postcode;
 
 -- index: uix_ospostcodes_postcodetrim
 -- drop index uix_ospostcodes_postcodetrim;

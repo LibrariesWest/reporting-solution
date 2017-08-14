@@ -9,7 +9,7 @@ select
     	when vu.county_name is null then vu.district_name
         else vu.county_name
     end as resident_authority,
-	vu.ward as ward_code,
+	vu.ward_code as ward_code,
 	vu.ward_name as ward_name,
     count(*) as users
 from vw_users_geography vu

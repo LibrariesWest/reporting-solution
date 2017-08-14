@@ -5,7 +5,7 @@
 -- drop view vw_dashboard_usage_loansbyward;
 create or replace view vw_dashboard_usage_loansbyward as
 select
-	u.ward,
+	u.ward_name,
     count(ch.user_key) as loans
 from
 	(	select user_key, number_of_renewals from charge where date_charged > (now() - interval '1 year')

@@ -7,7 +7,7 @@ create or replace view vw_dashboard_usage_renewalsbyauthorityanddeprivation as
 select
     fn_librarytoauthority(lp.policy_name) as authority,
     to_char(date_charged, 'YYYYMM') as month,
-    coalesce(vu.imd_decile, 'Unknown') as imd_decile,
+    coalesce(vu.imd_decile, null) as imd_decile,
     sum(ch.number_of_renewals) as renewals
 from
     (   select key, user_key, number_of_renewals, library, date_charged from charge where date_charged > (now() - interval '1 year')
@@ -17,5 +17,5 @@ from
 join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = ch.library
 join vw_users_geography vu on vu.user_key = ch.user_key
 where fn_librarytoauthority(lp.policy_name) is not null
-group by authority, month, vu.imd_decile
-order by authority, month, vu.imd_decile;
+group by fn_librarytoauthority(lp.policy_name), month, vu.imd_decile
+order by fn_librarytoauthority(lp.policy_name), month, vu.imd_decile;
