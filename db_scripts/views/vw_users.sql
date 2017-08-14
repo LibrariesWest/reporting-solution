@@ -5,6 +5,7 @@
 -- drop view vw_users;
 create or replace view vw_users as
 select
+    u.user_key,
     u.id,
     up.policy_name as profile,
     us.policy_name as status,
