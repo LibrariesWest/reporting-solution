@@ -6,6 +6,9 @@
 create or replace view vw_transits as
 select
     i.id as item_id,
+    t.catalogue_key,
+    t.call_sequence,
+    t.copy_number,
     ip.policy_name as item_type,
     ihl.policy_name as home_location,
     icl.policy_name as current_location,

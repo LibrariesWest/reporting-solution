@@ -3,7 +3,7 @@
 ---------------------------------------------------------------
 
 -- drop view vw_catalogue;
-create or replace view public.vw_catalogue as 
+create or replace view vw_catalogue as 
 select
     c.catalogue_key,
     c.flexible_key,
