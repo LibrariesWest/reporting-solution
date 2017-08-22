@@ -7,7 +7,7 @@ create or replace view vw_catalogue as
 select
     c.catalogue_key,
     c.flexible_key,
-    c.year_of_publication as published,
+    c.year_of_publication,
     pf.policy_name as format,
     ( select rtrim(rtrim((string_to_array(marc.tag, '~'))[1], ':'), '/') as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '245' limit 1) as title,
     ( select rtrim((string_to_array(marc.tag, '~'))[1], ',') as string_to_array from marc where marc.marc = c.marc and marc.tag_number = '100' limit 1) as author,

@@ -162,6 +162,7 @@ create extension postgis;
 \i 'views/vw_charges.sql'
 \i 'views/vw_chargeshistory.sql'
 \i 'views/vw_charges_chargeshistory.sql'
+\i 'views/vw_booksonprescription.sql'
 \i 'views/vw_holds.sql'
 \i 'views/vw_holds_interlending.sql'
 \i 'views/vw_holds_interlending_av.sql'

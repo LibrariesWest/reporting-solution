@@ -12,13 +12,7 @@ select
     item_type,
     home_location,
     current_location,
-    category_1,
-    category_2,
-    category_3,
-    category_4,
-    category_5,
     date_created,
-    last_activity_date,
     date_last_charged,
     price,
     shadowed
