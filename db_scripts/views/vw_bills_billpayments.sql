@@ -23,6 +23,6 @@ select
     bp.library as billpayment_library,
     bp.authority as billpayment_authority,
     bp.payment_type,
-    bp.amount as billpayment_amount
+    bp.payment_amount as billpayment_amount
 from vw_bills b
 join vw_billpayments bp on bp.bill_number = b.bill_number and bp.user_key = b.user_key;

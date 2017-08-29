@@ -5,16 +5,13 @@
 -- drop view vw_dashboard_bills_billsbyreasonlibrary;
 create or replace view vw_dashboard_bills_billsbyreasonlibrary as
 select
-    fn_librarytoauthority(bl.policy_name) as authority,
-    bl.policy_name as library,
-    br.policy_name as reason,
+	b.bill_authority,
+    b.library,
+	b.reason,
     count(*) as number_of_bills,
-	sum(b.amount_billed) as total_billed
-from bill b
-join users u
-on u.user_key = b.user_key
-join policy br on br.policy_type = 'BRSN' and br.policy_number = b.reason
-join policy bl on bl.policy_type = 'LIBR' and bl.policy_number = b.library
-where b.date_billed > now() - interval '1 year'
-group by fn_librarytoauthority(bl.policy_name), bl.policy_name, br.policy_name
-order by fn_librarytoauthority(bl.policy_name), bl.policy_name, br.policy_name;
+    sum(b.amount) as total_billed
+from vw_bills b
+join vw_users u on u.user_key = b.user_key
+where b.date_billed > (now() - interval '1 year')
+group by b.bill_authority, b.library, b.reason
+order by b.bill_authority, b.library, b.reason;

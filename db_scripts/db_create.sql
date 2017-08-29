@@ -36,6 +36,7 @@ create extension postgis;
 
 -- output area lookups table
 \i 'tables/tbl_ons_oas_lookups.sql'
+\i 'tables/tbl_ons_oas_lookups_load.sql'
 \i 'tables/tbl_ons_oas_lookups_indexes.sql'
 
 -- lower super output areas table

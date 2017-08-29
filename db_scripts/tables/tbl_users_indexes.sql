@@ -50,3 +50,7 @@ create index ix_users_access on users using btree (user_access);
 -- index: ix_users_status
 -- drop index ix_users_status;
 create index ix_users_status on users using btree (status);
+
+-- index: ix_users_postcodetrim
+-- drop index ix_users_postcodetrim;
+create index ix_users_postcodetrim on users using btree (postcode_trim);

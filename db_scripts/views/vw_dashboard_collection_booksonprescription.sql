@@ -17,18 +17,13 @@ from
 		bop.title,
 		bop.isbn,
 		ch.user_key,
-		fn_librarytoauthority(lp.policy_name) as authority,
+		ch.charge_authority as authority,
 		count(key) as issues,
 		sum(ch.number_of_renewals) as renewals
-	from
-	(	select user_key, date_charged, key, library, catalogue_key, call_sequence, copy_number, number_of_renewals from charge where date_charged >= (now() - interval '1 year')
-		union all 
-		select user_key, date_charged, key, library, catalogue_key, call_sequence, copy_number, number_of_renewals from chargehist where date_charged >= (now() - interval '1 year')
-	) as ch
-	join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = ch.library
-	join vw_catalogue c on c.catalogue_key = ch.catalogue_key
+	from vw_charges_chargehistory ch
+	join vw_catalogue c on c.catalogue_key = ch.catalogue_key and ch.date_charged > (now() - interval '1 year')
 	join booksonprescription bop on c.isbn = bop.isbn
-	group by bop.type, bop.title, bop.isbn, user_key, fn_librarytoauthority(lp.policy_name)
+	group by bop.type, bop.title, bop.isbn, user_key, ch.charge_authority
 ) as bop_ch
 group by bop_ch.type, bop_ch.title, bop_ch.isbn, authority
 order by bop_ch.type, bop_ch.title, authority;

@@ -15,15 +15,13 @@ from (
 			ST_Transform(ST_SimplifyPreserveTopology(ow.geom, 50), 4326) as geom
 			from
 				(	select
+						u.ward_name,
 						u.ward_code,
 						sum(ch.number_of_renewals) as renewals
-					from
-						(	select user_key, number_of_renewals from charge where date_charged > (now() - interval '1 year')
-							union all
-							select user_key, number_of_renewals from chargehist where date_charged > (now() - interval '1 year')
-						) ch
+					from vw_charges_chargeshistory ch
 					join vw_users_geography u on ch.user_key = u.user_key
-					group by u.ward_code) wc
+					where ch.date_charged > (now() - interval '1 year')
+					group by u.ward_name, u.ward_code) wc
 			join os_wards ow
 			on ow.code = wc.ward_code ) as lg
 		) as f

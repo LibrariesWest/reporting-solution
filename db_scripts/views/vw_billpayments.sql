@@ -13,7 +13,7 @@ select
     lp.policy_name as library,
     fn_librarytoauthority(lp.policy_name) as authority,
     ptp.policy_name as payment_type,
-    bp.payment_amount as amount
+    bp.payment_amount as payment_amount
 from billpayment bp
 join users u on u.user_key = bp.user_key
 join policy ptp on ptp.policy_number = bp.payment_type and ptp.policy_type = 'PTYP'
