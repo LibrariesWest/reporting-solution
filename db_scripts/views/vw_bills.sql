@@ -4,7 +4,7 @@
 
 -- drop view vw_bills;
 create or replace view vw_bills as 
-select 
+select
     u.user_key,
     b.bill_number,
     b.date_billed,
