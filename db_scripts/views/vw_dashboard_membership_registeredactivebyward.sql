@@ -13,4 +13,5 @@ select
 	vu.ward_name as ward_name,
     count(*) as users
 from vw_users_geography vu
-group by ward_code, ward_name, resident_authority;
+where vu.last_activity_date > (now() - interval '1 year')
+group by resident_authority, ward_code, ward_name;

@@ -1,16 +1,15 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_holdsbyward
+-- view: vw_dashboard_reservations_holdsbyward
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_holdsbyward;
-create or replace view vw_dashboard_holdsbyward as 
+-- drop view vw_dashboard_reservations_holdsbyward;
+create or replace view vw_dashboard_reservations_holdsbyward as 
 select 
-    fn_librarytoauthority(lp.policy_name) as authority,
-    to_char(h.date_placed, 'YYYY-MM') as month,
+    u.ward_name,
+    u.ward_code,
     count(h.key) as holds
-from hold h
-join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = h.library
-where h.date_placed > (now() - interval '12 months')
-and fn_librarytoauthority(lp.policy_name) is not null
-group by (fn_librarytoauthority(lp.policy_name)), (to_char(h.date_placed, 'YYYY-MM'))
-order by (fn_librarytoauthority(lp.policy_name)), (to_char(h.date_placed, 'YYYY-MM'));
+from vw_holds h
+join vw_users_geography u on u.user_key = h.user_key
+where h.date_placed > (now() - interval '1 year')
+group by u.ward_name, u.ward_code
+order by u.ward_name, u.ward_code;

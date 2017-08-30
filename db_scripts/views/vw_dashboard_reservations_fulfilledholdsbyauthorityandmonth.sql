@@ -1,16 +1,16 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_reservations_fulfilledholdsbylibrary
+-- view: vw_dashboard_reservations_fulfilledholdsbyauthorityandmonth
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_reservations_fulfilledholdsbylibrary;
-create or replace view vw_dashboard_reservations_fulfilledholdsbylibrary as
+-- drop view vw_dashboard_reservations_fulfilledholdsbyauthorityandmonth;
+create or replace view vw_dashboard_reservations_fulfilledholdsbyauthorityandmonth as
 select
     h.pickup_authority,
-    h.pickup_library,
+    to_char(h.date_placed, 'YYYYMM') as month,
     count(h.key) as holds,
     avg(datediff('dd', h.date_placed, h.date_available)) as days_taken
 from vw_holds h
 where h.date_placed > (now() - interval '1 year')
 and h.date_available is not null
-group by pickup_authority, pickup_library
-order by pickup_authority, pickup_library;
+group by pickup_authority, month
+order by pickup_authority, month;

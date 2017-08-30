@@ -5,12 +5,10 @@
 -- drop view vw_dashboard_membership_borrowersbyward;
 create or replace view vw_dashboard_membership_borrowersbyward as
 select
-    vu.ward_name as ward,
-    count(ch.user_key) as renewals
-from
-    (	select user_key from charge where date_charged > (now() - interval '1 year')
-        union all
-        select user_key from chargehist where date_charged > (now() - interval '1 year')
-	) ch
+    vu.ward_name,
+    vu.ward_code,
+    count(ch.user_key) as borrowers
+from vw_charges_chargeshistory ch
 join vw_users_geography vu on ch.user_key = vu.user_key
-group by vu.ward_name;
+group by vu.ward_name, vu.ward_name
+order by vu.ward_name, vu.ward_name;

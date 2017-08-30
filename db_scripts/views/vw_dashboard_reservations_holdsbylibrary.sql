@@ -1,16 +1,14 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_holds
+-- view: vw_dashboard_reservations_holdsbylibrary
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_holds;
+-- drop view vw_dashboard_reservations_holdsbylibrary;
 create or replace view vw_dashboard_reservations_holdsbylibrary as 
-select 
-    fn_librarytoauthority(lp.policy_name) as authority,
-    to_char(h.date_placed, 'YYYY-MM') as month,
+select
+    h.pickup_authority,
+    h.pickup_library,
     count(h.key) as holds
-from hold h
-join policy lp on lp.policy_type = 'LIBR' and lp.policy_number = h.library
-where h.date_placed > (now() - interval '12 months')
-and fn_librarytoauthority(lp.policy_name) is not null
-group by (fn_librarytoauthority(lp.policy_name)), (to_char(h.date_placed, 'YYYY-MM'))
-order by (fn_librarytoauthority(lp.policy_name)), (to_char(h.date_placed, 'YYYY-MM'));
+from vw_holds h
+where h.date_placed > (now() - interval '1 year')
+group by pickup_authority, pickup_library
+order by pickup_authority, pickup_library;

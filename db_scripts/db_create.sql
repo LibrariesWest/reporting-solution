@@ -192,8 +192,10 @@ create extension postgis;
 \i 'views/vw_dashboard_bills_paymentsbylibrary.sql'
 
 \i 'views/vw_dashboard_collection_booksonprescription.sql'
+
 \i 'views/vw_dashboard_collection_itemsbytypeandauthority.sql'
 \i 'views/vw_dashboard_collection_itemsbytypeandlibrary.sql'
+
 \i 'views/vw_dashboard_collection_mostissuedandreneweditems.sql'
 \i 'views/vw_dashboard_collection_mostissueditems.sql'
 \i 'views/vw_dashboard_collection_mosttravelleditems.sql'
@@ -204,6 +206,7 @@ create extension postgis;
 \i 'views/vw_dashboard_membership_borrowersbylibraryanddeprivation.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward_geo.sql'
+
 \i 'views/vw_dashboard_membership_registeredactivebyauthority.sql'
 \i 'views/vw_dashboard_membership_registeredactivebylibrary.sql'
 \i 'views/vw_dashboard_membership_registeredactivebyresidentauthority.sql'
@@ -217,24 +220,28 @@ create extension postgis;
 \i 'views/vw_dashboard_movement_transitsbyitemauthority.sql'
 \i 'views/vw_dashboard_movement_transitsoversixweeks.sql'
 
-\i 'views/vw_dashboard_reservations_fulfilledholdsbyauthority.sql'
-\i 'views/vw_dashboard_reservations_fulfilledholdsbyinternalexternal.sql'
+\i 'views/vw_dashboard_reservations_fulfilledholdsbyauthorityandmonth.sql'
+\i 'views/vw_dashboard_reservations_fulfilledholdsbyauthorityandmonthexternal.sql'
+\i 'views/vw_dashboard_reservations_fulfilledholdsbyauthorityandmonthinternal.sql'
 \i 'views/vw_dashboard_reservations_fulfilledholdsbylibrary.sql'
-\i 'views/vw_dashboard_reservations_holdsbyauthority.sql'
-\i 'views/vw_dashboard_reservations_holdsbyclient.sql'
+
+\i 'views/vw_dashboard_reservations_holdsbyauthorityandmonth.sql'
+\i 'views/vw_dashboard_reservations_holdsbyauthorityandclient.sql'
 \i 'views/vw_dashboard_reservations_holdsbylibrary.sql'
 \i 'views/vw_dashboard_reservations_holdsbyward.sql'
 \i 'views/vw_dashboard_reservations_holdsbyward_geo.sql'
 \i 'views/vw_dashboard_reservations_holdsoversixweeks.sql'
+
 \i 'views/vw_dashboard_reservations_interlendingbyauthorityav.sql'
 \i 'views/vw_dashboard_reservations_interlendingbyauthoritybooks.sql'
 
-\i 'views/vw_dashboard_usage_loansbyauthority.sql'
+\i 'views/vw_dashboard_usage_loansbyauthorityandmonth.sql'
 \i 'views/vw_dashboard_usage_loansbyauthorityanddeprivation.sql'
 \i 'views/vw_dashboard_usage_loansbylibrary.sql'
 \i 'views/vw_dashboard_usage_loansbyward.sql'
 \i 'views/vw_dashboard_usage_loansbyward_geo.sql'
-\i 'views/vw_dashboard_usage_renewalsbyauthority.sql'
+
+\i 'views/vw_dashboard_usage_renewalsbyauthorityandmonth.sql'
 \i 'views/vw_dashboard_usage_renewalsbyauthorityanddeprivation.sql'
 \i 'views/vw_dashboard_usage_renewalsbylibrary.sql'
 \i 'views/vw_dashboard_usage_renewalsbyward.sql'
