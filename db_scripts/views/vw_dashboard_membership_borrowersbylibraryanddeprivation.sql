@@ -10,7 +10,7 @@ select
     count(auth.user_key) as borrowers
 from
     (   select distinct
-            user_key,
+            ch.user_key,
             ch.charge_authority,
             vu.imd_decile
         from vw_charges_chargeshistory ch

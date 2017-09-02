@@ -8,10 +8,11 @@ select row_to_json(fc)
 from (
 	select 'FeatureCollection' As type, array_to_json(array_agg(f)) as features
 	from (
-		select 'Feature' As type, ST_AsGeoJSON(lg.geom, 4)::json as geometry, row_to_json((select l from (select ward, loans) as l)) as properties
+		select 'Feature' As type, ST_AsGeoJSON(lg.geom, 4)::json as geometry, row_to_json((select l from (select ward_name, ward_code, users) as l)) as properties
 		from ( select
-			ow.ward_name as ward,
-			wc.holds,
+			ow.name as ward_name,
+			ow.code as ward_code,
+			wc.users,
 			ST_Transform(ST_SimplifyPreserveTopology(ow.geom, 50), 4326) as geom
 			from
 				(	select

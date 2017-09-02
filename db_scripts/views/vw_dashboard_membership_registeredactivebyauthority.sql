@@ -10,5 +10,5 @@ select
 from vw_users u
 where u.authority is not null
 and u.last_activity_date > (now() - interval '1 year')
-group by u.library
-order by u.library;
+group by u.authority
+order by u.authority;

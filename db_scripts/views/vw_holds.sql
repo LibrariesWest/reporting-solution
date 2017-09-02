@@ -7,6 +7,7 @@ create or replace view vw_holds as
 select
     h.key,
     u.id as user_id,
+    h.user_key,
     i.id as item_id,
     lp.policy_name as placed_library,
     fn_librarytoauthority(lp.policy_name) as placed_authority,

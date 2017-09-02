@@ -10,5 +10,5 @@ select
     count(ch.user_key) as borrowers
 from vw_charges_chargeshistory ch
 join vw_users_geography vu on ch.user_key = vu.user_key
-group by vu.ward_name, vu.ward_name
-order by vu.ward_name, vu.ward_name;
+group by vu.ward_name, vu.ward_code
+order by vu.ward_name, vu.ward_code;

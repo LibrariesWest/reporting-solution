@@ -11,7 +11,7 @@ select
     count(auth.user_key) as borrowers
 from
     (   select distinct
-            user_key,
+            ch.user_key,
             ch.charge_authority,
             ch.charge_library,
             vu.imd_decile

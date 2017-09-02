@@ -9,6 +9,8 @@ select
     u.id as user_id,
     i.id as item_id,
     i.catalogue_key,
+    i.call_sequence,
+    i.copy_number,
     lp.policy_name as charge_library,
     fn_librarytoauthority(lp.policy_name) as charge_authority,
     c.date_charged as date_charged,
