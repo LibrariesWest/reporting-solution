@@ -5,10 +5,9 @@
 -- drop view vw_charges_booksonprescription;
 create or replace view vw_charges_booksonprescription as
 select
-	ch.key,
 	ch.date_charged,
 	ch.user_key,
-	ch.library,
+	ch.charge_library,
 	bop.type,
 	bop.title,
 	bop.isbn,

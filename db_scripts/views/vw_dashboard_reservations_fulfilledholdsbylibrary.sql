@@ -8,7 +8,7 @@ select
     h.pickup_authority,
     h.pickup_library,
     count(h.key) as holds,
-    avg(datediff('dd', h.date_placed, h.date_available)) as days_taken
+    avg(h.date_available - h.date_placed) as days_taken
 from vw_holds h
 where h.date_placed > (now() - interval '1 year')
 and h.date_available is not null
