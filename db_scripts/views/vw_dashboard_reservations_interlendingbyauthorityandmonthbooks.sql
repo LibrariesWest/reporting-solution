@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_reservations_interlendingbyauthoritybooks
+-- view: vw_dashboard_reservations_interlendingbyauthorityandmonthbooks
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_reservations_interlendingbyauthoritybooks;
-create or replace view vw_dashboard_reservations_interlendingbyauthoritybooks as
+-- drop view vw_dashboard_reservations_interlendingbyauthorityandmonthbooks;
+create or replace view vw_dashboard_reservations_interlendingbyauthorityandmonthbooks as
 select
     to_char(h.date_available, 'YYYYMM') as month_available,
     h.item_authority,

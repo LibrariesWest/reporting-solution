@@ -195,12 +195,10 @@ create extension postgis;
 \i 'views/vw_dashboard_bills_billsbyreasonlibrary.sql'
 \i 'views/vw_dashboard_bills_paymentsbyauthority.sql'
 \i 'views/vw_dashboard_bills_paymentsbylibrary.sql'
-
-\i 'views/vw_dashboard_collection_booksonprescription.sql'
+\i 'views/vw_dashboard_bills_paymentsbyauthorityanditemtypeandmonth.sql'
 
 \i 'views/vw_dashboard_collection_itemsbytypeandauthority.sql'
 \i 'views/vw_dashboard_collection_itemsbytypeandlibrary.sql'
-
 \i 'views/vw_dashboard_collection_mostissuedandreneweditems.sql'
 \i 'views/vw_dashboard_collection_mostissueditems.sql'
 \i 'views/vw_dashboard_collection_mosttravelleditems.sql'
@@ -237,6 +235,7 @@ create extension postgis;
 \i 'views/vw_dashboard_reservations_holdsbyward_geo.sql'
 \i 'views/vw_dashboard_reservations_holdsoversixweeks.sql'
 
+\i 'views/vw_dashboard_reservations_interlendingbyauthorityandmonthanditemtype.sql'
 \i 'views/vw_dashboard_reservations_interlendingbyauthorityandmonthav.sql'
 \i 'views/vw_dashboard_reservations_interlendingbyauthorityandmonthbooks.sql'
 
@@ -246,6 +245,7 @@ create extension postgis;
 \i 'views/vw_dashboard_usage_loansbyward.sql'
 \i 'views/vw_dashboard_usage_loansbyward_geo.sql'
 
+\i 'views/vw_dashboard_usage_booksonprescription.sql'
 \i 'views/vw_dashboard_usage_renewalsbyauthorityandmonth.sql'
 \i 'views/vw_dashboard_usage_renewalsbyauthorityanddeprivation.sql'
 \i 'views/vw_dashboard_usage_renewalsbylibrary.sql'

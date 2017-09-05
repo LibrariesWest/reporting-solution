@@ -9,7 +9,7 @@ select
     i.item_type,
     count(*)
 from vw_items i
-where i.shadowed = 0 and i.authority is not null
+where i.shadowed = 0
 and i.current_location not in (
     'DISCARD',
     'LOST',

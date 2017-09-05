@@ -39,9 +39,9 @@ join policy it on it.policy_type = 'ITYP' and it.policy_number = i.type
 join policy il on il.policy_type = 'LOCN' and il.policy_number = i.current_location
 join policy ihl on ihl.policy_type = 'LOCN' and ihl.policy_number = i.home_location
 join policy rs on rs.policy_type = 'RESERVE_STATUS' and rs.policy_number = i.reserve_status
-join policy c1 on c1.policy_type = 'ICT1' and c1.policy_number = i.category1
-join policy c2 on c2.policy_type = 'ICT2' and c2.policy_number = i.category2
-join policy c3 on c3.policy_type = 'ICT3' and c3.policy_number = i.category3
-join policy c4 on c4.policy_type = 'ICT4' and c4.policy_number = i.category4
-join policy c5 on c5.policy_type = 'ICT5' and c5.policy_number = i.category5
-where fn_librarytoauthority(ip.policy_name) is not null;;
+left join policy c1 on c1.policy_type = 'ICT1' and c1.policy_number = i.category1
+left join policy c2 on c2.policy_type = 'ICT2' and c2.policy_number = i.category2
+left join policy c3 on c3.policy_type = 'ICT3' and c3.policy_number = i.category3
+left join policy c4 on c4.policy_type = 'ICT4' and c4.policy_number = i.category4
+left join policy c5 on c5.policy_type = 'ICT5' and c5.policy_number = i.category5
+where fn_librarytoauthority(ip.policy_name) is not null;

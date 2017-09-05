@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_membership_registeredbyward_geo
+-- view: vw_dashboard_membership_registeredactivebyward_geo
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_membership_registeredbyward_geo;
-create or replace view vw_dashboard_membership_registeredbyward_geo as
+-- drop view vw_dashboard_membership_registeredactivebyward_geo;
+create or replace view vw_dashboard_membership_registeredactivebyward_geo as
 select row_to_json(fc)
 from (
 	select 'FeatureCollection' As type, array_to_json(array_agg(f)) as features

@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_membership_registeredbyward
+-- view: vw_dashboard_membership_registeredactivebyward
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_membership_registeredbyward;
-create or replace view vw_dashboard_membership_registeredbyward as
+-- drop view vw_dashboard_membership_registeredactivebyward;
+create or replace view vw_dashboard_membership_registeredactivebyward as
 select
 	case
     	when vu.county_name is null then vu.district_name
