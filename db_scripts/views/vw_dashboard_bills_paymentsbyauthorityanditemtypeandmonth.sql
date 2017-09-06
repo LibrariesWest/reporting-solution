@@ -5,8 +5,8 @@
 -- drop view vw_dashboard_bills_paymentsbyauthorityanditemtypeandmonth;
 create or replace view vw_dashboard_bills_paymentsbyauthorityanditemtypeandmonth as
 select
-    to_char(bp.payment_date, 'YYYYMM') as payment_month,
     bp.payment_authority,
+    to_char(bp.payment_date, 'YYYYMM') as payment_month,
     bp.item_authority,
     bp.item_type,
     bp.reason,
