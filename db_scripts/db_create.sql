@@ -190,6 +190,8 @@ create extension postgis;
 \i 'views/vw_opendata_transits.sql'
 
 -- create the dashboard views. these are used in visualisations so should only return specific aspects of the data
+\i 'views/vw_dashboard_bills_billsbyauthorityandmonth.sql'
+\i 'views/vw_dashboard_bills_billsbyauthorityandmonthunpaid.sql'
 \i 'views/vw_dashboard_bills_billsbydeprivation.sql'
 \i 'views/vw_dashboard_bills_billsbyreasonauthority.sql'
 \i 'views/vw_dashboard_bills_billsbyreasonlibrary.sql'

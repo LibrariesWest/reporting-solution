@@ -3,6 +3,8 @@
 -- custom reporting dashboard definitions export
 ------------------------------------------------------
 
+copy(select * from vw_dashboard_bills_billsbyauthorityandmonth) to 'c:\dbdata\dashboard\bills_billsbyauthorityandmonth.csv' csv header;
+copy(select * from vw_dashboard_bills_billsbyauthorityandmonthunpaid) to 'c:\dbdata\dashboard\bills_billsbyauthorityandmonthunpaid.csv' csv header;
 copy(select * from vw_dashboard_bills_billsbydeprivation) to 'c:\dbdata\dashboard\bills_billsbydeprivation.csv' csv header;
 copy(select * from vw_dashboard_bills_billsbyreasonauthority) to 'c:\dbdata\dashboard\bills_billsbyreasonauthority.csv' csv header;
 copy(select * from vw_dashboard_bills_billsbyreasonlibrary) to 'c:\dbdata\dashboard\bills_billsbyreasonlibrary.csv' csv header;
