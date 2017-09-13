@@ -17,7 +17,7 @@ select
     fn_librarytoauthority(lp.policy_name) as bill_authority,
     br.policy_name as reason,
     b.amount_billed as amount,
-    b.paid_in_full_flag as paid
+    b.paid_in_full_flag
 from bill b
 join users u on u.user_key = b.user_key
 join item i on i.catalogue_key = b.catalogue_key and i.call_sequence = b.call_sequence and i.copy_number = b.copy_number
