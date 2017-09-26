@@ -17,7 +17,7 @@ select
     b.bill_authority,
     b.reason,
     b.amount as billed_amount,
-    b.paid,
+    b.paid_in_full_flag,
     bp.bill_payment_key,
     bp.payment_date as payment_date,
     bp.library as payment_library,
