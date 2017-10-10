@@ -5,6 +5,7 @@
 -- drop view vw_chargeshistory;
 create or replace view vw_chargeshistory as 
 select 
+    c.key,
     u.user_key,
     u.id as user_id,
     i.id as item_id,

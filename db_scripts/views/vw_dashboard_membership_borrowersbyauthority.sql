@@ -9,7 +9,7 @@ select
     count(auth.user_key) as borrowers
 from
     (   select distinct 
-            user_key,
+            ch.user_key,
             ch.charge_authority
         from vw_charges_chargeshistory ch
         where ch.date_charged > (now() - interval '1 year')) auth

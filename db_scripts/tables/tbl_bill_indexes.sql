@@ -26,3 +26,7 @@ create index ix_bill_date on bill using btree (date_billed);
 -- index: ix_bill_reason
 -- drop index ix_bill_reason;
 create index ix_bill_reason on bill using btree (reason);
+
+-- index: ix_bill_paid
+-- drop index ix_bill_paid;
+create index ix_bill_paid on bill using btree (paid_in_full_flag);

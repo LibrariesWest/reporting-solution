@@ -18,7 +18,7 @@ from
 		bop.isbn,
 		ch.user_key,
 		ch.charge_authority as authority,
-		count(*) as issues,
+		count(ch.key) as issues,
 		sum(ch.number_of_renewals) as renewals
 	from vw_charges_chargeshistory ch
 	join vw_catalogue c on c.catalogue_key = ch.catalogue_key and ch.date_charged > (now() - interval '1 year')

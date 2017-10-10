@@ -8,8 +8,8 @@ select
     bp.authority,
     bp.library,
     bp.payment_type,
-    count(bill_payment_key) as number_of_payments,
-    sum(payment_amount) as total_paid
+    count(bp.bill_payment_key) as number_of_payments,
+    sum(bp.payment_amount) as total_paid
 from vw_billpayments bp
 where bp.payment_date > (now() - interval '1 year')
 group by bp.authority, bp.library, bp.payment_type

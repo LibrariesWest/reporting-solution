@@ -4,7 +4,8 @@
 
 -- drop view vw_charges;
 create or replace view vw_charges as 
-select 
+select
+    c.key,
     u.user_key,
     u.id as user_id,
     i.id as item_id,

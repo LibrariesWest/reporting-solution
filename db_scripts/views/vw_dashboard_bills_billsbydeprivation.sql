@@ -8,7 +8,7 @@ select
 	b.bill_authority,
 	b.reason,
     u.imd_decile,
-    count(*) as number_of_bills,
+    count(b.bill_number) as number_of_bills,
     sum(b.amount) as total_billed
 from vw_bills b
 join vw_users_geography u on u.user_key = b.user_key

@@ -159,6 +159,10 @@ create extension postgis;
 \i 'tables/tbl_users_load.sql'
 \i 'tables/tbl_users_indexes.sql'
 
+-- discards table for doing discard analysis
+\i 'tables/tbl_discards.sql'
+\i 'tables/tbl_discards_indexes.sql'
+
 -- create the base views.  used for browsing the tables by administrators
 \i 'views/vw_bills.sql'
 \i 'views/vw_billpayments.sql'

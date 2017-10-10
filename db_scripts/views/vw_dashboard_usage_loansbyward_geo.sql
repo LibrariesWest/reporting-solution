@@ -18,7 +18,7 @@ from (
 				(	select
 						u.ward_name,
 						u.ward_code,
-						count(ch.user_key) as loans
+						count(ch.key) as loans
 					from vw_charges_chargeshistory ch
 					join vw_users_geography u on ch.user_key = u.user_key
 					where ch.date_charged > (now() - interval '1 year')
