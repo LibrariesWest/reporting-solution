@@ -7,7 +7,7 @@ create or replace view vw_dashboard_collection_itemsbytypeandauthority as
 select
     i.authority,
     i.item_type,
-    count(i.item_id)
+    count(i.item_id) as number_of_items
 from vw_items i
 where i.shadowed = 0
 and i.current_location not in (
