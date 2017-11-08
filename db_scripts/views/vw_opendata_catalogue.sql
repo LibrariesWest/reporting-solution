@@ -17,4 +17,5 @@ and exists (select
     from vw_items i 
     where c.catalogue_key = i.catalogue_key 
     and i.shadowed = 0
-    and i.current_location not in ('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM'));
+    and i.current_location not in 
+	('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM'));

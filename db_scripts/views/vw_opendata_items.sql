@@ -15,7 +15,8 @@ select
     date_created,
     date_last_charged,
     price,
-    shadowed
+	total_checkouts,
+    total_renewals
 from vw_items 
 where shadowed = 0
-and current_location not in ('DISCARD');
+and current_location not in ('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM');
