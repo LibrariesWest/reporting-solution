@@ -13,7 +13,11 @@ select
     pickup_authority,
     to_char(date_placed, 'YYYYMM') as month_placed,
 	to_char(date_available, 'YYYYMM') as month_available,
-    client,
+	case 
+		when client = 'WS_DS' then 'Website'
+		when client = 'WS_PUBLIC' then 'App'
+		when client = 'WORKFLOWS' then 'Branch'
+	end as reservation_method,
     round(avg(date_available - date_placed)) as days_taken,
     count(h.key) as holds
 from vw_holds h

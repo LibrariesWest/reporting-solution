@@ -17,6 +17,8 @@ select
     price,
 	total_checkouts,
     total_renewals
-from vw_items 
+from vw_items
+-- don't include shadowed items
 where shadowed = 0
+-- also dont include missing and lost
 and current_location not in ('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM');

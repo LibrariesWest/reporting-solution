@@ -4,12 +4,12 @@
 
 -- drop view vw_opendata_catalogue;
 create or replace view vw_opendata_catalogue as select
-    c.flexible_key,
-    c.title,
-    c.author,
-    c.isbn,
-    c.year_of_publication,
-    c.date_created
+    c.flexible_key as flex_key,
+    c.title as title,
+    c.author as author,
+    c.isbn as ISBN,
+    c.year_of_publication as published_year,
+    c.date_created as created
 from vw_catalogue c
 where c.shadowed = 0
 and exists (select 
