@@ -21,7 +21,7 @@ select
     hl.policy_name as home_library,
     fn_librarytoauthority(hl.policy_name) as home_authority,
     pr.policy_name as transit_reason,
-	i.shadowed
+	i.shadow
 from transit t
 join item i on t.catalogue_key = i.catalogue_key and t.call_sequence = i.call_sequence and t.copy_number = i.copy_number
 left join hold h on h.key = t.hold_key 
