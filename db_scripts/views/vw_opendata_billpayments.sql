@@ -5,7 +5,7 @@
 -- drop view vw_opendata_billpayments;
 create or replace view vw_opendata_billpayments as
 select
-    to_char(bp.payment_date, 'YYYYMM') as month_paid,
+    to_char(bp.payment_date, 'YYYY-MM') as month_paid,
     bp.payment_authority as payment_authority,
     bp.payment_library as payment_library,
     bp.reason as bill_reason,
