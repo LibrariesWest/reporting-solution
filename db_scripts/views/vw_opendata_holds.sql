@@ -5,14 +5,11 @@
 -- drop view vw_opendata_holds;
 create or replace view vw_opendata_holds as
 select
-    placed_library,
-    placed_authority,
     item_library,
     item_authority,
     pickup_library,
     pickup_authority,
     to_char(date_placed, 'YYYYMM') as month_placed,
-	to_char(date_available, 'YYYYMM') as month_available,
 	case 
 		when client = 'WS_DS' then 'Website'
 		when client = 'WS_PUBLIC' then 'App'

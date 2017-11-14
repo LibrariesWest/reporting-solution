@@ -5,7 +5,7 @@
 -- drop view vw_opendata_bills;
 create or replace view vw_opendata_bills as
 select
-    to_char(b.date_billed, 'YYYYMM') as month_billed,
+    to_char(b.date_billed, 'YYYY-MM-DD') as date,
     b.bill_authority as bill_authority,
     b.bill_library as bill_library,
 	b.item_type as item_type,

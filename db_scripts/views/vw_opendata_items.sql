@@ -7,16 +7,13 @@ create or replace view vw_opendata_items as
 select
     catalogue_flex_key,
     item_id,
-    library,
     authority,
+    library,
     item_type,
-    home_location,
-    current_location,
-    date_created,
-    date_last_charged,
+    date_created as created,
     price,
-	total_checkouts,
-    total_renewals
+	total_checkouts as issues,
+    total_renewals as renewals
 from vw_items
 -- don't include shadowed items
 where shadowed = 0
