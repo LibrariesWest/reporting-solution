@@ -19,4 +19,4 @@ select
     count(h.key) as holds
 from vw_holds h
 where h.date_available is not null
-group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, month_available, client;
+group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, client;

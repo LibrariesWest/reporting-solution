@@ -5,7 +5,7 @@
 -- drop view vw_cashmanagement;
 create or replace view vw_cashmanagement as 
 select 
-    to_char(t.timestamp, 'YYYY-MM-DD') as date,
+    to_char(t.timestamp, 'YYYY-MM-DD') as date_paid,
     fn_librarytoauthority(l.policy_name) as authority,
     l.policy_name as library,
     case when ity.policy_name is not null then i.description
@@ -26,5 +26,5 @@ left join policy tp on tp.policy_type = 'TXN_TYP' and tp.policy_number = t.trans
 left join policy ity on ity.policy_type = 'ITYP' and ity.policy_number = i.item_type
 left join policy itty on itty.policy_type = 'ITYP' and itty.policy_number = it.type
 where t.timestamp >= '2016-06-07' and fn_librarytoauthority(l.policy_name) is not null
-order by to_char(t.timestamp, 'YYYY-MM-DD')
-group by to_char(t.timestamp, 'YYYY-MM-DD'), fn_librarytoauthority(l.policy_name), l.policy_name, payment_reason;
+group by to_char(t.timestamp, 'YYYY-MM-DD'), fn_librarytoauthority(l.policy_name), l.policy_name, payment_reason
+order by to_char(t.timestamp, 'YYYY-MM-DD');
