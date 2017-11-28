@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate ons_census_sw_ethnicity;
-copy ons_census_sw_ethnicity from 'c:\dbdata\ons\ons_census_sw_ethnicity.csv' delimiter ',' csv header;
+copy ons_census_sw_ethnicity from 'c:\dbdata\ons\oa_sw_ethnicgroup.csv' delimiter ',' csv header;

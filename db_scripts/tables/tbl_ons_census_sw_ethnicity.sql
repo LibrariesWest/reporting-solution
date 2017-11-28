@@ -31,5 +31,5 @@ create table ons_census_sw_ethnicity
     other integer,
     other_arab integer,
     other_anyother integer,
-	constraint pk_onscensusswreligions_code primary key (oa_code)
+	constraint pk_onscensusswethnicity_code primary key (oa_code)
 );
