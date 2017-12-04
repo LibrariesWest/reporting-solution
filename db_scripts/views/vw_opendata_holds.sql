@@ -9,7 +9,7 @@ select
     item_authority,
     pickup_library,
     pickup_authority,
-    to_char(date_placed, 'YYYYMM') as month_placed,
+    to_char(date_placed, 'YYYY-MM') as month_placed,
 	case 
 		when client = 'WS_DS' then 'Website'
 		when client = 'WS_PUBLIC' then 'App'
@@ -19,4 +19,4 @@ select
     count(h.key) as holds
 from vw_holds h
 where h.date_available is not null
-group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, client;
+group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, reservation_method;

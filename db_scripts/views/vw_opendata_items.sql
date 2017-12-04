@@ -5,7 +5,7 @@
 -- drop view vw_opendata_items;
 create or replace view vw_opendata_items as
 select
-    catalogue_flex_key,
+    catalogue_flex_key as catalogue_flex_key,
     item_id,
     authority,
     library,

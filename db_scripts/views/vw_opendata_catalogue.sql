@@ -3,8 +3,9 @@
 ---------------------------------------------------------------
 
 -- drop view vw_opendata_catalogue;
-create or replace view vw_opendata_catalogue as select
-    c.flexible_key as flex_key,
+create or replace view vw_opendata_catalogue as 
+select
+    c.flexible_key as catalogue_flex_key,
     c.title as title,
     c.author as author,
     c.isbn as ISBN,

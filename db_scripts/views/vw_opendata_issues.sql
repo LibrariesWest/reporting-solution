@@ -5,7 +5,7 @@
 -- drop view vw_opendata_issues;
 create or replace view vw_opendata_issues as
 select
-	to_char(ch.date_charged, 'YYYYMMDD') as date_issued,
+	to_char(ch.date_charged, 'YYYY-MM-DD') as date_issued,
 	ch.charge_authority as authority,
 	ch.charge_library as library,
 	i.item_type as item_type,
