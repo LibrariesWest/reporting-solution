@@ -2,7 +2,10 @@
 -- custom reporting database.  create script.
 ------------------------------------------------------
 
--- 1.  create the database.
+-- if the database exists, drop it
+drop database if exists customreporting;
+
+-- create the database.
 create database customreporting;
 \c customreporting;
 
@@ -257,3 +260,9 @@ create extension postgis;
 \i 'views/vw_dashboard_usage_renewalsbylibrary.sql'
 \i 'views/vw_dashboard_usage_renewalsbyward.sql'
 \i 'views/vw_dashboard_usage_renewalsbyward_geo.sql'
+
+-- then run our dashboard set of jobs
+\i 'jobs/jb_dashboard.sql'
+
+-- and then our open data set of jobs
+\i 'jobs/jb_opendata.sql'
