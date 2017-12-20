@@ -19,4 +19,5 @@ select
     count(h.key) as holds
 from vw_holds h
 where h.date_available is not null
+and date_placed >= '7-Jun-2016'
 group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, reservation_method;

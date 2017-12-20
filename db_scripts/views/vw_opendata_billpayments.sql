@@ -13,5 +13,6 @@ select
     count(bp.bill_payment_key) as number_of_payments,
     sum(bp.payment_amount) as total_paid
 from vw_bills_billpayments bp
+where bp.payment_date >= '7-Jun-2016'
 group by month_paid, payment_authority, payment_library, bill_reason, payment_type
 order by month_paid, payment_authority, payment_library, bill_reason, payment_type;

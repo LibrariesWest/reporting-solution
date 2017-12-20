@@ -13,5 +13,6 @@ select
     count(*) as number_of_bills,
     sum(amount) as total_billed
 from vw_bills b
+where b.date_billed >= '7-Jun-2016'
 group by month_billed, bill_authority, bill_library, item_type, bill_reason
 order by month_billed, bill_authority, bill_library, item_type, bill_reason;
