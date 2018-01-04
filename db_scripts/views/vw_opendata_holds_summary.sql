@@ -1,0 +1,16 @@
+---------------------------------------------------------------
+-- view: vw_opendata_holds_summary
+---------------------------------------------------------------
+
+-- drop view vw_opendata_holds_summary;
+create or replace view vw_opendata_holds_summary as
+select
+    item_authority,
+    pickup_authority,
+    to_char(date_placed, 'YYYY-MM') as month_placed,
+    round(avg(date_available - date_placed)) as days_taken,
+    count(h.key) as holds
+from vw_holds h
+where h.date_available is not null
+and date_placed >= '7-Jun-2016'
+group by placed_authority, item_authority, pickup_library, pickup_authority, month_placed;

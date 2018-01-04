@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_opendata_catalogue
+-- view: vw_opendata_titles
 ---------------------------------------------------------------
 
--- drop view vw_opendata_catalogue;
-create or replace view vw_opendata_catalogue as 
+-- drop view vw_opendata_titles;
+create or replace view vw_opendata_titles as 
 select
     c.flexible_key as catalogue_flex_key,
     c.title as title,

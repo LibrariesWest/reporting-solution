@@ -190,11 +190,22 @@ create extension postgis;
 \i 'views/vw_users_geography.sql'
 
 -- create the open data views. these will ensure anonymisation and privacy considerations.
+\i 'views/vw_opendata_bills.sql'
+\i 'views/vw_opendata_bills_summary.sql'
 \i 'views/vw_opendata_billpayments.sql'
-\i 'views/vw_opendata_catalogue.sql'
+\i 'views/vw_opendata_billpayments_summary.sql'
+\i 'views/vw_opendata_cashmanagement.sql'
 \i 'views/vw_opendata_holds.sql'
+\i 'views/vw_opendata_holds_summary.sql'
+\i 'views/vw_opendata_issues.sql'
+\i 'views/vw_opendata_issues_summary.sql'
 \i 'views/vw_opendata_items.sql'
+\i 'views/vw_opendata_items_summary.sql'
+\i 'views/vw_opendata_members.sql'
+\i 'views/vw_opendata_members_summary.sql'
+\i 'views/vw_opendata_titles.sql'
 \i 'views/vw_opendata_transits.sql'
+\i 'views/vw_opendata_transits_summary.sql'
 
 -- create the dashboard views. these are used in visualisations so should only return specific aspects of the data
 \i 'views/vw_dashboard_bills_billsbyauthorityandmonth.sql'
