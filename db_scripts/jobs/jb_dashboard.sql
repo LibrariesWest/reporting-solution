@@ -63,3 +63,6 @@ copy(select * from vw_dashboard_usage_renewalsbyauthorityandmonth) to 'c:\dbdata
 copy(select * from vw_dashboard_usage_renewalsbylibrary) to 'c:\dbdata\dashboard\usage_renewalsbylibrary.csv' csv header;
 copy(select * from vw_dashboard_usage_renewalsbyward_geo) to 'c:\dbdata\dashboard\usage_renewalsbyward.geojson';
 copy(select * from vw_dashboard_usage_renewalsbyward) to 'c:\dbdata\dashboard\usage_renewalsbyward.csv' csv header;
+
+-- create a javascript file with a variable showing the data updated
+copy(select 'var dashboard_updated = "' || to_char(now(), 'YYYY-MM-DD') || '"') to 'c:\dbdata\dashboard\dashboard-updated.js'
