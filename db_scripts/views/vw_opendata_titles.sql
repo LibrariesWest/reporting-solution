@@ -19,7 +19,7 @@ and exists (select
     where c.catalogue_key = i.catalogue_key 
     and i.shadowed = 0
     and i.current_location not in 
-	('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM'))
+	('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM')
     and i.library not in (
     'BNACQ',
     'BSACQ', 
@@ -40,4 +40,4 @@ and exists (select
     'SOHDQ',
     'SOMIM',
     'SOSAR',
-    'SOSST');
+    'SOSST'));

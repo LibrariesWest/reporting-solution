@@ -13,7 +13,7 @@ select
 from vw_bills b
 where b.date_billed >= '7-Jun-2016'
 -- filter out some libraries - acquisitions etc
-and b.library not in (
+and b.bill_library not in (
     'BNACQ', 
     'BSACQ', 
     'BSBP', 

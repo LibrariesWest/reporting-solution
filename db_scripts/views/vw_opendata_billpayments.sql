@@ -15,7 +15,7 @@ select
 from vw_bills_billpayments bp
 where bp.payment_date >= '7-Jun-2016'
 -- filter out some libraries - acquisitions etc
-and bp.library not in (
+and bp.payment_library not in (
     'BNACQ', 
     'BSACQ', 
     'BSBP', 
