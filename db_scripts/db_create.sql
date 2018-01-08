@@ -230,6 +230,7 @@ create extension postgis;
 \i 'views/vw_dashboard_membership_borrowersbyward.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward_geo.sql'
 
+\i 'views/vw_dashboard_membership_registrationsbyweek.sql'
 \i 'views/vw_dashboard_membership_registeredactivebyauthority.sql'
 \i 'views/vw_dashboard_membership_registeredactivebylibrary.sql'
 \i 'views/vw_dashboard_membership_registeredactivebyresidentauthority.sql'
