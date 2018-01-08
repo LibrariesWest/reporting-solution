@@ -27,5 +27,27 @@ left join policy ity on ity.policy_type = 'ITYP' and ity.policy_number = i.item_
 left join policy itty on itty.policy_type = 'ITYP' and itty.policy_number = it.type
 where t.timestamp >= '2016-06-07' 
 and fn_librarytoauthority(l.policy_name) is not null
+-- filter out some libraries - acquisitions etc
+and l.policy_name not in (
+    'BNACQ', 
+    'BSACQ', 
+    'BSBP', 
+    'BSCS', 
+    'DELETE', 
+    'DOACQ',
+    'DOHQ',
+    'DOPRISGM',
+    'DOPRISPO',
+    'DOPRISVE',
+    'DOSLS',
+    'NSACQ',
+    'POACQ',
+    'SGACQ',
+    'SGEP',
+    'SGLP',
+    'SOHDQ',
+    'SOMIM',
+    'SOSAR',
+    'SOSST')
 group by to_char(t.timestamp, 'YYYY-MM'), fn_librarytoauthority(l.policy_name), l.policy_name, payment_reason
 order by to_char(t.timestamp, 'YYYY-MM'), fn_librarytoauthority(l.policy_name), l.policy_name, payment_reason;

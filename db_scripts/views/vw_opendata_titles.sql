@@ -19,4 +19,25 @@ and exists (select
     where c.catalogue_key = i.catalogue_key 
     and i.shadowed = 0
     and i.current_location not in 
-	('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM'));
+	('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM'))
+    and i.library not in (
+    'BNACQ',
+    'BSACQ', 
+    'BSBP', 
+    'BSCS', 
+    'DELETE', 
+    'DOACQ',
+    'DOHQ',
+    'DOPRISGM',
+    'DOPRISPO',
+    'DOPRISVE',
+    'DOSLS',
+    'NSACQ',
+    'POACQ',
+    'SGACQ',
+    'SGEP',
+    'SGLP',
+    'SOHDQ',
+    'SOMIM',
+    'SOSAR',
+    'SOSST');

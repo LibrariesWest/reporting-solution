@@ -14,5 +14,27 @@ select
     sum(amount) as total_billed
 from vw_bills b
 where b.date_billed >= '7-Jun-2016'
+-- filter out some libraries - acquisitions etc
+and b.library not in (
+    'BNACQ', 
+    'BSACQ', 
+    'BSBP', 
+    'BSCS', 
+    'DELETE', 
+    'DOACQ',
+    'DOHQ',
+    'DOPRISGM',
+    'DOPRISPO',
+    'DOPRISVE',
+    'DOSLS',
+    'NSACQ',
+    'POACQ',
+    'SGACQ',
+    'SGEP',
+    'SGLP',
+    'SOHDQ',
+    'SOMIM',
+    'SOSAR',
+    'SOSST')
 group by month_billed, bill_authority, bill_library, item_type, bill_reason
 order by month_billed, bill_authority, bill_library, item_type, bill_reason;

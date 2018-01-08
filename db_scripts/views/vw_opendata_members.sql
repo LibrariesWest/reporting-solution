@@ -20,5 +20,26 @@ select
 	case when count(*) > 4 then cast(count(*) as varchar) else '*' end as users
 from vw_users_geography 
 where last_activity_date > (now() - interval '1 year')
+and library not in (
+    'BNACQ',
+    'BSACQ', 
+    'BSBP', 
+    'BSCS', 
+    'DELETE', 
+    'DOACQ',
+    'DOHQ',
+    'DOPRISGM',
+    'DOPRISPO',
+    'DOPRISVE',
+    'DOSLS',
+    'NSACQ',
+    'POACQ',
+    'SGACQ',
+    'SGEP',
+    'SGLP',
+    'SOHDQ',
+    'SOMIM',
+    'SOSAR',
+    'SOSST')
 group by authority, library, district_name, district_code, county_name, county_code, ward_name, ward_code, msoa_name, msoa_code, lsoa_name, lsoa_code
 order by authority, library, district_name, district_code, county_name, county_code, ward_name, ward_code, msoa_name, msoa_code, lsoa_name, lsoa_code;

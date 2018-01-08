@@ -20,4 +20,25 @@ select
 from vw_holds h
 where h.date_available is not null
 and date_placed >= '7-Jun-2016'
+and h.library not in (
+    'BNACQ', 
+    'BSACQ', 
+    'BSBP', 
+    'BSCS', 
+    'DELETE', 
+    'DOACQ',
+    'DOHQ',
+    'DOPRISGM',
+    'DOPRISPO',
+    'DOPRISVE',
+    'DOSLS',
+    'NSACQ',
+    'POACQ',
+    'SGACQ',
+    'SGEP',
+    'SGLP',
+    'SOHDQ',
+    'SOMIM',
+    'SOSAR',
+    'SOSST')
 group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, reservation_method;
