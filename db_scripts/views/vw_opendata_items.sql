@@ -39,4 +39,5 @@ and library not in (
     'SOHDQ',
     'SOMIM',
     'SOSAR',
-    'SOSST');
+    'SOSST')
+order by catalogue_flex_key, item_id, library;

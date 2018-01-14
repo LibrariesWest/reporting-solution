@@ -59,4 +59,4 @@ and t.to_library not in (
     'SOSAR',
     'SOSST')
 group by t.item_type, t.from_library, t.from_authority, t.to_library, t.to_authority
-order by t.date_time_transited;
+order by t.item_type, t.from_library, t.from_authority, t.to_library, t.to_authority;

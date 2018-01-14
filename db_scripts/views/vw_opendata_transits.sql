@@ -6,9 +6,6 @@
 create or replace view vw_opendata_transits as
 select
     t.date_time_transited as date_transited,
-    t.item_id,
-    c.title as title,
-    c.author as author,
     t.item_type,
     t.from_library,
     t.from_authority,

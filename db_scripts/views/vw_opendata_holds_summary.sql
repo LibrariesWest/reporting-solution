@@ -5,9 +5,9 @@
 -- drop view vw_opendata_holds_summary;
 create or replace view vw_opendata_holds_summary as
 select
+	to_char(date_placed, 'YYYY-MM') as month_placed,
     item_authority,
     pickup_authority,
-    to_char(date_placed, 'YYYY-MM') as month_placed,
     round(avg(date_available - date_placed)) as days_taken,
     count(h.key) as holds
 from vw_holds h
@@ -56,4 +56,5 @@ and h.pickup_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by placed_authority, item_authority, pickup_library, pickup_authority, month_placed;
+group by month_placed, placed_authority, item_authority, pickup_library, pickup_authority
+order by month_placed, placed_authority, item_authority, pickup_library, pickup_authority;

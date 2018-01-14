@@ -8,8 +8,8 @@ select
     to_char(bp.payment_date, 'YYYY-MM') as month_paid,
     bp.payment_authority as payment_authority,
     bp.payment_type as payment_type,
-    count(bp.bill_payment_key) as number_of_payments,
-    sum(bp.payment_amount) as total_paid
+    round(count(bp.bill_payment_key), -1) as number_of_payments,
+    round(sum(bp.payment_amount), -1) as total_paid
 from vw_bills_billpayments bp
 where bp.payment_date >= '7-Jun-2016'
 -- filter out some libraries - acquisitions etc

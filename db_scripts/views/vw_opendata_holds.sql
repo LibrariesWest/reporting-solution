@@ -5,11 +5,11 @@
 -- drop view vw_opendata_holds;
 create or replace view vw_opendata_holds as
 select
+	to_char(date_placed, 'YYYY-MM') as month_placed,
     item_library,
     item_authority,
     pickup_library,
     pickup_authority,
-    to_char(date_placed, 'YYYY-MM') as month_placed,
 	case 
 		when client = 'WS_DS' then 'Website'
 		when client = 'WS_PUBLIC' then 'App'
@@ -62,4 +62,5 @@ and h.pickup_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, month_placed, reservation_method;
+group by month_placed, placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, reservation_method
+order by month_placed, placed_library, placed_authority, item_library, item_authority, pickup_library, pickup_authority, reservation_method;

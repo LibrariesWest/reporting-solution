@@ -34,4 +34,5 @@ and ch.charge_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by month_issued, charge_authority, item_type;
+group by month_issued, charge_authority, item_type
+order by month_issued, charge_authority, item_type;

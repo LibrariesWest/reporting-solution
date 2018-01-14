@@ -36,4 +36,5 @@ and library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by authority, item_type;
+group by authority, item_type
+order by authority, item_type;
