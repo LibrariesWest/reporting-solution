@@ -8,8 +8,8 @@ select
 	to_char(date_placed, 'YYYY-MM') as month_placed,
     item_authority,
     pickup_authority,
-    round(avg(date_available - date_placed)) as days_taken,
-    count(h.key) as holds
+    count(h.key) as reservations,
+    round(avg(date_available - date_placed)) as days_taken
 from vw_holds h
 where h.date_available is not null
 and date_placed >= '7-Jun-2016'

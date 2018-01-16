@@ -5,7 +5,7 @@
 -- drop view vw_opendata_billpayments_summary;
 create or replace view vw_opendata_billpayments_summary as
 select
-    to_char(bp.payment_date, 'YYYY-MM') as month_paid,
+    to_char(bp.payment_date, 'YYYY') as year_paid,
     bp.payment_authority as payment_authority,
     bp.payment_type as payment_type,
     round(count(bp.bill_payment_key), -1) as number_of_payments,
@@ -34,5 +34,5 @@ and bp.payment_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by month_paid, payment_authority, payment_type
-order by month_paid, payment_authority, payment_type;
+group by year_paid, payment_authority, payment_type
+order by year_paid, payment_authority, payment_type;

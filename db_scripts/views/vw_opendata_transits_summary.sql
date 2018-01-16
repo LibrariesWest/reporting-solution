@@ -6,9 +6,7 @@
 create or replace view vw_opendata_transits_summary as
 select
     t.item_type,
-    t.from_library,
     t.from_authority,
-    t.to_library,
     t.to_authority,
     count(t.item_id) as items
 from vw_transits t
@@ -58,5 +56,5 @@ and t.to_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by t.item_type, t.from_library, t.from_authority, t.to_library, t.to_authority
-order by t.item_type, t.from_library, t.from_authority, t.to_library, t.to_authority;
+group by t.item_type, t.from_authority, t.to_authority
+order by t.item_type, t.from_authority, t.to_authority;

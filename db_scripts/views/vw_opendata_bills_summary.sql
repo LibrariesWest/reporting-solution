@@ -5,7 +5,7 @@
 -- drop view vw_opendata_bills_summary;
 create or replace view vw_opendata_bills_summary as
 select
-    to_char(b.date_billed, 'YYYY-MM') as month_billed,
+    to_char(b.date_billed, 'YYYY') as year_billed,
     b.bill_authority as bill_authority,
     b.reason as bill_reason,
     count(*) as number_of_bills,
@@ -34,5 +34,5 @@ and b.bill_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by month_billed, bill_authority, bill_reason
-order by month_billed, bill_authority, bill_reason;
+group by year_billed, bill_authority, bill_reason
+order by year_billed, bill_authority, bill_reason;
