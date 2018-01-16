@@ -56,5 +56,5 @@ and h.pickup_library not in (
     'SOMIM',
     'SOSAR',
     'SOSST')
-group by month_placed, placed_authority, item_authority, pickup_library, pickup_authority
-order by month_placed, placed_authority, item_authority, pickup_library, pickup_authority;
+group by month_placed, item_authority, pickup_authority
+order by month_placed, item_authority, pickup_authority;
