@@ -273,6 +273,8 @@ create extension postgis;
 \i 'views/vw_dashboard_usage_renewalsbyward.sql'
 \i 'views/vw_dashboard_usage_renewalsbyward_geo.sql'
 
+vacuum analyze;
+
 -- then run our dashboard set of jobs
 \i 'jobs/jb_dashboard.sql'
 
