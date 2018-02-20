@@ -224,8 +224,10 @@ create extension postgis;
 \i 'views/vw_dashboard_collection_mosttravelleditems.sql'
 
 \i 'views/vw_dashboard_membership_borrowersbyauthority.sql'
+\i 'views/vw_dashboard_membership_borrowersbyauthorityagegender.sql'
 \i 'views/vw_dashboard_membership_borrowersbyauthorityanddeprivation.sql'
 \i 'views/vw_dashboard_membership_borrowersbylibrary.sql'
+\i 'views/vw_dashboard_membership_borrowersbylibraryagegender.sql'
 \i 'views/vw_dashboard_membership_borrowersbylibraryanddeprivation.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward_geo.sql'
