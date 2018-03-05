@@ -10,7 +10,10 @@ copy(select * from vw_dashboard_bills_billsbyreasonauthority) to 'c:\dbdata\dash
 copy(select * from vw_dashboard_bills_billsbyreasonlibrary) to 'c:\dbdata\dashboard\bills_billsbyreasonlibrary.csv' csv header;
 copy(select * from vw_dashboard_bills_paymentsbyauthority) to 'c:\dbdata\dashboard\bills_paymentsbyauthority.csv' csv header;
 copy(select * from vw_dashboard_bills_paymentsbyauthorityanditemtypeandmonth) to 'c:\dbdata\dashboard\bills_paymentsbyauthorityanditemtypeandmonth.csv' csv header;
+copy(select * from vw_dashboard_bills_paymentsbyauthorityanditemtypeprofileandmonth) to 'c:\dbdata\dashboard\bills_paymentsbyauthorityanditemtypeprofileandmonth.csv' csv header;
 copy(select * from vw_dashboard_bills_paymentsbylibrary) to 'c:\dbdata\dashboard\bills_paymentsbylibrary.csv' csv header;
+copy(select * from vw_dashboard_bills_paymentsbylibraryanditemtypeandmonth) to 'c:\dbdata\dashboard\bills_paymentsbylibraryanditemtypeandmonth.csv' csv header;
+copy(select * from vw_dashboard_bills_paymentsbylibraryanditemtypeprofileandmonth) to 'c:\dbdata\dashboard\bills_paymentsbylibraryanditemtypeprofileandmonth.csv' csv header;
 
 copy(select * from vw_dashboard_collection_itemsbytypeandauthority) to 'c:\dbdata\dashboard\collection_itemsbytypeandauthority.csv' csv header;
 copy(select * from vw_dashboard_collection_itemsbytypeandlibrary) to 'c:\dbdata\dashboard\collection_itemsbytypeandlibrary.csv' csv header;
