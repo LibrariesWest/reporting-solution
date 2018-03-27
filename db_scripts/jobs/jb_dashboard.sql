@@ -15,11 +15,15 @@ copy(select * from vw_dashboard_bills_paymentsbylibrary) to 'c:\dbdata\dashboard
 copy(select * from vw_dashboard_bills_paymentsbylibraryanditemtypeandmonth) to 'c:\dbdata\dashboard\bills_paymentsbylibraryanditemtypeandmonth.csv' csv header;
 copy(select * from vw_dashboard_bills_paymentsbylibraryanditemtypeprofileandmonth) to 'c:\dbdata\dashboard\bills_paymentsbylibraryanditemtypeprofileandmonth.csv' csv header;
 
+copy(select * from vw_dashboard_cash_dailytotals) to 'c:\dbdata\dashboard\cash_dailytotals.csv' csv header;
+
 copy(select * from vw_dashboard_collection_itemsbytypeandauthority) to 'c:\dbdata\dashboard\collection_itemsbytypeandauthority.csv' csv header;
 copy(select * from vw_dashboard_collection_itemsbytypeandlibrary) to 'c:\dbdata\dashboard\collection_itemsbytypeandlibrary.csv' csv header;
 -- copy(select * from vw_dashboard_collection_mostissuedandreneweditems) to 'c:\dbdata\dashboard\collection_mostissuedandreneweditems.csv' csv header;
 -- copy(select * from vw_dashboard_collection_mostissueditems) to 'c:\dbdata\dashboard\collection_mostissueditems.csv' csv header;
 -- copy(select * from vw_dashboard_collection_mosttravelleditems) to 'c:\dbdata\dashboard\collection_mosttravelleditems.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithhighholdratio) to 'c:\dbdata\dashboard\collection_titleswithhighholdratio.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithhighholdsnocopies) to 'c:\dbdata\dashboard\collection_titleswithhighholdsnocopies.csv' csv header;
 
 copy(select * from vw_dashboard_membership_borrowersbyauthority) to 'c:\dbdata\dashboard\membership_borrowersbyauthority.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyauthorityagegender) to 'c:\dbdata\dashboard\membership_borrowersbyauthorityagegender.csv' csv header;

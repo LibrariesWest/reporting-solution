@@ -5,11 +5,11 @@
 
 copy(select * from vw_opendata_bills) to 'c:\dbdata\opendata\bills.csv' csv header;
 copy(select * from vw_opendata_bills_summary) to 'c:\dbdata\opendata\bills_summary.csv' csv header;
-copy(select * from vw_opendata_billpayments) to 'c:\dbdata\opendata\billpayments.csv' csv header;
-copy(select * from vw_opendata_billpayments_summary) to 'c:\dbdata\opendata\billpayments_summary.csv' csv header;
+copy(select * from vw_opendata_billpayments) to 'c:\dbdata\opendata\payments.csv' csv header;
+copy(select * from vw_opendata_billpayments_summary) to 'c:\dbdata\opendata\payments_summary.csv' csv header;
 copy(select * from vw_opendata_titles) to 'c:\dbdata\opendata\titles.csv' csv header;
-copy(select * from vw_opendata_holds) to 'c:\dbdata\opendata\holds.csv' csv header;
-copy(select * from vw_opendata_holds_summary) to 'c:\dbdata\opendata\holds_summary.csv' csv header;
+copy(select * from vw_opendata_holds) to 'c:\dbdata\opendata\reservations.csv' csv header;
+copy(select * from vw_opendata_holds_summary) to 'c:\dbdata\opendata\reservations_summary.csv' csv header;
 copy(select * from vw_opendata_issues) to 'c:\dbdata\opendata\issues.csv' csv header;
 copy(select * from vw_opendata_issues_summary) to 'c:\dbdata\opendata\issues_summary.csv' csv header;
 copy(select * from vw_opendata_items where authority = 'Bath and North East Somerset') to 'c:\dbdata\opendata\items_banes.csv' csv header;

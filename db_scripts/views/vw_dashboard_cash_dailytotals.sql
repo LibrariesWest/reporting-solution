@@ -15,5 +15,3 @@ select
 from vw_cashmanagement
 group by date_paid, library, authority, payment_reason
 order by date_paid, library, authority, payment_reason;
-
-
