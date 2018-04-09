@@ -220,6 +220,8 @@ create extension postgis;
 \i 'views/vw_dashboard_bills_paymentsbylibraryanditemtypeandmonth.sql'
 \i 'views/vw_dashboard_bills_paymentsbylibraryanditemtypeprofileandmonth.sql'
 
+\i 'views/vw_dashboard_cash_dailytotals.sql'
+
 \i 'views/vw_dashboard_collection_itemsbytypeandauthority.sql'
 \i 'views/vw_dashboard_collection_itemsbytypeandlibrary.sql'
 \i 'views/vw_dashboard_collection_mostissuedandreneweditems.sql'
