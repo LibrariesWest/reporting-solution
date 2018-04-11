@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_collection_titleswithnocopiesbyauthority
+-- view: vw_dashboard_collection_titleswithnocopies
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_collection_titleswithnocopiesbyauthority;
-create or replace view vw_dashboard_collection_titleswithnocopiesbyauthority as
+-- drop view vw_dashboard_collection_titleswithnocopies;
+create or replace view vw_dashboard_collection_titleswithnocopies as
 select 
 	a.authority,
 	c.flexible_key,
