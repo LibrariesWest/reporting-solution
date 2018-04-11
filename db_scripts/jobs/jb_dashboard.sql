@@ -22,9 +22,11 @@ copy(select * from vw_dashboard_collection_itemsbytypeandlibrary) to 'c:\dbdata\
 -- copy(select * from vw_dashboard_collection_mostissuedandreneweditems) to 'c:\dbdata\dashboard\collection_mostissuedandreneweditems.csv' csv header;
 -- copy(select * from vw_dashboard_collection_mostissueditems) to 'c:\dbdata\dashboard\collection_mostissueditems.csv' csv header;
 -- copy(select * from vw_dashboard_collection_mosttravelleditems) to 'c:\dbdata\dashboard\collection_mosttravelleditems.csv' csv header;
+copy(select * from vw_dashboard_collection_newtitleswithholdsnocopies) to 'c:\dbdata\dashboard\collection_newtitleswithholdsnocopies.csv' csv header;
+copy(select * from vw_dashboard_collection_newtitleswithnocopies) to 'c:\dbdata\dashboard\collection_newtitleswithnocopies.csv' csv header;
 copy(select * from vw_dashboard_collection_titleswithhighholdratio) to 'c:\dbdata\dashboard\collection_titleswithhighholdratio.csv' csv header;
 copy(select * from vw_dashboard_collection_titleswithhighholdsnocopies) to 'c:\dbdata\dashboard\collection_titleswithhighholdsnocopies.csv' csv header;
-
+copy(select * from vw_dashboard_collection_titleswithnocopies) to 'c:\dbdata\dashboard\collection_titleswithnocopies.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyauthority) to 'c:\dbdata\dashboard\membership_borrowersbyauthority.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyauthorityagegender) to 'c:\dbdata\dashboard\membership_borrowersbyauthorityagegender.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyauthorityanddeprivation) to 'c:\dbdata\dashboard\membership_borrowersbyauthorityanddeprivation.csv' csv header;
@@ -33,7 +35,6 @@ copy(select * from vw_dashboard_membership_borrowersbylibraryagegender) to 'c:\d
 copy(select * from vw_dashboard_membership_borrowersbylibraryanddeprivation) to 'c:\dbdata\dashboard\membership_borrowersbylibraryanddeprivation.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyward_geo) to 'c:\dbdata\dashboard\membership_borrowersbyward.geojson' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyward) to 'c:\dbdata\dashboard\membership_borrowersbyward.csv' csv header;
-copy(select * from vw_dashboard_membership_registrationsbyweek) to 'c:\dbdata\dashboard\membership_registrationsbyweek.csv' csv header;
 copy(select * from vw_dashboard_membership_registeredactivebyauthority) to 'c:\dbdata\dashboard\membership_registeredactivebyauthority.csv' csv header;
 copy(select * from vw_dashboard_membership_registeredactivebylibrary) to 'c:\dbdata\dashboard\membership_registeredactivebylibrary.csv' csv header;
 copy(select * from vw_dashboard_membership_registeredactivebyresidentauthority) to 'c:\dbdata\dashboard\membership_registeredactivebyresidentauthority.csv' csv header;
@@ -43,6 +44,7 @@ copy(select * from vw_dashboard_membership_registeredbyauthority) to 'c:\dbdata\
 copy(select * from vw_dashboard_membership_registeredbylibrary) to 'c:\dbdata\dashboard\membership_registeredbylibrary.csv' csv header;
 copy(select * from vw_dashboard_membership_registeredbyward_geo) to 'c:\dbdata\dashboard\membership_registeredbyward.geojson' csv header;
 copy(select * from vw_dashboard_membership_registeredbyward) to 'c:\dbdata\dashboard\membership_registeredbyward.csv' csv header;
+copy(select * from vw_dashboard_membership_registrationsbyweek) to 'c:\dbdata\dashboard\membership_registrationsbyweek.csv' csv header;
 
 copy(select * from vw_dashboard_movement_transitsbyitemauthority) to 'c:\dbdata\dashboard\movement_transitsbyitemauthority.csv' csv header;
 copy(select * from vw_dashboard_movement_transitsoversixweeks) to 'c:\dbdata\dashboard\movement_transitsoversixweeks.csv' csv header;

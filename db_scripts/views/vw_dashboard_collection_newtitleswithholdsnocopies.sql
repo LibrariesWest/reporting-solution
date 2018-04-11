@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- view: vw_dashboard_collection_titleswithhighholdratio
+-- view: vw_dashboard_collection_newtitleswithholdsnocopies
 ---------------------------------------------------------------
 
--- drop view vw_dashboard_collection_titleswithhighholdratio;
-create or replace view vw_dashboard_collection_titleswithhighholdratio as
+-- drop view vw_dashboard_collection_newtitleswithholdsnocopies;
+create or replace view vw_dashboard_collection_newtitleswithholdsnocopies as
 select
 	distinct
 	vc.flexible_key,
@@ -12,15 +12,16 @@ select
 	vc.year_of_publication,
 	(select item_type from vw_items vi where vi.catalogue_key = vc.catalogue_key limit 1) as item_type,
 	(select shelving_key from callnum call where call.catalogue_key = vc.catalogue_key limit 1) as call_number,
-	round(counts.number_of_holds::float/counts.number_of_items::float)::numeric as ratio,
-	counts.*
+	counts.catalogue_key,
+	counts.authority,
+	counts.number_of_holds
 from
-	(select
+	(select 
 		holds.catalogue_key,
 		holds.hold_authority as authority,
 		holds.number_of_holds,
 		count(i.item_id) as number_of_items
-	from
+	from 
 		(select
 			c.catalogue_key,
 			fn_librarytoauthority(hl.policy_name) as hold_authority,
@@ -30,9 +31,12 @@ from
 		join catalogue c on h.catalogue_key = c.catalogue_key
 		where h.date_available is null and h.date_inactive is null
 		group by fn_librarytoauthority(hl.policy_name), c.catalogue_key) as holds
-	join vw_items i on i.catalogue_key = holds.catalogue_key and i.authority = holds.hold_authority
+	left join vw_items i on i.catalogue_key = holds.catalogue_key and i.authority = holds.hold_authority
 	and i.shadowed = 0 and i.current_location not in ('MISSING', 'LOST', 'DISCARD', 'LOST_ASSUM') and i.home_location not in ('MISSING', 'LOST', 'DISCARD', 'LOST_ASSUM')
 	group by holds.catalogue_key, holds.hold_authority, holds.number_of_holds) counts
 join vw_catalogue vc on vc.catalogue_key = counts.catalogue_key
-where round(counts.number_of_holds::float/counts.number_of_items::float)::numeric >= 5
-order by ratio desc;
+where counts.number_of_items = 0 and counts.number_of_holds > 0
+and vc.year_of_publication is not null 
+and (vc.year_of_publication >= date_part('year', current_date) - 1)
+and (vc.year_of_publication < date_part('year', current_date) + 1)
+order by counts.number_of_holds desc;

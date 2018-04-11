@@ -9,13 +9,16 @@ select
 	vc.flexible_key,
 	vc.author,
 	vc.title,
+	vc.year_of_publication,
 	(select item_type from vw_items vi where vi.catalogue_key = vc.catalogue_key limit 1) as item_type,
 	(select shelving_key from callnum call where call.catalogue_key = vc.catalogue_key limit 1) as call_number,
-	counts.*
+	counts.catalogue_key,
+	counts.authority,
+	counts.number_of_holds
 from
 	(select 
 		holds.catalogue_key,
-		holds.hold_authority,
+		holds.hold_authority as authority,
 		holds.number_of_holds,
 		count(i.item_id) as number_of_items
 	from 

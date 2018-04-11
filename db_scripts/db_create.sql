@@ -227,8 +227,11 @@ create extension postgis;
 \i 'views/vw_dashboard_collection_mostissuedandreneweditems.sql'
 \i 'views/vw_dashboard_collection_mostissueditems.sql'
 \i 'views/vw_dashboard_collection_mosttravelleditems.sql'
-\i 'views/vw_dashboard_collection_titleswithhighholdsnocopies.sql'
+\i 'views/vw_dashboard_collection_newtitleswithholdsnocopies.sql'
+\i 'views/vw_dashboard_collection_newtitleswithnocopies.sql'
 \i 'views/vw_dashboard_collection_titleswithhighholdratio.sql'
+\i 'views/vw_dashboard_collection_titleswithhighholdsnocopies.sql'
+\i 'views/vw_dashboard_collection_titleswithnocopies.sql'
 
 \i 'views/vw_dashboard_membership_borrowersbyauthority.sql'
 \i 'views/vw_dashboard_membership_borrowersbyauthorityagegender.sql'
@@ -236,6 +239,7 @@ create extension postgis;
 \i 'views/vw_dashboard_membership_borrowersbylibrary.sql'
 \i 'views/vw_dashboard_membership_borrowersbylibraryagegender.sql'
 \i 'views/vw_dashboard_membership_borrowersbylibraryanddeprivation.sql'
+\i 'views/vw_dashboard_membership_borrowersbylibraryanddeprivation_geo.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward.sql'
 \i 'views/vw_dashboard_membership_borrowersbyward_geo.sql'
 
