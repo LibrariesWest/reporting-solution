@@ -17,23 +17,6 @@ copy(select * from vw_dashboard_bills_paymentsbylibraryanditemtypeprofileandmont
 
 copy(select * from vw_dashboard_cash_dailytotals) to 'c:\dbdata\dashboard\cash_dailytotals.csv' csv header;
 
-copy(select * from vw_dashboard_collection_itemsbytypeandauthority) to 'c:\dbdata\dashboard\collection_itemsbytypeandauthority.csv' csv header;
-copy(select * from vw_dashboard_collection_itemsbytypeandlibrary) to 'c:\dbdata\dashboard\collection_itemsbytypeandlibrary.csv' csv header;
--- copy(select * from vw_dashboard_collection_mostissuedandreneweditems) to 'c:\dbdata\dashboard\collection_mostissuedandreneweditems.csv' csv header;
--- copy(select * from vw_dashboard_collection_mostissueditems) to 'c:\dbdata\dashboard\collection_mostissueditems.csv' csv header;
--- copy(select * from vw_dashboard_collection_mosttravelleditems) to 'c:\dbdata\dashboard\collection_mosttravelleditems.csv' csv header;
-copy(select * from vw_dashboard_collection_newtitleswithholdsnocopies) to 'c:\dbdata\dashboard\collection_newtitleswithholdsnocopies.csv' csv header;
-copy(select * from vw_dashboard_collection_newtitleswithnocopies) to 'c:\dbdata\dashboard\collection_newtitleswithnocopies.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithhighholdratio) to 'c:\dbdata\dashboard\collection_titleswithhighholdratio.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithhighholdsnocopies) to 'c:\dbdata\dashboard\collection_titleswithhighholdsnocopies.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Bath and North East Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_banes.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Bristol') to 'c:\dbdata\dashboard\collection_titleswithnocopies_bristol.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Dorset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_dorset.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='North Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_northsomerset.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Poole') to 'c:\dbdata\dashboard\collection_titleswithnocopies_poole.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_somerset.csv' csv header;
-copy(select * from vw_dashboard_collection_titleswithnocopies where authority='South Gloucestershire') to 'c:\dbdata\dashboard\collection_titleswithnocopies_southglos.csv' csv header;
-
 copy(select * from vw_dashboard_membership_borrowersbyauthority) to 'c:\dbdata\dashboard\membership_borrowersbyauthority.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyauthorityagegender) to 'c:\dbdata\dashboard\membership_borrowersbyauthorityagegender.csv' csv header;
 copy(select * from vw_dashboard_membership_borrowersbyauthorityanddeprivation) to 'c:\dbdata\dashboard\membership_borrowersbyauthorityanddeprivation.csv' csv header;
@@ -81,6 +64,23 @@ copy(select * from vw_dashboard_usage_renewalsbyauthorityandmonth) to 'c:\dbdata
 copy(select * from vw_dashboard_usage_renewalsbylibrary) to 'c:\dbdata\dashboard\usage_renewalsbylibrary.csv' csv header;
 copy(select * from vw_dashboard_usage_renewalsbyward_geo) to 'c:\dbdata\dashboard\usage_renewalsbyward.geojson';
 copy(select * from vw_dashboard_usage_renewalsbyward) to 'c:\dbdata\dashboard\usage_renewalsbyward.csv' csv header;
+
+copy(select * from vw_dashboard_collection_itemsbytypeandauthority) to 'c:\dbdata\dashboard\collection_itemsbytypeandauthority.csv' csv header;
+copy(select * from vw_dashboard_collection_itemsbytypeandlibrary) to 'c:\dbdata\dashboard\collection_itemsbytypeandlibrary.csv' csv header;
+-- copy(select * from vw_dashboard_collection_mostissuedandreneweditems) to 'c:\dbdata\dashboard\collection_mostissuedandreneweditems.csv' csv header;
+-- copy(select * from vw_dashboard_collection_mostissueditems) to 'c:\dbdata\dashboard\collection_mostissueditems.csv' csv header;
+-- copy(select * from vw_dashboard_collection_mosttravelleditems) to 'c:\dbdata\dashboard\collection_mosttravelleditems.csv' csv header;
+copy(select * from vw_dashboard_collection_newtitleswithholdsnocopies) to 'c:\dbdata\dashboard\collection_newtitleswithholdsnocopies.csv' csv header;
+copy(select * from vw_dashboard_collection_newtitleswithnocopies) to 'c:\dbdata\dashboard\collection_newtitleswithnocopies.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithhighholdratio) to 'c:\dbdata\dashboard\collection_titleswithhighholdratio.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithhighholdsnocopies) to 'c:\dbdata\dashboard\collection_titleswithhighholdsnocopies.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Bath and North East Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_banes.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Bristol') to 'c:\dbdata\dashboard\collection_titleswithnocopies_bristol.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Dorset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_dorset.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='North Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_northsomerset.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Poole') to 'c:\dbdata\dashboard\collection_titleswithnocopies_poole.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_somerset.csv' csv header;
+copy(select * from vw_dashboard_collection_titleswithnocopies where authority='South Gloucestershire') to 'c:\dbdata\dashboard\collection_titleswithnocopies_southglos.csv' csv header;
 
 -- create a javascript file with a variable showing the data updated
 copy(select 'var dashboard_updated = "' || to_char(now(), 'YYYY-MM-DD') || '"') to 'c:\dbdata\dashboard\dashboard-updated.js'

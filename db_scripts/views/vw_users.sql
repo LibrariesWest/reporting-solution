@@ -28,6 +28,7 @@ select
 	    when u.birth_date = 0 then null
 	    else ('J' || cast(u.birth_date as text))::date
     end as birth_date,
+    (select count(*) from userphone where user_key = u.user_key) as mobile_count,
     u.date_created as date_created,
     u.last_activity_date as last_activity_date
 from users u

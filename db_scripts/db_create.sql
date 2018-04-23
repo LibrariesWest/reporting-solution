@@ -152,7 +152,7 @@ create extension postgis;
 \i 'tables/tbl_ucat_load.sql'
 \i 'tables/tbl_ucat_indexes.sql'
 
--- users table 
+-- user extended info table 
 \i 'tables/tbl_userxinfo.sql'
 \i 'tables/tbl_userxinfo_load.sql'
 \i 'tables/tbl_userxinfo_indexes.sql'
@@ -161,6 +161,26 @@ create extension postgis;
 \i 'tables/tbl_users.sql'
 \i 'tables/tbl_users_load.sql'
 \i 'tables/tbl_users_indexes.sql'
+
+-- user phone table
+\i 'tables/tbl_userphone.sql'
+\i 'tables/tbl_userphone_load.sql'
+\i 'tables/tbl_userphone_indexes.sql'
+
+-- acquisitions distribution table
+\i 'tables/tbl_dist.sql'
+\i 'tables/tbl_dist_load.sql'
+\i 'tables/tbl_dist_indexes.sql'
+
+-- acquisitions fund table
+\i 'tables/tbl_fund.sql'
+\i 'tables/tbl_fund_load.sql'
+\i 'tables/tbl_fund_indexes.sql'
+
+-- acquisitions vendcyc table
+\i 'tables/tbl_vendcyc.sql'
+\i 'tables/tbl_vendcyc_load.sql'
+\i 'tables/tbl_vendcyc_indexes.sql'
 
 -- discards table for doing discard analysis
 \i 'tables/tbl_discards.sql'
