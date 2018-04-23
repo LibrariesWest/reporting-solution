@@ -57,6 +57,7 @@ copy(select * from vw_dashboard_reservations_interlendingbyauthorityandmonthbook
 copy(select * from vw_dashboard_usage_loansbyauthorityanddeprivation) to 'c:\dbdata\dashboard\usage_loansbyauthorityanddeprivation.csv' csv header;
 copy(select * from vw_dashboard_usage_loansbyauthorityandmonth) to 'c:\dbdata\dashboard\usage_loansbyauthorityandmonth.csv' csv header;
 copy(select * from vw_dashboard_usage_loansbylibrary) to 'c:\dbdata\dashboard\usage_loansbylibrary.csv' csv header;
+copy(select * from vw_dashboard_usage_loansbylibraryanddayofweek) to 'c:\dbdata\dashboard\usage_loansbylibraryanddayofweek.csv' csv header;
 copy(select * from vw_dashboard_usage_loansbyward_geo) to 'c:\dbdata\dashboard\usage_loansbyward.geojson';
 copy(select * from vw_dashboard_usage_loansbyward) to 'c:\dbdata\dashboard\usage_loansbyward.csv' csv header;
 copy(select * from vw_dashboard_usage_renewalsbyauthorityanddeprivation) to 'c:\dbdata\dashboard\usage_renewalsbyauthorityanddeprivation.csv' csv header;
