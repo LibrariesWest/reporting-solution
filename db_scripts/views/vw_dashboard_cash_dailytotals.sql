@@ -8,10 +8,12 @@ select
 	day_time,
 	library, 
 	authority,
+	transaction_type,
 	bill_reason,
+	item_type,
 	count(*) as number_of_payments,
 	sum(sale_amt) as total_sale_amt,
 	sum(tax_amt) as total_tax_amt
 from vw_cashmanagement
-group by day_time, library, authority, bill_reason
-order by day_time, library, authority, bill_reason;
+group by day_time, library, authority, bill_reason, transaction_type, item_type
+order by day_time, library, authority, bill_reason, transaction_type, item_type;
