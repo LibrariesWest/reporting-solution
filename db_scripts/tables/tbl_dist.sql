@@ -17,5 +17,5 @@ create table dist
   holding_code integer, 
   shipping integer,
   empty character(1),
-  constraint pk_dist_key primary key (dist_key)
+  constraint pk_dist_key primary key (key)
 );
