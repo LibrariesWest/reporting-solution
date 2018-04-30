@@ -2,6 +2,10 @@
 -- custom reporting database.  create views
 ------------------------------------------------------
 
+-- connect to the database
+\c customreporting;
+set client_encoding = 'UTF8';
+
 -- create the base views.  used for browsing the tables by administrators
 \i 'views/vw_bills.sql'
 \i 'views/vw_billpayments.sql'
