@@ -9,7 +9,7 @@ create table transit
   call_sequence integer not null,
   copy_number integer not null,
   hold_key integer,
-  date_time_transited date,
+  date_time_transited timestamp,
   library integer,
   from_library integer,
   to_library integer,

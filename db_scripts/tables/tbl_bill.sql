@@ -12,7 +12,7 @@ create table bill
   bill_number integer not null,
   library integer,
   amount_billed numeric,
-  date_billed date,
+  date_billed timestamp,
   reason integer,
   paid_in_full_flag boolean,
   tax numeric,

@@ -12,8 +12,9 @@ create table charge
   copy_number integer,
   charge_number integer,
   library integer,
-  date_charged date,
-  date_renewed date,
+  date_charged timestamp,
+  date_due timestamp
+  date_renewed timestamp,
   number_of_renewals integer,
   location integer,
   accrued_fine numeric,

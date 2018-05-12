@@ -9,7 +9,7 @@ create table billpayment
   user_key integer,
   bill_number integer,
   payment_type integer,
-  payment_date date,
+  payment_date timestamp,
   payment_amount numeric,
   library integer,
   empty character(1),

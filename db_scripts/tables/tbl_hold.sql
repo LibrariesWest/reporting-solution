@@ -16,7 +16,7 @@ create table hold
   usergroup_key integer,
   library integer,
   pickup_library integer,
-  date_placed date,
+  date_placed timestamp,
   date_expires date,
   date_notified date,
   number_of_notices integer,
