@@ -13,7 +13,7 @@ create table charge
   charge_number integer,
   library integer,
   date_charged timestamp,
-  date_due timestamp
+  date_due timestamp,
   date_renewed timestamp,
   number_of_renewals integer,
   location integer,

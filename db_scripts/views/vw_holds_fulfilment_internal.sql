@@ -7,7 +7,7 @@ create or replace view vw_holds_fulfilment_internal as
 select 
     pickup_authority, 
     to_char(h.date_placed, 'YYYY-MM') as month,
-    round(avg(h.date_available - h.date_placed)) as days,
+    round(avg(h.date_available::date - h.date_placed::date)) as days,
     count(h.key)
 from vw_holds h
 where h.date_available is not null and h.hold_status = 'INACTIVE' and h.date_placed >= '7-Jun-2016'

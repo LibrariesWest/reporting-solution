@@ -8,7 +8,7 @@ select
     h.pickup_authority,
     to_char(h.date_placed, 'YYYYMM') as month,
     count(h.key) as holds,
-    avg(h.date_available - h.date_placed) as days_taken
+    avg(h.date_available::date - h.date_placed::date) as days_taken
 from vw_holds h
 where h.date_placed > (now() - interval '1 year')
 and h.date_available is not null

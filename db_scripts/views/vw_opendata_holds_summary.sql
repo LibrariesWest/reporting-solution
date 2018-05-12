@@ -9,7 +9,7 @@ select
     item_authority,
     pickup_authority,
     count(h.key) as reservations,
-    round(avg(date_available - date_placed)) as days_taken
+    round(avg(date_available::date - date_placed::date)) as days_taken
 from vw_holds h
 where h.date_available is not null
 and date_placed >= '7-Jun-2016'
