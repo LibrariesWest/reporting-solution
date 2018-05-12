@@ -4,7 +4,7 @@
 
 -- index: cuix_vendcyc_key
 -- drop index cuix_vendcyc_key;
-create unique index cuix_vendcyc_key on dist using btree (key);
+create unique index cuix_vendcyc_key on vendcyc using btree (key);
 alter table vendcyc cluster on cuix_vendcyc_key;
 
 -- index: ix_vendcyc_vendkey

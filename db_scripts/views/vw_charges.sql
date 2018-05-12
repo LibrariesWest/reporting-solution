@@ -15,6 +15,7 @@ select
     lp.policy_name as charge_library,
     fn_librarytoauthority(lp.policy_name) as charge_authority,
     c.date_charged as date_charged,
+    c.date_due as date_due,
     c.date_renewed as date_renewed,
     c.number_of_renewals as number_of_renewals,
     c.number_of_unseen_renewals as number_of_unseen_renewals,

@@ -13,7 +13,7 @@ create table fund
   name character varying(200),
   extended_offset integer,
   number_of_cycles integer,
-  level_1 integer
+  level_1 integer,
   level_2 integer,
   level_3 integer,
   level_4 integer,
