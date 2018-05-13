@@ -293,8 +293,10 @@ create extension postgis;
 \i 'views/vw_dashboard_reservations_interlendingbyauthorityandmonthav.sql'
 \i 'views/vw_dashboard_reservations_interlendingbyauthorityandmonthbooks.sql'
 
-\i 'views/vw_dashboard_usage_loansbyauthorityandmonth.sql'
 \i 'views/vw_dashboard_usage_loansbyauthorityanddeprivation.sql'
+\i 'views/vw_dashboard_usage_loansbyauthorityandmonth.sql'
+\i 'views/vw_dashboard_usage_loansbydayandhour.sql'
+\i 'views/vw_dashboard_usage_loansbydayandhouraverage.sql'
 \i 'views/vw_dashboard_usage_loansbylibrary.sql'
 \i 'views/vw_dashboard_usage_loansbylibraryanddayofweek.sql'
 \i 'views/vw_dashboard_usage_loansbyward.sql'

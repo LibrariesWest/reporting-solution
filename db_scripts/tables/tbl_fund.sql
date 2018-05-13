@@ -20,5 +20,5 @@ create table fund
   level_5 integer,
   level_6 integer, 
   empty character(1),
-  constraint pk_dist_key primary key (dist_key)
+  constraint pk_dist_key primary key (key)
 );
