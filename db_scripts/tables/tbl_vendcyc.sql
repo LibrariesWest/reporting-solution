@@ -10,7 +10,7 @@ create table vendcyc
   fiscal_cycle character varying (4),
   total_amount_list_price numeric,
   total_amount_ordered numeric,
-  amount_ordered integer,
+  amount_ordered numeric,
   amount_funded integer,
   amount_invoiced_funded integer,
   total_paid numeric, 

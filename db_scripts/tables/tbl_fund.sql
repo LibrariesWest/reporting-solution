@@ -18,7 +18,7 @@ create table fund
   level_3 integer,
   level_4 integer,
   level_5 integer,
-  level_6 integer, 
+  level_6 integer,
   empty character(1),
-  constraint pk_dist_key primary key (key)
+  constraint pk_fund_key primary key (key)
 );
