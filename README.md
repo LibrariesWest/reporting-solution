@@ -31,9 +31,10 @@ Build instructions
 
 ### Install the Symphony custom report
 
-Symphony allows for custom report development as laid out in SirsiDynix API and Developer training materials.
+Symphony allows for custom report development, as described in SirsiDynix API and Developer training materials.
 
-This project includes a single file in the sym_scripts directory which will need to be installed as a custom report.  This can be run as often as is necessary for reporting requirements.  The suggestion is to run this once every day (overnight).
+
+
 
 ### Necessary files and folders
 
