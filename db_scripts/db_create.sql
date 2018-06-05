@@ -132,6 +132,11 @@ create extension postgis;
 \i 'tables/tbl_item_load.sql'
 \i 'tables/tbl_item_indexes.sql'
 
+-- libraries table 
+\i 'tables/tbl_libraries.sql'
+\i 'tables/tbl_libraries_load.sql'
+\i 'tables/tbl_libraries_indexes.sql'
+
 -- marc table 
 \i 'tables/tbl_marc.sql'
 \i 'tables/tbl_marc_load.sql'

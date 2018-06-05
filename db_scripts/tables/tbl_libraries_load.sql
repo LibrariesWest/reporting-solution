@@ -1,173 +1,173 @@
-insert into libraries (code, name, type, public) values ('BNBL', 'Bath Central Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNCC', 'Bath Council Connect', 'LAL', false)
-insert into libraries (code, name, type, public) values ('BNGH', 'B&NES Local Studies and Archives', 'LAL', false)
-insert into libraries (code, name, type, public) values ('BNKY', 'Keynsham Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNMN', 'Midsomer Norton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNMOB', 'B&NES Mobile Libraries', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNMOO', 'Moorland Road Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNPAU', 'Paulton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNRAD', 'Radstock Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNRS', 'BNES Reserve Store', 'LAL', false)
-insert into libraries (code, name, type, public) values ('BNSAL', 'Saltford Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BNSUR', 'Childrens Centre Stock', 'LAL', false)
-insert into libraries (code, name, type, public) values ('BNWES', 'Weston (Bath) Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSAL', 'Bristol Central Lending Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSAM', 'Avonmouth Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSBE', 'Bedminster Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSBI', 'Bishopsworth Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSBM', 'Bristol At Home Service', 'LAL', false)
-insert into libraries (code, name, type, public) values ('BSBT', 'Bishopston Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSCH', 'Cheltenham Road Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSCS', 'Bristol Children''s Services', 'LAL', false)
-insert into libraries (code, name, type, public) values ('BSCT', 'Clifton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSEA', 'Eastville Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSFP', 'Fishponds Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSFW', 'Filwood Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSHC', 'Hartcliffe Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSHL', 'Hillfields Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSHO', 'Horfield Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSHY', 'Henbury Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSHZ', 'Henleaze Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSJ3', 'Junction 3 Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSKN', 'Knowle Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSLW', 'Lawrence Weston Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSLZ', 'Lockleaze Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSMA', 'Marksbury Road Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSRE', 'Redland Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSSE', 'Sea Mills Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSSG', 'St George Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSSO', 'Southmead Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSSP', 'St Pauls Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSSR', 'Shirehampton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSSW', 'Stockwood Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSWH', 'Whitchurch Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSWK', 'Wick Road Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('BSWY', 'Westbury-on-Trym Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOBEAM', 'Beaminster Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOBLAN', 'Blandford Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOBRID', 'Bridport Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOBURT', 'Burton Bradstock Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCHAR', 'Charmouth Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCHIC', 'Chickerell Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCHRI', 'Christchurch Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCMUL', 'Corfe Mullen Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCOLE', 'Colehill Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCORF', 'Corfe Castle Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOCROS', 'Crossways Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DODIRECT', 'Dorset Direct', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DODORC', 'Dorchester Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DODORMOB', 'Dorchester Mobile Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOFERN', 'Ferndown Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOGILL', 'Gillingham Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOHIGH', 'Highcliffe Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOHIST', 'Dorset History Centre Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOHLSMOB', 'Home Library Service Mobile Dorset', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOLITT', 'Littlemoor Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOLYME', 'Lyme Regis Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOLYTC', 'Lytchett Matravers Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOPORT', 'Portland Tophill Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOPUDD', 'Puddletown Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DORESMOB', 'Dorset Reserve Mobile Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOSHAF', 'Shaftesbury Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOSHER', 'Sherborne Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOSTALL', 'Stalbridge Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOSTUMOB', 'Sturminster Newton Mobile Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOSTUR', 'Sturminster Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOSWAN', 'Swanage Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOUPTO', 'Upton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOVERW', 'Verwood Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWARE', 'Wareham Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWEST', 'West Moors Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWEYM', 'Weymouth Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWIMB', 'Wimborne Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWMOMOB', 'West Moors Mobile Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWOOL', 'Wool Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('DOWYKE', 'Wyke Regis Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSCV', 'Clevedon Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSCX', 'Congresbury Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSCY', 'Yatton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSDS', 'N Somerset District Stock', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSHLC', 'N Som Healthy Living Centre', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSNA', 'Nailsea Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSNL', 'Long Ashton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSNM', 'North Somerset Mobile', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSOLAP', 'Oldmixon Library Access Point', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSPL', 'Pill Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSPO', 'Portishead Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSSA', 'Sandford Station', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSSTLI', 'N Somerset Studies Weston', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSTZ', 'North Somerset Reserve', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSWL', 'Campus Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSWN', 'Winscombe Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSWO', 'Worle Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('NSWS', 'Weston-super-Mare Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POBRAN', 'Branksome Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POBROA', 'Broadstone Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POCACL', 'Canford Cliffs Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POCAHE', 'Canford Heath Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POCREE', 'Creekmoor Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POCUST', 'Poole Customer Services', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POHAMW', 'Hamworthy Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POLOC', 'Poole Local Studies Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POOAKD', 'Oakdale Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POPARK', 'Parkstone Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POPOOL', 'Poole Central Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('POROSS', 'Rossmore Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGBS', 'Bradley Stoke Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGCC', 'South Gloucestershire Contact', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGCH', 'Cadbury Heath Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGCS', 'Chipping Sodbury Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGDO', 'Downend Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGDZ', 'Downend Junior Store', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGEG', 'Emersons Green Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGFT', 'Filton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGHH', 'Hanham Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGHU', 'Hawkesbury Upton Community Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGKI', 'Kingswood Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGMA', 'Marshfield Community Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGPA', 'Patchway Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGSG', 'St Michaels Church Community Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGST', 'Staple Hill Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGTH', 'Thornbury Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGWT', 'Winterbourne Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGYA', 'Yate Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGYM', 'Yate Mobile', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SGYZ', 'Yate Reserve Stack', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOBHM', 'Burnham Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOBLD', 'Bishops Lydeard Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOBRN', 'Bruton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOBRW', 'Bridgwater Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOCCY', 'Castle Cary Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOCHA', 'Chard Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOCHE', 'Cheddar Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOCRS', 'Somerset County Reserve', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOCRW', 'Crewkerne Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SODUL', 'Dulverton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOFRO', 'Frome Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOGLA', 'Glastonbury Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOHIB', 'Highbridge Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOILM', 'Ilminster Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOLAN', 'Langport Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOMAR', 'Martock Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOMIN', 'Minehead Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOMPT', 'Milborne Port Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SONES', 'Nether Stowey Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SONPN', 'North Petherton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOPAL', 'Performing Arts Library Yeovil', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOPOR', 'Porlock Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOPRW', 'Priorswood Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOSHM', 'Shepton Mallet Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOSOM', 'Somerton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOSPN', 'South Petherton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOSTR', 'Street Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOSUN', 'Sunningdale Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOTAM', 'Taunton Mobile', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOTAU', 'Taunton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWAT', 'Watchet Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWCN', 'Wincanton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWIL', 'Williton Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWIV', 'Wiveliscombe Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWLM', 'Wells Mobile', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWLN', 'Wellington Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOWLS', 'Wells Library', 'LAL', true)
-insert into libraries (code, name, type, public) values ('SOYEO', 'Yeovil Library', 'LAL', true)
+insert into libraries (code, name, type, public) values ('BNBL', 'Bath Central Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNCC', 'Bath Council Connect', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BNGH', 'B&NES Local Studies and Archives', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BNKY', 'Keynsham Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNMN', 'Midsomer Norton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNMOB', 'B&NES Mobile Libraries', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BNMOO', 'Moorland Road Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNPAU', 'Paulton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNRAD', 'Radstock Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNRS', 'BNES Reserve Store', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BNSAL', 'Saltford Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BNSUR', 'Childrens Centre Stock', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BNWES', 'Weston (Bath) Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSAL', 'Bristol Central Lending Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSAM', 'Avonmouth Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSBE', 'Bedminster Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSBI', 'Bishopsworth Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSBM', 'Bristol At Home Service', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BSBT', 'Bishopston Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSCH', 'Cheltenham Road Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSCS', 'Bristol Children''s Services', 'LAL', false);
+insert into libraries (code, name, type, public) values ('BSCT', 'Clifton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSEA', 'Eastville Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSFP', 'Fishponds Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSFW', 'Filwood Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSHC', 'Hartcliffe Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSHL', 'Hillfields Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSHO', 'Horfield Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSHY', 'Henbury Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSHZ', 'Henleaze Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSJ3', 'Junction 3 Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSKN', 'Knowle Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSLW', 'Lawrence Weston Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSLZ', 'Lockleaze Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSMA', 'Marksbury Road Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSRE', 'Redland Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSSE', 'Sea Mills Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSSG', 'St George Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSSO', 'Southmead Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSSP', 'St Pauls Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSSR', 'Shirehampton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSSW', 'Stockwood Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSWH', 'Whitchurch Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSWK', 'Wick Road Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('BSWY', 'Westbury-on-Trym Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOBEAM', 'Beaminster Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOBLAN', 'Blandford Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOBRID', 'Bridport Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOBURT', 'Burton Bradstock Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCHAR', 'Charmouth Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCHIC', 'Chickerell Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCHRI', 'Christchurch Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCMUL', 'Corfe Mullen Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCOLE', 'Colehill Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCORF', 'Corfe Castle Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOCROS', 'Crossways Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DODIRECT', 'Dorset Direct', 'LAL', false);
+insert into libraries (code, name, type, public) values ('DODORC', 'Dorchester Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DODORMOB', 'Dorchester Mobile Library', 'LAL', false);
+insert into libraries (code, name, type, public) values ('DOFERN', 'Ferndown Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOGILL', 'Gillingham Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOHIGH', 'Highcliffe Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOHIST', 'Dorset History Centre Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOHLSMOB', 'Home Library Service Mobile Dorset', 'LAL', false);
+insert into libraries (code, name, type, public) values ('DOLITT', 'Littlemoor Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOLYME', 'Lyme Regis Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOLYTC', 'Lytchett Matravers Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOPORT', 'Portland Tophill Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOPUDD', 'Puddletown Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DORESMOB', 'Dorset Reserve Mobile Library', 'LAL', false);
+insert into libraries (code, name, type, public) values ('DOSHAF', 'Shaftesbury Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOSHER', 'Sherborne Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOSTALL', 'Stalbridge Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOSTUMOB', 'Sturminster Newton Mobile Library', 'LAL', false);
+insert into libraries (code, name, type, public) values ('DOSTUR', 'Sturminster Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOSWAN', 'Swanage Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOUPTO', 'Upton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOVERW', 'Verwood Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWARE', 'Wareham Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWEST', 'West Moors Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWEYM', 'Weymouth Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWIMB', 'Wimborne Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWMOMOB', 'West Moors Mobile Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWOOL', 'Wool Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('DOWYKE', 'Wyke Regis Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSCV', 'Clevedon Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSCX', 'Congresbury Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSCY', 'Yatton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSDS', 'N Somerset District Stock', 'LAL', false);
+insert into libraries (code, name, type, public) values ('NSHLC', 'N Som Healthy Living Centre', 'LAL', false);
+insert into libraries (code, name, type, public) values ('NSNA', 'Nailsea Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSNL', 'Long Ashton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSNM', 'North Somerset Mobile', 'LAL', false);
+insert into libraries (code, name, type, public) values ('NSOLAP', 'Oldmixon Library Access Point', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSPL', 'Pill Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSPO', 'Portishead Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSSA', 'Sandford Station', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSSTLI', 'N Somerset Studies Weston', 'LAL', false);
+insert into libraries (code, name, type, public) values ('NSTZ', 'North Somerset Reserve', 'LAL', false);
+insert into libraries (code, name, type, public) values ('NSWL', 'Campus Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSWN', 'Winscombe Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSWO', 'Worle Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('NSWS', 'Weston-super-Mare Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POBRAN', 'Branksome Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POBROA', 'Broadstone Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POCACL', 'Canford Cliffs Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POCAHE', 'Canford Heath Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POCREE', 'Creekmoor Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POCUST', 'Poole Customer Services', 'LAL', false);
+insert into libraries (code, name, type, public) values ('POHAMW', 'Hamworthy Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POLOC', 'Poole Local Studies Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POOAKD', 'Oakdale Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POPARK', 'Parkstone Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POPOOL', 'Poole Central Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('POROSS', 'Rossmore Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGBS', 'Bradley Stoke Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGCC', 'South Gloucestershire Contact', 'LAL', false);
+insert into libraries (code, name, type, public) values ('SGCH', 'Cadbury Heath Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGCS', 'Chipping Sodbury Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGDO', 'Downend Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGDZ', 'Downend Junior Store', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGEG', 'Emersons Green Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGFT', 'Filton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGHH', 'Hanham Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGHU', 'Hawkesbury Upton Community Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGKI', 'Kingswood Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGMA', 'Marshfield Community Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGPA', 'Patchway Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGSG', 'St Michaels Church Community Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGST', 'Staple Hill Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGTH', 'Thornbury Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGWT', 'Winterbourne Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGYA', 'Yate Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGYM', 'Yate Mobile', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGYZ', 'Yate Reserve Stack', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOBHM', 'Burnham Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOBLD', 'Bishops Lydeard Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOBRN', 'Bruton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOBRW', 'Bridgwater Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOCCY', 'Castle Cary Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOCHA', 'Chard Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOCHE', 'Cheddar Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOCRS', 'Somerset County Reserve', 'LAL', false);
+insert into libraries (code, name, type, public) values ('SOCRW', 'Crewkerne Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SODUL', 'Dulverton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOFRO', 'Frome Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOGLA', 'Glastonbury Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOHIB', 'Highbridge Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOILM', 'Ilminster Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOLAN', 'Langport Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOMAR', 'Martock Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOMIN', 'Minehead Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOMPT', 'Milborne Port Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SONES', 'Nether Stowey Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SONPN', 'North Petherton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOPAL', 'Performing Arts Library Yeovil', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOPOR', 'Porlock Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOPRW', 'Priorswood Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOSHM', 'Shepton Mallet Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOSOM', 'Somerton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOSPN', 'South Petherton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOSTR', 'Street Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOSUN', 'Sunningdale Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOTAM', 'Taunton Mobile', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOTAU', 'Taunton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWAT', 'Watchet Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWCN', 'Wincanton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWIL', 'Williton Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWIV', 'Wiveliscombe Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWLM', 'Wells Mobile', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWLN', 'Wellington Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOWLS', 'Wells Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SOYEO', 'Yeovil Library', 'LAL', true);
