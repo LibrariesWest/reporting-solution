@@ -117,4 +117,9 @@ insert into booksonprescription (title, isbn, type) values
 ('The Unlikely Hero of Room 13B','9781406362992', 'Young people'),
 ('Touch and Go Joe','9781843103912', 'Young people'),
 ('Tyranny','9781406331134', 'Young people'),
-('Vicious: True Stories by Teens About Bullying','9781575424132', 'Young people')
+('Vicious: True Stories by Teens About Bullying','9781575424132', 'Young people'),
+('Getting Better Bite by Bite: A Survival Kit for Sufferers of Bulimia Nervosa and Binge Eating Disorders, 2nd edition', '9781138797376', 'Adult mental health'),
+('Overcoming Chronic Pain', '9781841199702', 'Long term conditions'),
+('Overcoming Panic, 2nd edition: A Self-Help Guide Using Cognitive Behavioural Techniques', '9781472135827', 'Adult mental health')
+
+
