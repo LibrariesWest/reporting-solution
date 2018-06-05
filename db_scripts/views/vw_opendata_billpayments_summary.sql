@@ -11,28 +11,7 @@ select
     round(count(bp.bill_payment_key), -1) as number_of_payments,
     round(sum(bp.payment_amount), -1) as total_paid
 from vw_bills_billpayments bp
-where bp.payment_date >= '7-Jun-2016'
--- filter out some libraries - acquisitions etc
-and bp.payment_library not in (
-    'BNACQ', 
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST')
+where bp.payment_date >= (now() - interval '2 years')
+and bp.payment_library in (select code from libraries)
 group by year_paid, payment_authority, payment_type
 order by year_paid, payment_authority, payment_type;

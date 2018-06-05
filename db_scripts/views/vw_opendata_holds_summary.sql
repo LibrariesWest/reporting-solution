@@ -12,49 +12,9 @@ select
     round(avg(date_available::date - date_placed::date)) as days_taken
 from vw_holds h
 where h.date_available is not null
-and date_placed >= '7-Jun-2016'
--- filter out some libraries - acquisitions etc
-and h.item_library not in (
-    'BNACQ', 
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST')
-and h.pickup_library not in (
-    'BNACQ', 
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST')
+and date_placed >= (now() - interval '2 years')
+and date_placed < date_trunc('month', now())
+and h.item_library in (select code from libraries)
+and h.pickup_library in (select code from libraries)
 group by month_placed, item_authority, pickup_authority
 order by month_placed, item_authority, pickup_authority;

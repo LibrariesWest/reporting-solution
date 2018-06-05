@@ -5,41 +5,21 @@
 -- drop view vw_opendata_members;
 create or replace view vw_opendata_members as
 select 
-	authority as registered_authority,
-	library as registered_library,
-	district_name, 
-	district_code, 
-	county_name,
-	county_code,
-	ward_name,
-	ward_code,
-	msoa_name,
-	msoa_code,
-	lsoa_name,
-	lsoa_code,
+	u.authority as registered_authority,
+	l.name as registered_library,
+	u.district_name, 
+	u.district_code, 
+	u.county_name,
+	u.county_code,
+	u.ward_name,
+	u.ward_code,
+	u.msoa_name,
+	u.msoa_code,
+	u.lsoa_name,
+	u.lsoa_code,
 	case when count(*) > 4 then cast(count(*) as varchar) else '*' end as users
-from vw_users_geography 
-where last_activity_date > (now() - interval '1 year')
-and library not in (
-    'BNACQ',
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST')
-group by authority, library, district_name, district_code, county_name, county_code, ward_name, ward_code, msoa_name, msoa_code, lsoa_name, lsoa_code
-order by authority, library, district_name, district_code, county_name, county_code, ward_name, ward_code, msoa_name, msoa_code, lsoa_name, lsoa_code;
+from vw_users_geography u
+join libraries l on l.code = u.library
+where u.last_activity_date >= (now() - interval '1 year')
+group by u.authority, l.name, u.district_name, u.district_code, u.county_name, u.county_code, u.ward_name, u.ward_code, u.msoa_name, u.msoa_code, u.lsoa_name, u.lsoa_code
+order by u.authority, l.name, u.district_name, u.district_code, u.county_name, u.county_code, u.ward_name, u.ward_code, u.msoa_name, u.msoa_code, u.lsoa_name, u.lsoa_code;

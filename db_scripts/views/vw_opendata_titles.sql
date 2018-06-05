@@ -14,30 +14,9 @@ select
 from vw_catalogue c
 where c.shadowed = 0
 and exists (select 
-    catalogue_key 
+    catalogue_key
     from vw_items i 
     where c.catalogue_key = i.catalogue_key 
     and i.shadowed = 0
-    and i.current_location not in 
-	('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM')
-    and i.library not in (
-    'BNACQ',
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST'));
+    and i.current_location not in ('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM')
+    and i.library in (select code from libraries));

@@ -5,39 +5,17 @@
 -- drop view vw_opendata_items;
 create or replace view vw_opendata_items as
 select
-    catalogue_flex_key as catalogue_flex_key,
-    item_id,
-    authority,
-    library,
-    item_type,
-    date_created as created,
-    price,
-	total_checkouts as issues,
-    total_renewals as renewals
-from vw_items
--- don't include shadowed items
+    i.catalogue_flex_key as catalogue_flex_key,
+    i.item_id,
+    i.authority,
+    l.name as library,
+    i.item_type,
+    i.date_created as created,
+    i.price,
+	i.total_checkouts as issues,
+    i.total_renewals as renewals
+from vw_items i
+join libraries l on l.code = i.library
 where shadowed = 0
--- also dont include missing and lost
 and current_location not in ('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM')
-and library not in (
-    'BNACQ', 
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST')
 order by catalogue_flex_key, item_id, library;

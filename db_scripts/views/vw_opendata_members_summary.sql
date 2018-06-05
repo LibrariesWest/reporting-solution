@@ -8,27 +8,7 @@ select
 	authority as registered_authority,
 	round(count(*), -1) as users
 from vw_users
-where last_activity_date > (now() - interval '1 year')
-and library not in (
-    'BNACQ', 
-    'BSACQ', 
-    'BSBP', 
-    'BSCS', 
-    'DELETE', 
-    'DOACQ',
-    'DOHQ',
-    'DOPRISGM',
-    'DOPRISPO',
-    'DOPRISVE',
-    'DOSLS',
-    'NSACQ',
-    'POACQ',
-    'SGACQ',
-    'SGEP',
-    'SGLP',
-    'SOHDQ',
-    'SOMIM',
-    'SOSAR',
-    'SOSST')
+where last_activity_date >= (now() - interval '1 year')
+and library in (select code from libraries)
 group by authority
 order by authority;
