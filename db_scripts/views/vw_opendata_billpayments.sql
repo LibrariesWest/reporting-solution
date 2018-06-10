@@ -16,5 +16,5 @@ from vw_bills_billpayments bp
 join libraries l on l.code = bp.payment_library
 where bp.payment_date >= (now() - interval '2 years')
 and bp.payment_date < date_trunc('month', now())
-group by month_paid, payment_authority, payment_library, bill_reason, payment_type
-order by month_paid, payment_authority, payment_library, bill_reason, payment_type;
+group by month_paid, payment_authority, l.name, bill_reason, payment_type
+order by month_paid, payment_authority, l.name, bill_reason, payment_type;
