@@ -4,13 +4,12 @@
 
 -- index: cuix_fund_key
 -- drop index cuix_fund_key;
-create unique index cuix_fund_key on dist using btree (key);
+create unique index cuix_fund_key on fund using btree (key);
 alter table fund cluster on cuix_fund_key;
 
 -- index: ix_fund_library
 -- drop index ix_fund_library;
 create index ix_fund_library on fund using btree (library);
-
 
 -- index: ix_fund_id
 -- drop index ix_fund_id;

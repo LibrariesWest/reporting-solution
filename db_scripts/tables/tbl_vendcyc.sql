@@ -11,7 +11,7 @@ create table vendcyc
   total_amount_list_price numeric,
   total_amount_ordered numeric,
   amount_ordered numeric,
-  amount_funded integer,
+  amount_funded numeric,
   amount_invoiced_funded integer,
   total_paid numeric, 
   deposit_encumbrance_margin integer,
