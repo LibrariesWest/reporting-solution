@@ -5,8 +5,8 @@
 -- drop table booksonprescription
 create table booksonprescription
 (
-  isbn character (13),
+  type character (20),
   title character varying (200),
-  type character varying (20),
+  isbn character varying (13),
   constraint pk_booksonprescription_isbn primary key (isbn)
 );
