@@ -191,6 +191,11 @@ create extension postgis;
 \i 'tables/tbl_discards.sql'
 \i 'tables/tbl_discards_indexes.sql'
 
+-- financial year table for reporting against financial year
+\i 'tables/tbl_financialyear.sql'
+\i 'tables/tbl_financialyear_load.sql'
+\i 'tables/tbl_financialyear_indexes.sql'
+
 -- create the base views.  used for browsing the tables by administrators
 \i 'views/vw_bills.sql'
 \i 'views/vw_billpayments.sql'
