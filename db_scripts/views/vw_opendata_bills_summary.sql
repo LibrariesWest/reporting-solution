@@ -11,7 +11,8 @@ select
     round(count(*), -1) as number_of_bills,
     round(sum(amount), -1) as total_billed
 from vw_bills b
-where b.date_billed >= (now() - interval '2 years')
+join financial_year fy on b.date_billed between fy.beginning and fy.ending
+where fy.beginning >= (now() - interval '2 years')
 and b.bill_library in (select code from libraries)
 group by year_billed, bill_authority, bill_reason
 order by year_billed, bill_authority, bill_reason;

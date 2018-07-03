@@ -12,7 +12,7 @@ select
     round(sum(bp.payment_amount), -1) as total_paid
 from vw_bills_billpayments bp
 join financial_year fy on bp.payment_date between fy.beginning and fy.ending
-where bp.payment_date >= (now() - interval '2 years')
+where fy.beginning >= (now() - interval '2 years')
 and bp.payment_library in (select code from libraries)
 group by financial_year, payment_authority, payment_type
 order by financial_year, payment_authority, payment_type;
