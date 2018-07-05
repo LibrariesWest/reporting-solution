@@ -13,10 +13,12 @@ select
     c.date_created as created
 from vw_catalogue c
 where c.shadowed = 0
-and exists (select 
-    catalogue_key
+and exists (
+    select 
+        catalogue_key
     from vw_items i 
     where c.catalogue_key = i.catalogue_key 
     and i.shadowed = 0
     and i.current_location not in ('DISCARD', 'MISSING', 'LOST', 'LOST-CLAIM', 'STOLEN', 'LOST-ASSUM')
-    and i.library in (select code from libraries));
+    and i.library in (select code from libraries)
+);

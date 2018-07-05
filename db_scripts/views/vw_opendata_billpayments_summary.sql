@@ -9,7 +9,8 @@ select
     bp.payment_authority as payment_authority,
     bp.payment_type as payment_type,
     round(count(bp.bill_payment_key), -1) as number_of_payments,
-    round(sum(bp.payment_amount), -1) as total_paid
+    round(sum(bp.payment_amount), -1) as system_paid,
+    round(sum((case when bp.payment_type = 'CANCEL' then 0 when bp.payment_type = 'FORGIVEN' then 0 else bp.payment_amount end)), -1) as real_amount_paid
 from vw_bills_billpayments bp
 join financial_year fy on bp.payment_date between fy.beginning and fy.ending
 where fy.beginning >= (now() - interval '2 years')
