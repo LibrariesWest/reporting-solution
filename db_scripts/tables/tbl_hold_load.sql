@@ -10,7 +10,7 @@ alter table hold alter column date_reordered type character varying(10);
 alter table hold alter column date_notified type character varying(10);
 alter table hold alter column date_inactive type character varying(10);
 alter table hold alter column date_expires type character varying(10);
-copy hold from 'c:\dbdata\symphony\hold.txt' delimiter '|';
+copy hold from 'c:\dbdata\symphony\holds.txt' delimiter '|';
 update hold set date_recalled = null where date_recalled = 'NEVER';
 update hold set date_available = null where date_available = 'NEVER';
 update hold set date_available_expires = null where date_available_expires = 'NEVER';

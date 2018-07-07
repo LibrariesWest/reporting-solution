@@ -3,4 +3,4 @@
 ---------------------------------------------------------------
 
 truncate transit;
-copy transit from 'c:\dbdata\symphony\transit.txt' delimiter '|';
+copy transit from 'c:\dbdata\symphony\transits.txt' delimiter '|';
