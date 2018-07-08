@@ -13,7 +13,8 @@ select
 from vw_charges_chargeshistory ch
 join vw_items i on i.catalogue_key = ch.catalogue_key and i.call_sequence = ch.call_sequence and i.copy_number = ch.copy_number
 join policy ip on ip.policy_type = 'ITYP' and ip.policy_name = i.item_type
-where ch.date_charged >= (now() - interval '2 years')
+where ch.date_charged >= date_trunc('month', (now() - interval '2 years'))
+and ch.date_charged < date_trunc('month', now())
 and ch.charge_library in (select code from libraries)
 group by month_issued, charge_authority, ip.field_5
 order by month_issued, charge_authority, ip.field_5;
