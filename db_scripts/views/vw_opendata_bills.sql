@@ -9,14 +9,13 @@ select
     b.bill_authority as bill_authority,
     l.name as bill_library,
 	ip.field_5 as item_type,
-    rp.field_1 as bill_reason,
+    b.reason as bill_reason,
     count(*) as number_of_bills,
     sum(amount) as total_billed
 from vw_bills b
 join libraries l on l.code = b.bill_library
 join policy ip on ip.policy_type = 'ITYP' and ip.policy_name = b.item_type
-join policy rp on rp.policy_type = 'BRSN' and rp.policy_name = b.reason
 where b.date_billed >= date_trunc('month', (now() - interval '2 years'))
 and b.date_billed < date_trunc('month', now())
-group by month_billed, bill_authority, l.name, ip.field_5, rp.field_1
-order by month_billed, bill_authority, l.name, ip.field_5, rp.field_1;
+group by month_billed, bill_authority, l.name, ip.field_5, b.reason
+order by month_billed, bill_authority, l.name, ip.field_5, b.reason;

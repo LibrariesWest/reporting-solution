@@ -19,3 +19,7 @@ create index ix_policy_name on policy using btree (policy_name);
 -- index: ix_policy_type
 -- drop index ix_policy_type;
 create index ix_policy_type on policy using btree (policy_type);
+
+-- index: ix_policy_field5
+-- drop index ix_policy_field5;
+create index ix_policy_field5 on policy using btree (field_5);
