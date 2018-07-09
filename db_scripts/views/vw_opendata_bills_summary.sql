@@ -7,12 +7,13 @@ create or replace view vw_opendata_bills_summary as
 select
     fy.financial_year as financial_year_billed,
     b.bill_authority as bill_authority,
-    b.reason as bill_reason,
+    rp.field_1 as bill_reason,
     round(count(*), -1) as number_of_bills,
     round(sum(amount), -1) as total_billed
 from vw_bills b
 join financial_year fy on b.date_billed between fy.beginning and fy.ending
+join policy rp on rp.policy_type = 'BRSN' and rp.policy_name = b.reason
 where fy.beginning >= (now() - interval '2 years')
 and b.bill_library in (select code from libraries)
-group by financial_year_billed, bill_authority, bill_reason
-order by financial_year_billed, bill_authority, bill_reason;
+group by financial_year_billed, bill_authority, rp.field_1
+order by financial_year_billed, bill_authority, rp.field_1;

@@ -2,6 +2,11 @@
 -- custom reporting database.  create script.
 ------------------------------------------------------
 
+-- drop connections to the database
+SELECT pg_terminate_backend(pid)
+FROM pg_stat_activity
+WHERE datname = 'customreporting';
+
 -- if the database exists, drop it
 drop database if exists customreporting;
 
