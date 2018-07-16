@@ -10,8 +10,8 @@ select
     l.name as bill_library,
 	ip.field_5 as item_type,
     b.reason as bill_reason,
-    count(*) as number_of_bills,
-    sum(amount) as total_billed
+    case when count(*) > 4 then cast(count(*) as varchar) else '*' end as number_of_bills,
+    case when count(*) > 4 then cast(sum(amount) as varchar) else '*' end as total_billed
 from vw_bills b
 join libraries l on l.code = b.bill_library
 join policy ip on ip.policy_type = 'ITYP' and ip.policy_name = b.item_type
