@@ -15,7 +15,7 @@ select
 		when client = 'WS_PUBLIC' then 'App'
 		when client = 'WORKFLOWS' then 'Branch'
 	end as reservation_method,
-    count(h.key) as holds,
+    case when count(h.key) > 4 then cast(count(h.key) as varchar) else '*' end as holds,
     round(avg(date_available::date - date_placed::date)) as days_taken
 from vw_holds h
 join libraries pl on pl.code = h.pickup_library
