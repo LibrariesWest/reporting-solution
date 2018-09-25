@@ -218,6 +218,7 @@ create extension postgis;
 \i 'views/vw_holds_fulfilment_external.sql'
 \i 'views/vw_holds_fulfilment_internal.sql'
 \i 'views/vw_items.sql'
+\i 'views/vw_ons_lsoa_pop.sql'
 \i 'views/vw_transits.sql'
 \i 'views/vw_users.sql'
 \i 'views/vw_users_libraries.sql'

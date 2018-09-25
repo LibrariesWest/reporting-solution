@@ -38,7 +38,6 @@ where vu.profile in (
   'E_YR_8', 
   'E_YR_9', 
   'HOME_IND', 
-  'INPROCESS', 
   'INT_U18', 
   'LOSTCARD', 
   'NO_ADD', 

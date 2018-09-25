@@ -7,8 +7,8 @@ create or replace view vw_opendata_members as
 select 
 	u.authority as registered_authority,
 	l.name as registered_library,
-	u.district_name, 
-	u.district_code, 
+	u.district_name,
+	u.district_code,
 	u.county_name,
 	u.county_code,
 	u.ward_name,

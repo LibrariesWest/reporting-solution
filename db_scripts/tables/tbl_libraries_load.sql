@@ -1,3 +1,4 @@
+insert into libraries (code, name, type, public) values ('BNBIS', 'Bishop Sutton Community Library', 'LAL', false);
 insert into libraries (code, name, type, public) values ('BNBL', 'Bath Central Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('BNCC', 'Bath Council Connect', 'LAL', false);
 insert into libraries (code, name, type, public) values ('BNGH', 'B&NES Local Studies and Archives', 'LAL', false);
@@ -126,13 +127,15 @@ insert into libraries (code, name, type, public) values ('SGHU', 'Hawkesbury Upt
 insert into libraries (code, name, type, public) values ('SGKI', 'Kingswood Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGMA', 'Marshfield Community Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGPA', 'Patchway Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGSB', 'Severn Beach & Pilning Library', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGSC', 'Scholars Chase Stoke Gifford Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGSG', 'St Michaels Church Community Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGST', 'Staple Hill Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGTH', 'Thornbury Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGWT', 'Winterbourne Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SGYA', 'Yate Library', 'LAL', true);
-insert into libraries (code, name, type, public) values ('SGYM', 'Yate Mobile', 'LAL', true);
-insert into libraries (code, name, type, public) values ('SGYZ', 'Yate Reserve Stack', 'LAL', true);
+insert into libraries (code, name, type, public) values ('SGYM', 'Yate Mobile', 'LAL', false);
+insert into libraries (code, name, type, public) values ('SGYZ', 'Yate Reserve Stack', 'LAL', false);
 insert into libraries (code, name, type, public) values ('SOBHM', 'Burnham Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SOBLD', 'Bishops Lydeard Library', 'LAL', true);
 insert into libraries (code, name, type, public) values ('SOBRN', 'Bruton Library', 'LAL', true);

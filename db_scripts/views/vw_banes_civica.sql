@@ -2,11 +2,13 @@
 -- view: vw_banes_civica
 ------------------------
 
--- Custom view for B&NES to extract cash management data
+-- 
+create or replace view vw_banes_civica as 
 select
+    to_char(day_time, 'YYYYMMDD') as cash_day,
 	case 
     	when item_type = 'SALESVAT' then 'SALES - Vatable'
-        when item_type = 'SALESNOVAT' then 'SALES -Non vatable'
+        when item_type = 'SALESNOVAT' then 'SALES - Non Vatable'
     else 'HIRE & FINES' end as sale_type,
     case 
     	when item_type = 'SALESVAT' then 'W'
@@ -17,10 +19,11 @@ select
         when item_type = 'SALESNOVAT' then 'YA1'
     else 'YF2' end as cost_code,
     library,
-    '' as sub_account,
-	sum(sale_amt) as moeny_taken
+	sum(sale_amt) as money_taken
 from vw_cashmanagement
 where authority = 'Bath and North East Somerset'
-and day_time >= '17-May-2018' and day_time < '25-May-2018'
+and library in ('BNBL', 'BNKY', 'BNMN')
 and transaction_type = 'SALE'
-group by sale_type, vat, cost_code, library;
+and day_time > '7-Jun-2016'
+group by to_char(day_time, 'YYYYMMDD') as cash_day, sale_type, vat, cost_code, library
+order by to_char(day_time, 'YYYYMMDD') as cash_day, sale_type, vat, cost_code, library;

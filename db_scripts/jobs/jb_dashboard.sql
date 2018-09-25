@@ -85,5 +85,8 @@ copy(select * from vw_dashboard_collection_titleswithnocopies where authority='P
 copy(select * from vw_dashboard_collection_titleswithnocopies where authority='Somerset') to 'c:\dbdata\dashboard\collection_titleswithnocopies_somerset.csv' csv header;
 copy(select * from vw_dashboard_collection_titleswithnocopies where authority='South Gloucestershire') to 'c:\dbdata\dashboard\collection_titleswithnocopies_southglos.csv' csv header;
 
+copy(select * from vw_banes_civica) to 'c:\dbdata\dashboard\banes_civica.csv' csv header;
+
+
 -- create a javascript file with a variable showing the data updated
 copy(select 'var dashboard_updated = "' || to_char(now(), 'YYYY-MM-DD') || '"') to 'c:\dbdata\dashboard\dashboard-updated.js'

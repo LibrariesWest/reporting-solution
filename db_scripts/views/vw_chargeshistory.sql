@@ -29,7 +29,9 @@ select
     fn_librarytoauthority(ldp.policy_name) as discharge_authority
 from chargehist c
 join users u on u.user_key = c.user_key
+join policy up on up.policy_type = 'UPRF' and up.policy_number = u.profile
 join item i on i.catalogue_key = c.catalogue_key and i.call_sequence = c.call_sequence and i.copy_number = c.copy_number
 join policy lp on lp.policy_number = c.library and lp.policy_type = 'LIBR'
 join policy ldp on ldp.policy_number = c.discharge_library and ldp.policy_type = 'LIBR'
-where fn_librarytoauthority(lp.policy_name) is not null;
+where fn_librarytoauthority(lp.policy_name) is not null
+and up.policy_name not in ('MISSING', 'DISCARD'); -- we're never interested in discards or missing charges
