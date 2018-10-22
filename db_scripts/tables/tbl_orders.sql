@@ -29,7 +29,7 @@ create table orders
   amount_invoiced numeric,
   total_amount_paid numeric,
   type integer,
-  extended_info_offset integer
+  extended_info_offset integer,
   empty character(1),
   constraint pk_orders_key primary key (key)
 );

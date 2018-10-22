@@ -1,9 +1,9 @@
 ---------------------------------------------------------------
--- table: orderlines
+-- table: orderline
 ---------------------------------------------------------------
 
--- drop table orderlines;
-create table orderlines
+-- drop table orderline;
+create table orderline
 (
   key integer not null,
   order_key integer,
@@ -38,7 +38,7 @@ create table orderlines
   category2 integer,
   category3 integer,
   category4 integer,
-  material_type integer
+  material_type integer,
   empty character(1),
-  constraint pk_orderlines_key primary key (key)
+  constraint pk_orderline_key primary key (key)
 );
