@@ -16,7 +16,6 @@ select
 	sum(sale_amt) as total_sale_amt,
 	sum(tax_amt) as total_tax_amt
 from vw_cashmanagement
-where transaction_type = 'SALE'
-and bill_reason is null
+where transaction_type = 'SALE' and bill_reason is null
 group by month, library, authority, item_type, description, payment_type
 order by month, library, authority, item_type, description, payment_type;

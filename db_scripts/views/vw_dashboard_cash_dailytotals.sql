@@ -8,6 +8,7 @@ select
 	day_time,
 	library, 
 	authority,
+	station,
 	transaction_type,
 	bill_reason,
 	item_type,
@@ -15,5 +16,6 @@ select
 	sum(sale_amt) as total_sale_amt,
 	sum(tax_amt) as total_tax_amt
 from vw_cashmanagement
-group by day_time, library, authority, bill_reason, transaction_type, item_type
-order by day_time, library, authority, bill_reason, transaction_type, item_type;
+where 
+group by day_time, library, authority, station, bill_reason, transaction_type, item_type
+order by day_time, library, authority, station, bill_reason, transaction_type, item_type;
