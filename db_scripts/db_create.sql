@@ -82,6 +82,11 @@ create extension postgis;
 \i 'tables/tbl_booksonprescription_load.sql'
 \i 'tables/tbl_booksonprescription_indexes.sql'
 
+-- audit table
+\i 'tables/tbl_audit.sql'
+\i 'tables/tbl_audit_load.sql'
+\i 'tables/tbl_audit_indexes.sql'
+
 -- bill table
 \i 'tables/tbl_bill.sql'
 \i 'tables/tbl_bill_load.sql'
@@ -96,6 +101,11 @@ create extension postgis;
 \i 'tables/tbl_callnum.sql'
 \i 'tables/tbl_callnum_load.sql'
 \i 'tables/tbl_callnum_indexes.sql'
+
+-- cancel table
+\i 'tables/tbl_cancel.sql'
+\i 'tables/tbl_cancel_load.sql'
+\i 'tables/tbl_cancel_indexes.sql'
 
 -- catalogue table
 \i 'tables/tbl_catalogue.sql'
@@ -127,10 +137,75 @@ create extension postgis;
 \i 'tables/tbl_dailypaytransitem_load.sql'
 \i 'tables/tbl_dailypaytransitem_indexes.sql'
 
+-- acquisitions distribution table
+\i 'tables/tbl_dist.sql'
+\i 'tables/tbl_dist_load.sql'
+\i 'tables/tbl_dist_indexes.sql'
+
+-- acquisitions fund table
+\i 'tables/tbl_fund.sql'
+\i 'tables/tbl_fund_load.sql'
+\i 'tables/tbl_fund_indexes.sql'
+
+-- heading1 table
+\i 'tables/tbl_heading1.sql'
+\i 'tables/tbl_heading1_load.sql'
+\i 'tables/tbl_heading1_indexes.sql'
+
+-- heading1 table
+\i 'tables/tbl_heading2.sql'
+\i 'tables/tbl_heading2_load.sql'
+\i 'tables/tbl_heading2_indexes.sql'
+
+-- heading1 table
+\i 'tables/tbl_heading3.sql'
+\i 'tables/tbl_heading3_load.sql'
+\i 'tables/tbl_heading3_indexes.sql'
+
+-- heading1 table
+\i 'tables/tbl_heading4.sql'
+\i 'tables/tbl_heading4_load.sql'
+\i 'tables/tbl_heading4_indexes.sql'
+
+-- heading1 table
+\i 'tables/tbl_heading5.sql'
+\i 'tables/tbl_heading5_load.sql'
+\i 'tables/tbl_heading5_indexes.sql'
+
+-- headingved table
+\i 'tables/tbl_headingved.sql'
+\i 'tables/tbl_headingved_load.sql'
+\i 'tables/tbl_headingved_indexes.sql'
+
 -- hold table
 \i 'tables/tbl_hold.sql'
 \i 'tables/tbl_hold_load.sql'
 \i 'tables/tbl_hold_indexes.sql'
+
+-- holdblanket table
+\i 'tables/tbl_holdblanket.sql'
+\i 'tables/tbl_holdblanket_load.sql'
+\i 'tables/tbl_holdblanket_indexes.sql'
+
+-- holditem table
+\i 'tables/tbl_holditem.sql'
+\i 'tables/tbl_holditem_load.sql'
+\i 'tables/tbl_holditem_indexes.sql'
+
+-- invline table
+\i 'tables/tbl_invline.sql'
+\i 'tables/tbl_invline_load.sql'
+\i 'tables/tbl_invline_indexes.sql'
+
+-- invlink table
+\i 'tables/tbl_invlink.sql'
+\i 'tables/tbl_invlink_load.sql'
+\i 'tables/tbl_invlink_indexes.sql'
+
+-- invlink table
+\i 'tables/tbl_invoice.sql'
+\i 'tables/tbl_invoice_load.sql'
+\i 'tables/tbl_invoice_indexes.sql'
 
 -- item table 
 \i 'tables/tbl_item.sql'
@@ -147,10 +222,30 @@ create extension postgis;
 \i 'tables/tbl_marc_load.sql'
 \i 'tables/tbl_marc_indexes.sql'
 
+-- orders table 
+\i 'tables/tbl_orders.sql'
+\i 'tables/tbl_orders_load.sql'
+\i 'tables/tbl_orders_indexes.sql'
+
+-- orderline table 
+\i 'tables/tbl_orderline.sql'
+\i 'tables/tbl_orderline_load.sql'
+\i 'tables/tbl_orderline_indexes.sql'
+
 -- policy table 
 \i 'tables/tbl_policy.sql'
 \i 'tables/tbl_policy_load.sql'
 \i 'tables/tbl_policy_indexes.sql'
+
+-- request table 
+\i 'tables/tbl_request.sql'
+\i 'tables/tbl_request_load.sql'
+\i 'tables/tbl_request_indexes.sql'
+
+-- requestved table 
+\i 'tables/tbl_requestved.sql'
+\i 'tables/tbl_requestved_load.sql'
+\i 'tables/tbl_requestved_indexes.sql'
 
 -- transit table 
 \i 'tables/tbl_transit.sql'
@@ -177,17 +272,18 @@ create extension postgis;
 \i 'tables/tbl_userphone_load.sql'
 \i 'tables/tbl_userphone_indexes.sql'
 
--- acquisitions distribution table
-\i 'tables/tbl_dist.sql'
-\i 'tables/tbl_dist_load.sql'
-\i 'tables/tbl_dist_indexes.sql'
 
--- acquisitions fund table
-\i 'tables/tbl_fund.sql'
-\i 'tables/tbl_fund_load.sql'
-\i 'tables/tbl_fund_indexes.sql'
+-- user status table
+\i 'tables/tbl_userstatus.sql'
+\i 'tables/tbl_userstatus_load.sql'
+\i 'tables/tbl_userstatus_indexes.sql'
 
--- acquisitions vendcyc table
+-- vendor table
+\i 'tables/tbl_vendor.sql'
+\i 'tables/tbl_vendor_load.sql'
+\i 'tables/tbl_vendor_indexes.sql'
+
+-- vendcyc table
 \i 'tables/tbl_vendcyc.sql'
 \i 'tables/tbl_vendcyc_load.sql'
 \i 'tables/tbl_vendcyc_indexes.sql'
