@@ -12,8 +12,8 @@ select
     pl.name as pickup_library,
 	case 
 		when client = 'WS_DS' then 'Website'
-		when client = 'WS_PUBLIC' then 'App'
-		when client = 'WORKFLOWS' then 'Branch'
+		when client = 'WS_PUBLIC' then 'Mobile App'
+		when client = 'WORKFLOWS' then 'Library'
 	end as reservation_method,
     case when count(h.key) > 4 then cast(count(h.key) as varchar) else '*' end as holds,
     round(avg(date_available::date - date_placed::date)) as days_taken
